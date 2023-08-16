@@ -88,8 +88,6 @@ in
       historySize = 100000;
       profileExtra = ''
         export PATH=~/.local/bin:$PATH
-        export PATH=~/Work/proj/script:$PATH
-        export PATH=~/Work/git/build-proxy/bin:$PATH
         export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
       '';
       bashrcExtra = ''
@@ -119,7 +117,7 @@ in
         # Set Color Prompt
         PS1="\[''${ucolor}\]\u\[\e[38;5;68m\]@\[''${hcolor}\]\H\[\e[0;34m\]\[\e[0;38;5;68m\]:\w \e[0;35m\D{%T} \[\e[91m\]\$(parse_git_branch)\[\e[0m\]\nλ "
 
-        PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+        PROMPT_COMMAND="$PROMPT_COMMAND history -a; history -c; history -r;"
 
         if [ -x "$(command -v fortune)" ]; then
             echo -e "\e[0;35m$(fortune)\e[0m\n"
@@ -636,6 +634,92 @@ in
       "Work/proj".source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Projects";
       "Work/wiki".source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Documents/Wiki";
       "Work/tmp/.keep".source = builtins.toFile "keep" "";
+      ".local/bin/vi" = {
+        executable = true;
+        text = ''
+          #!/usr/bin/env bash
+          cmd='codium'
+          files=()
+          args=()
+          line=0
+
+          for arg in "$@"; do
+              case $arg in
+              -*)
+                  args+=("$arg")
+                  ;;
+              +*)
+                  line=("''${arg:1}")
+                  ;;
+              *)
+                  files+=("$arg")
+                  ;;
+              esac
+          done
+
+          nfile=''${#files[@]}
+          for file in "''${files[@]}"; do
+              if [[ "$file" = /* ]]; then
+                  file=$file
+              else
+                  file="$PWD/$file"
+              fi
+              touch "$file"
+              if [ $nfile -gt 1 ]; then
+                  $cmd -r $args "$file" &
+              else
+                  if [ -d $file ];
+                  then
+                      echo "folder"
+                      $cmd -n $args "$file"
+                  else
+                      echo "not"
+                      $cmd -rg $args "$file:$line"
+                  fi
+              fi
+          done
+        '';
+      };
+      ".local/bin/tmux-dir" = {
+        executable = true;
+        text = ''
+          #!/usr/bin/env sh
+
+          SESSION=''${PWD//./_}
+          tmux has-session -t $SESSION 2>/dev/null
+          if [ $? != 0 ]; then
+            tmux new -s $SESSION "$@"
+          else
+            tmux attach-session -t $SESSION
+          fi
+        '';
+      };
+      ".local/bin/firefox-dev" = {
+        executable = true;
+        text = ''
+          #!/usr/bin/env bash
+          args="-start-debugger-server 6000 -P dev http://localhost:3000"
+          if [ -x "$(command -v flatpak)" ]; then
+            cmd='flatpak run org.mozilla.firefox'
+          else
+            cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.mozilla.firefox'
+          fi
+          $cmd $args "$@"
+        '';
+      };
+      ".local/bin/chromium-dev" = {
+        executable = true;
+        text = ''
+          #!/usr/bin/env bash
+          args="--remote-debugging-port=9220"
+          if [ -x "$(command -v flatpak)" ]; then
+            cmd='flatpak run org.chromium.Chromium'
+          else
+            cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.chromium.Chromium'
+          fi
+          $cmd $args "$@"
+        '';
+      };
       ".npmrc".text = ''
         prefix=/home/noverby/.global-modules
         init.author.name=Niclas Overby
