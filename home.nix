@@ -39,6 +39,7 @@ let
     rust-lang.rust-analyzer
     tamasfe.even-better-toml
     ms-python.python
+    esbenp.prettier-vscode
   ];
 in
 with config.home; with config.lib.file;
