@@ -685,6 +685,16 @@ with config.home; with config.lib.file;
     "org/gnome/settings-daemon.plugins/color" = {
       "night-light-enabled" = true;
     };
+      "com/github/amezin/ddterm" = {
+        "command" = "custom-command";
+        "custom-command" = "tmux-dir";
+        "ddterm-toggle-hotkey" = [
+          "onehalf"
+        ];
+      };
+      "org/gnome/shell/extensions/auto-move-windows" = {
+        "application-list" = ["com.spotify.Client.desktop:2"];
+      };
   };
 
   programs.home-manager.enable = true;
