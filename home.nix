@@ -75,7 +75,6 @@ in
 
     programs.bash = {
       enable = true;
-      enableVteIntegration = true;
       shellOptions = [
         "histappend"
         "checkwinsize"
@@ -117,7 +116,7 @@ in
         # Set Color Prompt
         PS1="\[''${ucolor}\]\u\[\e[38;5;68m\]@\[''${hcolor}\]\H\[\e[0;34m\]\[\e[0;38;5;68m\]:\w \e[0;35m\D{%T} \[\e[91m\]\$(parse_git_branch)\[\e[0m\]\nλ "
 
-        PROMPT_COMMAND="$PROMPT_COMMAND history -a; history -c; history -r;"
+        PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
         if [ -x "$(command -v fortune)" ]; then
             echo -e "\e[0;35m$(fortune)\e[0m\n"
