@@ -14,6 +14,7 @@
     fpp
     fortune
     alejandra
+    distrobox
 
     bat
     fd
