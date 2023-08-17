@@ -217,6 +217,10 @@ in
     programs = {
       home-manager.enable = true;
 
+      "command-not-found" = {
+        enable = true;
+      };
+
       bash = {
         enable = true;
         shellOptions = [
