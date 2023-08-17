@@ -636,6 +636,11 @@ in
       '';
     };
 
+    programs.broot = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
     home.file = {
       Pictures.source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Pictures";
       Documents.source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Documents";
