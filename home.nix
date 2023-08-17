@@ -99,39 +99,37 @@ in
             line=0
 
             for arg in "$@"; do
-                case $arg in
-                -*)
-                    args+=("$arg")
-                    ;;
-                +*)
-                    line=("''${arg:1}")
-                    ;;
-                *)
-                    files+=("$arg")
-                    ;;
-                esac
+              case $arg in
+              -*)
+                args+=("$arg")
+                ;;
+              +*)
+                line=("''${arg:1}")
+                ;;
+              *)
+                files+=("$arg")
+                ;;
+              esac
             done
 
             nfile=''${#files[@]}
             for file in "''${files[@]}"; do
-                if [[ "$file" = /* ]]; then
-                    file=$file
+              if [[ "$file" = /* ]]; then
+                file=$file
+              else
+                file="$PWD/$file"
+              fi
+              touch "$file"
+              if [ $nfile -gt 1 ]; then
+                $cmd -r $args "$file" &
+              else
+                if [ -d $file ];
+                then
+                  $cmd -n $args "$file"
                 else
-                    file="$PWD/$file"
+                  $cmd -rg $args "$file:$line"
                 fi
-                touch "$file"
-                if [ $nfile -gt 1 ]; then
-                    $cmd -r $args "$file" &
-                else
-                    if [ -d $file ];
-                    then
-                        echo "folder"
-                        $cmd -n $args "$file"
-                    else
-                        echo "not"
-                        $cmd -rg $args "$file:$line"
-                    fi
-                fi
+              fi
             done
           '';
         };
@@ -192,11 +190,11 @@ in
           historyPath = os.path.expanduser("~/.pyhistory")
 
           def save_history(historyPath=historyPath):
-                 import readline
-                 readline.write_history_file(historyPath)
+              import readline
+              readline.write_history_file(historyPath)
 
           if os.path.exists(historyPath):
-                 readline.read_history_file(historyPath)
+              readline.read_history_file(historyPath)
           readline.parse_and_bind('tab: complete')
 
 
@@ -263,14 +261,14 @@ in
         '';
         bashrcExtra = ''
           if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-              source $HOME/.nix-profile/etc/profile.d/nix.sh
+            source $HOME/.nix-profile/etc/profile.d/nix.sh
           fi
 
           # User Color
           if [[ $USER == "root" ]]; then
-              ucolor='\e[0;31m'
+            ucolor='\e[0;31m'
           else
-              ucolor='\e[0;32m'
+            ucolor='\e[0;32m'
           fi
 
           # Hostname Color
@@ -282,7 +280,7 @@ in
           esac
 
           parse_git_branch() {
-              git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+            git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
           }
 
           # Set Color Prompt
@@ -291,31 +289,31 @@ in
           PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
           if [ -x "$(command -v fortune)" ]; then
-              echo -e "\e[0;35m$(fortune)\e[0m\n"
+            echo -e "\e[0;35m$(fortune)\e[0m\n"
           fi
 
           if [ -x "$(command -v direnv)" ]; then
-              eval "$(direnv hook bash)"
+            eval "$(direnv hook bash)"
           fi
 
           if [ -x "$(command -v tmux)" ]; then
-              # Picker
-              get_tmux_option() {
-                  local option=$1
-                  local default_value=$2
-                  local option_value=$(tmux show-option -gqv "$option")
-                  if [ -z $option_value ]; then
-                      echo $default_value
-                  else
-                      echo $option_value
-                  fi
-              }
+            # Picker
+            get_tmux_option() {
+              local option=$1
+              local default_value=$2
+              local option_value=$(tmux show-option -gqv "$option")
+              if [ -z $option_value ]; then
+                echo $default_value
+              else
+                echo $option_value
+              fi
+            }
 
-              readonly key="$(get_tmux_option "@fpp-key" "f")"
-              tmux bind-key "$key" capture-pane -J \\\; \
-                  save-buffer "''${TMPDIR:-/tmp}/tmux-buffer" \\\; \
-                  delete-buffer \\\; \
-                  new-window -n fpp -c "#{pane_current_path}" "sh -c 'cat \"''${TMPDIR:-/tmp}/tmux-buffer\" | fpp -nfc ; rm \"''${TMPDIR:-/tmp}/tmux-buffer\"'"
+            readonly key="$(get_tmux_option "@fpp-key" "f")"
+            tmux bind-key "$key" capture-pane -J \\\; \
+              save-buffer "''${TMPDIR:-/tmp}/tmux-buffer" \\\; \
+              delete-buffer \\\; \
+              new-window -n fpp -c "#{pane_current_path}" "sh -c 'cat \"''${TMPDIR:-/tmp}/tmux-buffer\" | fpp -nfc ; rm \"''${TMPDIR:-/tmp}/tmux-buffer\"'"
           fi
         '';
       };
