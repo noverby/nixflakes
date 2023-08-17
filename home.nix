@@ -81,6 +81,7 @@ in
       ll = "exa -al";
       ls = "exa -a";
       cp = "xcp";
+      cat = "bat";
       grep = "grep --color=auto";
       assume = "source assume";
     };
