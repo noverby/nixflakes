@@ -22,6 +22,11 @@
     gh
     glab
     ripgrep
+
+    exa
+    duf
+    xcp
+    fzf
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
@@ -64,13 +69,19 @@ in
     };
 
     home.shellAliases = {
+      "..." = "../..";
+      "...." = "../../..";
       vim = "nvim";
       gc = "git checkout";
       gpl = "git pull";
       gps = "git push";
       gr = "git rebase";
       gcp = "git cherry-pick";
-      ls = "ls --color=auto";
+      df = "duf";
+      ll = "exa -al";
+      ls = "exa -a";
+      cp = "xcp";
+      man = "fzf-man";
       grep = "grep --color=auto";
       assume = "source assume";
     };
