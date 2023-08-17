@@ -37,6 +37,7 @@
     vspacecode.vspacecode
     vspacecode.whichkey
 
+    mkhl.direnv
     jnoortheen.nix-ide
     kamadorueda.alejandra
     rust-lang.rust-analyzer
