@@ -81,7 +81,6 @@ in
       ll = "exa -al";
       ls = "exa -a";
       cp = "xcp";
-      man = "fzf-man";
       grep = "grep --color=auto";
       assume = "source assume";
     };
