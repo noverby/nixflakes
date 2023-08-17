@@ -23,7 +23,6 @@
     glab
     ripgrep
 
-    exa
     duf
     xcp
     fzf
@@ -79,8 +78,6 @@ in
         gr = "git rebase";
         gcp = "git cherry-pick";
         df = "duf";
-        ll = "exa -al";
-        ls = "exa -a";
         cp = "xcp";
         cat = "bat";
         grep = "grep --color=auto";
@@ -219,6 +216,11 @@ in
 
       "command-not-found" = {
         enable = true;
+      };
+
+      exa = {
+        enable = true;
+        enableAliases = true;
       };
 
       bash = {
