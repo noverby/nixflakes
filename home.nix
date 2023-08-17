@@ -212,10 +212,6 @@ in
     programs = {
       home-manager.enable = true;
 
-      "command-not-found" = {
-        enable = true;
-      };
-
       exa = {
         enable = true;
         enableAliases = true;
@@ -800,6 +796,11 @@ in
 
       jq = {
         enable = true;
+      };
+
+      nix-index = {
+        enable = true;
+        enableBashIntegration = true;
       };
     };
 
