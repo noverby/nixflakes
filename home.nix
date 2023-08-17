@@ -42,6 +42,7 @@
     rust-lang.rust-analyzer
     tamasfe.even-better-toml
     ms-python.python
+    ms-vscode.hexeditor
     esbenp.prettier-vscode
   ];
 in
