@@ -211,6 +211,11 @@ in
     programs = {
       home-manager.enable = true;
 
+      starship = {
+        enable = true;
+        enableBashIntegration = true;
+      };
+
       ripgrep = {
         enable = true;
       };
