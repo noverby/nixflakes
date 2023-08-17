@@ -15,6 +15,7 @@
     alejandra
     distrobox
     lldb
+    util-linux
 
     bat
     fd
