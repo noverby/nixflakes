@@ -641,6 +641,10 @@ in
       enableBashIntegration = true;
     };
 
+    programs.htop = {
+      enable = true;
+    };
+
     home.file = {
       Pictures.source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Pictures";
       Documents.source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Documents";
