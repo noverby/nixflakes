@@ -53,6 +53,7 @@ in
     home.homeDirectory = "/home/${username}";
     home.stateVersion = "23.05";
     home.packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
+    home.enableDebugInfo = true;
 
     home.sessionVariables = {
       EDITOR = "vi";
