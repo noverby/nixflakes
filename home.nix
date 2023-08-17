@@ -792,6 +792,11 @@ in
       htop = {
         enable = true;
       };
+
+      hstr = {
+        enable = true;
+        enableBashIntegration = true;
+      };
     };
 
     dconf.settings = {
