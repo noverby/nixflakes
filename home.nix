@@ -7,7 +7,6 @@
     fortune
     strace
     wl-clipboard
-    vscodium
     fpp
     fortune
     alejandra
