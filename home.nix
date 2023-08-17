@@ -216,6 +216,10 @@ in
         enableBashIntegration = true;
       };
 
+      tealdeer = {
+        enable = true;
+      };
+
       ripgrep = {
         enable = true;
       };
