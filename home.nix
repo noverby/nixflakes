@@ -7,7 +7,6 @@
     fortune
     direnv
     strace
-    tmux
     wl-clipboard
     vscodium
     fpp
