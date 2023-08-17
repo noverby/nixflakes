@@ -25,7 +25,6 @@
 
     duf
     xcp
-    fzf
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
@@ -221,6 +220,12 @@ in
       exa = {
         enable = true;
         enableAliases = true;
+      };
+
+      fzf = {
+        enable = true;
+        enableBashIntegration = true;
+        tmux.enableShellIntegration = true;
       };
 
       bash = {
