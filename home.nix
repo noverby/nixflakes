@@ -5,7 +5,6 @@
 }: let
   basePkgs = with pkgs; [
     fortune
-    direnv
     strace
     wl-clipboard
     vscodium
@@ -219,6 +218,10 @@ in
       };
 
       ripgrep = {
+        enable = true;
+      };
+
+      direnv = {
         enable = true;
       };
 
