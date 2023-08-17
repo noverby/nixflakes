@@ -797,6 +797,10 @@ in
         enable = true;
         enableBashIntegration = true;
       };
+
+      jq = {
+        enable = true;
+      };
     };
 
     dconf.settings = {
