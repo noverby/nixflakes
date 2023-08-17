@@ -6,7 +6,6 @@
   basePkgs = with pkgs; [
     fortune
     direnv
-    git-lfs
     strace
     tmux
     wl-clipboard
@@ -659,6 +658,9 @@ in
         enable = true;
         userName = "Niclas Overby";
         userEmail = "niclas@overby.me";
+        lfs = {
+          enable = true;
+        };
         extraConfig = {
           core = {
             autocrlf = "input";
