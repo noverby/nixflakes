@@ -19,7 +19,6 @@
 
     bat
     fd
-    gh
     glab
     ripgrep
 
@@ -226,6 +225,10 @@ in
         enable = true;
         enableBashIntegration = true;
         tmux.enableShellIntegration = true;
+      };
+
+      gh = {
+        enable = true;
       };
 
       bash = {
