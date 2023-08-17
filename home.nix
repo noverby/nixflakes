@@ -16,7 +16,6 @@
     lldb
     util-linux
 
-    bat
     fd
     glab
 
@@ -220,6 +219,10 @@ in
       };
 
       ripgrep = {
+        enable = true;
+      };
+
+      bat = {
         enable = true;
       };
 
