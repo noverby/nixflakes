@@ -15,6 +15,7 @@
     fortune
     alejandra
     distrobox
+    lldb
 
     bat
     fd
