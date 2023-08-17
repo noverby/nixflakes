@@ -20,7 +20,6 @@
     bat
     fd
     glab
-    ripgrep
 
     duf
     xcp
@@ -211,6 +210,10 @@ in
 
     programs = {
       home-manager.enable = true;
+
+      ripgrep = {
+        enable = true;
+      };
 
       exa = {
         enable = true;
