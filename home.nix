@@ -748,7 +748,7 @@ in
           # Force resize
           set -g window-size largest
 
-          #Prefix is Ctrl-a
+          # Prefix is Ctrl-a
           bind C-a send-prefix
           unbind C-b
 
@@ -756,7 +756,7 @@ in
           setw -g monitor-activity on
           set -g visual-activity on
 
-          # y and p as in vim
+          # Vim-style y and p
           bind Escape copy-mode
           unbind p
           bind p paste-buffer
