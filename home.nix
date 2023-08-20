@@ -263,9 +263,11 @@ in
         enable = true;
       };
 
-      hstr = {
+      atuin = {
         enable = true;
+        enableNushellIntegration = true;
         enableZshIntegration = true;
+        enableBashIntegration = true;
       };
 
       jq = {
@@ -309,12 +311,6 @@ in
           "checkjobs"
         ];
         historyControl = ["ignoredups" "erasedups"];
-        historyFileSize = 100000;
-        historySize = 100000;
-        bashrcExtra = ''
-          # Better history sync
-          PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-        '';
       };
 
       readline = {
