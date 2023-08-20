@@ -310,6 +310,13 @@ in
           "globstar"
           "checkjobs"
         ];
+        profileExtra = ''
+          if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+            source $HOME/.nix-profile/etc/profile.d/nix.sh
+          fi
+          export PATH=~/.local/bin:$PATH
+          export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
+        '';
         historyControl = ["ignoredups" "erasedups"];
       };
 
