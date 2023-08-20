@@ -95,7 +95,7 @@ in
         ".local/bin/vi" = {
           executable = true;
           text = ''
-            #!/usr/bin/env bash
+            #!/usr/bin/env sh
             cmd='codium'
             files=()
             args=()
@@ -153,7 +153,7 @@ in
         ".local/bin/firefox-dev" = {
           executable = true;
           text = ''
-            #!/usr/bin/env bash
+            #!/usr/bin/env sh
             args="-start-debugger-server 6000 -P dev http://localhost:3000"
             if [ -x "$(command -v flatpak)" ]; then
               cmd='flatpak run org.mozilla.firefox'
@@ -166,7 +166,7 @@ in
         ".local/bin/chromium-dev" = {
           executable = true;
           text = ''
-            #!/usr/bin/env bash
+            #!/usr/bin/env sh
             args="--remote-debugging-port=9220"
             if [ -x "$(command -v flatpak)" ]; then
               cmd='flatpak run org.chromium.Chromium'
