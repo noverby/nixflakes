@@ -210,6 +210,7 @@ in
       starship = {
         enable = true;
         enableBashIntegration = true;
+        enableZshIntegration = true;
       };
 
       tealdeer = {
@@ -236,11 +237,21 @@ in
       fzf = {
         enable = true;
         enableBashIntegration = true;
+        enableZshIntegration = true;
         tmux.enableShellIntegration = true;
       };
 
       gh = {
         enable = true;
+      };
+
+      zsh = {
+        enable = true;
+        enableVteIntegration = true;
+        autocd = true;
+        oh-my-zsh = {
+          enable = true;
+        };
       };
 
       bash = {
@@ -424,7 +435,7 @@ in
           "terminal.integrated.gpuAcceleration" = "on";
           "editor.renderLineHighlight" = "none";
           "terminal.integrated.automationProfile.linux" = {
-            "path" = "bash";
+            "path" = "${pkgs.zsh}/bin/zsh";
           };
           "terminal.integrated.defaultProfile.linux" = "tmux-dir";
           "terminal.integrated.profiles.linux" = {
@@ -723,7 +734,7 @@ in
         enable = true;
         prefix = "C-a";
         shortcut = "a";
-        shell = "/bin/bash";
+        shell = "${pkgs.zsh}/bin/zsh";
         terminal = "screen-256color";
         mouse = true;
         keyMode = "vi";
@@ -799,6 +810,7 @@ in
       broot = {
         enable = true;
         enableBashIntegration = true;
+        enableZshIntegration = true;
       };
 
       htop = {
@@ -808,6 +820,7 @@ in
       hstr = {
         enable = true;
         enableBashIntegration = true;
+        enableZshIntegration = true;
       };
 
       jq = {
@@ -817,6 +830,7 @@ in
       nix-index = {
         enable = true;
         enableBashIntegration = true;
+        enableZshIntegration = true;
       };
     };
 
