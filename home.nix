@@ -77,6 +77,7 @@ in
         cat = "bat";
         find = "fd";
         grep = "rg";
+        man = "tldr";
         assume = "source assume";
       };
 
