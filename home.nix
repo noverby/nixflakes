@@ -488,15 +488,6 @@ in
             "tmux-dir" = {
               "path" = "tmux-dir";
             };
-            "flatpak-tmux-dir" = {
-              "args" = [
-                "--host"
-                "--env=TERM=xterm-256color"
-                "--env=VSCODE_GIT_IPC_HANDLE=\${VSCODE_GIT_IPC_HANDLE}"
-                "tmux-dir"
-              ];
-              "path" = "/usr/bin/flatpak-spawn";
-            };
           };
           "vspacecode.bindingOverrides" = [];
           "terminal.integrated.tabs.enabled" = false;
