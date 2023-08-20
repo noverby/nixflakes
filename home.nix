@@ -243,6 +243,11 @@ in
         tmux.enableShellIntegration = true;
       };
 
+      zoxide = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       gh = {
         enable = true;
       };
