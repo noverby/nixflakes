@@ -223,6 +223,7 @@ in
 
       direnv = {
         enable = true;
+        enableZshIntegration = true;
       };
 
       bat = {
