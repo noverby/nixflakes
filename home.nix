@@ -96,7 +96,7 @@ in
           executable = true;
           text = ''
             #!/usr/bin/env sh
-            cmd='codium'
+            cmd=${pkgs.vscodium}/bin/codium
             files=()
             args=()
             line=0
