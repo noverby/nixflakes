@@ -736,14 +736,15 @@ in
         baseIndex = 1;
         escapeTime = 1;
         aggressiveResize = true;
+        plugins = [
+          {
+            plugin = pkgs.tmuxPlugins.fpp;
+          }
+        ];
         extraConfig = ''
           # Style
           set -g status-bg magenta
           set -g status off
-
-          # Picker
-          bind b split-window "tmux lsw | percol --initial-index $(tmux lsw | awk '/active.$/ {print NR-1}') | cut -d':' -f 1 | tr -d '\n' | xargs -0 tmux select-window -t"
-          bind B split-window "tmux ls | percol --initial-index $(tmux ls | awk \"/^$(tmux display-message -p '#{session_name}'):/ {print NR-1}\") | cut -d':' -f 1 | tr -d '\n' | xargs -0 tmux switch-client -t"
 
           # Set title
           set-option -g set-titles on
