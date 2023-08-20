@@ -75,6 +75,7 @@ in
         df = "duf";
         cp = "xcp";
         cat = "bat";
+        find = "fd";
         grep = "grep --color=auto";
         assume = "source assume";
       };
