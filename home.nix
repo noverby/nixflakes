@@ -212,6 +212,7 @@ in
 
       starship = {
         enable = true;
+        enableNushellIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -245,6 +246,7 @@ in
 
       zoxide = {
         enable = true;
+        enableNushellIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -278,6 +280,10 @@ in
       scmpuff = {
         enable = true;
         enableZshIntegration = true;
+      };
+
+      nushell = {
+        enable = true;
       };
 
       zsh = {
