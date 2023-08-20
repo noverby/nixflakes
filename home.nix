@@ -177,7 +177,7 @@ in
           '';
         };
         ".npmrc".text = ''
-          prefix=/home/noverby/.global-modules
+          prefix=~/.global-modules
           init.author.name=Niclas Overby
           init.author.email=niclas@overby.me
           init.author.url=https://niclas.overby.me/
