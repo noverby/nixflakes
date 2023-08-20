@@ -210,7 +210,6 @@ in
 
       starship = {
         enable = true;
-        enableBashIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -238,7 +237,6 @@ in
 
       fzf = {
         enable = true;
-        enableBashIntegration = true;
         enableZshIntegration = true;
         tmux.enableShellIntegration = true;
       };
@@ -254,7 +252,6 @@ in
 
       broot = {
         enable = true;
-        enableBashIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -264,7 +261,6 @@ in
 
       hstr = {
         enable = true;
-        enableBashIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -274,7 +270,6 @@ in
 
       nix-index = {
         enable = true;
-        enableBashIntegration = true;
         enableZshIntegration = true;
       };
 
@@ -290,6 +285,10 @@ in
         oh-my-zsh = {
           enable = true;
         };
+        profileExtra = ''
+          export PATH=~/.local/bin:$PATH
+          export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
+        '';
       };
 
       bash = {
@@ -304,66 +303,9 @@ in
         historyControl = ["ignoredups" "erasedups"];
         historyFileSize = 100000;
         historySize = 100000;
-        profileExtra = ''
-          export PATH=~/.local/bin:$PATH
-          export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
-        '';
         bashrcExtra = ''
-          if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-            source $HOME/.nix-profile/etc/profile.d/nix.sh
-          fi
-
-          # User Color
-          if [[ $USER == "root" ]]; then
-            ucolor='\e[0;31m'
-          else
-            ucolor='\e[0;32m'
-          fi
-
-          # Hostname Color
-          case "$HOSTNAME" in
-          prozum.dk) hcolor='\e[4;31m' ;;
-          gravitas) hcolor='\e[4;34m' ;;
-          levitas) hcolor='\e[4;36m' ;;
-          *) hcolor='\e[4;32m' ;;
-          esac
-
-          parse_git_branch() {
-            git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-          }
-
-          # Set Color Prompt
-          PS1="\[''${ucolor}\]\u\[\e[38;5;68m\]@\[''${hcolor}\]\H\[\e[0;34m\]\[\e[0;38;5;68m\]:\w \e[0;35m\D{%T} \[\e[91m\]\$(parse_git_branch)\[\e[0m\]\nλ "
-
+          # Better history sync
           PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
-          if [ -x "$(command -v fortune)" ]; then
-            echo -e "\e[0;35m$(fortune)\e[0m\n"
-          fi
-
-          if [ -x "$(command -v direnv)" ]; then
-            eval "$(direnv hook bash)"
-          fi
-
-          if [ -x "$(command -v tmux)" ]; then
-            # Picker
-            get_tmux_option() {
-              local option=$1
-              local default_value=$2
-              local option_value=$(tmux show-option -gqv "$option")
-              if [ -z $option_value ]; then
-                echo $default_value
-              else
-                echo $option_value
-              fi
-            }
-
-            readonly key="$(get_tmux_option "@fpp-key" "f")"
-            tmux bind-key "$key" capture-pane -J \\\; \
-              save-buffer "''${TMPDIR:-/tmp}/tmux-buffer" \\\; \
-              delete-buffer \\\; \
-              new-window -n fpp -c "#{pane_current_path}" "sh -c 'cat \"''${TMPDIR:-/tmp}/tmux-buffer\" | fpp -nfc ; rm \"''${TMPDIR:-/tmp}/tmux-buffer\"'"
-          fi
         '';
       };
 
