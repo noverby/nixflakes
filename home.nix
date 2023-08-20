@@ -251,6 +251,37 @@ in
         enableZshIntegration = true;
       };
 
+      broot = {
+        enable = true;
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
+
+      htop = {
+        enable = true;
+      };
+
+      hstr = {
+        enable = true;
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
+
+      jq = {
+        enable = true;
+      };
+
+      nix-index = {
+        enable = true;
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
+
+      scmpuff = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       zsh = {
         enable = true;
         enableVteIntegration = true;
@@ -811,32 +842,6 @@ in
           bind -r K resize-pane -U 5
           bind -r L resize-pane -R 5
         '';
-      };
-
-      broot = {
-        enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-      };
-
-      htop = {
-        enable = true;
-      };
-
-      hstr = {
-        enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-      };
-
-      jq = {
-        enable = true;
-      };
-
-      nix-index = {
-        enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
       };
     };
 
