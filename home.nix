@@ -245,6 +245,11 @@ in
         enable = true;
       };
 
+      autojump = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       zsh = {
         enable = true;
         enableVteIntegration = true;
