@@ -803,6 +803,28 @@ in
       };
     };
 
+    systemd = {
+      user = {
+        services = {
+          tmux = {
+            Unit = {
+              Description = "Start tmux in detached session";
+            };
+
+            Service = {
+              Type = "forking";
+              ExecStart = "${pkgs.tmux}/bin/tmux new-session -s %u -d";
+              ExecStop = "${pkgs.tmux}/bin/tmux kill-session -t %u";
+            };
+
+            Install = {
+              WantedBy = ["default.target"];
+            };
+          };
+        };
+      };
+    };
+
     dconf.settings = {
       "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
 
