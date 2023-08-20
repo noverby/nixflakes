@@ -21,6 +21,8 @@
     duf
     xcp
 
+    cling
+
     yarn
   ];
 
