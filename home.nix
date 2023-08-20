@@ -78,6 +78,7 @@ in
         find = "fd";
         grep = "rg";
         man = "tldr";
+        top = "htop";
         assume = "source assume";
       };
 
