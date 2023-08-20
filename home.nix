@@ -312,8 +312,8 @@ in
           "checkjobs"
         ];
         profileExtra = ''
-          if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-            source $HOME/.nix-profile/etc/profile.d/nix.sh
+          if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+            source ~/.nix-profile/etc/profile.d/nix.sh
           fi
           export PATH=~/.local/bin:$PATH
           export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
@@ -824,35 +824,35 @@ in
     };
 
     dconf.settings = {
-      "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
-
-      "org/gnome/shell".disabled-extensions = [];
-
+      "org/gnome/shell" = {
+        enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
+        disabled-extensions = [];
+      };
       "org/gnome/desktop/peripherals/mouse" = {
-        "natural-scroll" = true;
+        natural-scroll = true;
       };
       "org/gnome/desktop/peripherals/touchpad" = {
-        "natural-scroll" = true;
-        "tap-to-click" = true;
+        natural-scroll = true;
+        tap-to-click = true;
       };
       "org/gnome/desktop/calendar" = {
-        "show-weekdate" = true;
+        show-weekdate = true;
       };
       "org/gnome/desktop/interface" = {
-        "clock-show-date" = true;
+        clock-show-date = true;
       };
       "org/gnome/settings-daemon.plugins/color" = {
-        "night-light-enabled" = true;
+        night-light-enabled = true;
       };
       "com/github/amezin/ddterm" = {
-        "command" = "custom-command";
-        "custom-command" = "tmux-dir";
-        "ddterm-toggle-hotkey" = [
+        command = "custom-command";
+        custom-command = "tmux-dir";
+        ddterm-toggle-hotkey = [
           "onehalf"
         ];
       };
       "org/gnome/shell/extensions/auto-move-windows" = {
-        "application-list" = ["com.spotify.Client.desktop:2"];
+        application-list = ["com.spotify.Client.desktop:2"];
       };
     };
   }
