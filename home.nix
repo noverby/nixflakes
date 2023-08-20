@@ -20,6 +20,8 @@
 
     duf
     xcp
+
+    yarn
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
