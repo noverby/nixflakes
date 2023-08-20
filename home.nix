@@ -76,7 +76,7 @@ in
         cp = "xcp";
         cat = "bat";
         find = "fd";
-        grep = "grep --color=auto";
+        grep = "rg";
         assume = "source assume";
       };
 
