@@ -252,11 +252,6 @@ in
         enable = true;
       };
 
-      autojump = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
       broot = {
         enable = true;
         enableBashIntegration = true;
