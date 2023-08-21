@@ -26,6 +26,7 @@
     rustc
 
     yarn
+    imagemagick
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
