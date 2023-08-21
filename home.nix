@@ -282,8 +282,7 @@ in
           enable = true;
         };
         profileExtra = ''
-          export PATH=~/.local/bin:$PATH
-          export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
+          [[ -f ~/.profile ]] && . ~/.profile
         '';
       };
 
