@@ -216,6 +216,13 @@ in
 
     programs = {
       home-manager.enable = true;
+      gh.enable = true;
+      bat.enable = true;
+      tealdeer.enable = true;
+      ripgrep.enable = true;
+      htop.enable = true;
+      jq.enable = true;
+      nushell.enable = true;
 
       starship = {
         enable = true;
@@ -223,21 +230,9 @@ in
         enableZshIntegration = true;
       };
 
-      tealdeer = {
-        enable = true;
-      };
-
-      ripgrep = {
-        enable = true;
-      };
-
       direnv = {
         enable = true;
         enableZshIntegration = true;
-      };
-
-      bat = {
-        enable = true;
       };
 
       exa = {
@@ -257,30 +252,6 @@ in
         enableZshIntegration = true;
       };
 
-      gh = {
-        enable = true;
-      };
-
-      broot = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
-      htop = {
-        enable = true;
-      };
-
-      atuin = {
-        enable = true;
-        enableNushellIntegration = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
-      };
-
-      jq = {
-        enable = true;
-      };
-
       nix-index = {
         enable = true;
         enableZshIntegration = true;
@@ -291,8 +262,16 @@ in
         enableZshIntegration = true;
       };
 
-      nushell = {
+      broot = {
         enable = true;
+        enableZshIntegration = true;
+      };
+
+      atuin = {
+        enable = true;
+        enableNushellIntegration = true;
+        enableZshIntegration = true;
+        enableBashIntegration = true;
       };
 
       zsh = {
