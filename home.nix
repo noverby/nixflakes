@@ -257,11 +257,6 @@ in
         enableZshIntegration = true;
       };
 
-      scmpuff = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
       broot = {
         enable = true;
         enableZshIntegration = true;
