@@ -22,6 +22,8 @@
     xcp
 
     cling
+    evcxr
+    rustc
 
     yarn
   ];
