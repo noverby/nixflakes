@@ -8,7 +8,6 @@
     strace
     wl-clipboard
     fpp
-    fortune
     alejandra
     distrobox
     lldb
@@ -27,6 +26,7 @@
 
     yarn
     imagemagick
+    optipng
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
