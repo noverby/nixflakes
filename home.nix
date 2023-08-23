@@ -20,6 +20,7 @@
 
     duf
     xcp
+    ripgrep
 
     cling
     evcxr
@@ -221,7 +222,6 @@ in
       gh.enable = true;
       bat.enable = true;
       tealdeer.enable = true;
-      ripgrep.enable = true;
       htop.enable = true;
       jq.enable = true;
       nushell.enable = true;
