@@ -297,6 +297,7 @@ in
           fi
           export PATH=~/.local/bin:$PATH
           export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
+          export XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
         '';
         historyControl = ["ignoredups" "erasedups"];
       };
