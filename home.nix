@@ -4,6 +4,7 @@
   ...
 }: let
   basePkgs = with pkgs; [
+    firefox
     gnome.gnome-tweaks
 
     fortune
