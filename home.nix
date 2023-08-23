@@ -813,6 +813,13 @@ in
       "org/gnome/shell" = {
         enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
         disabled-extensions = [];
+        favorite-apps = [
+          "firefox.desktop"
+          "codium.desktop"
+          "org.gnome.Console.desktop"
+          "org.gnome.Nautilus.desktop'"
+          "org.gnome.Geary.desktop"
+        ];
       };
       "org/gnome/desktop/peripherals/mouse" = {
         natural-scroll = true;
