@@ -4,6 +4,8 @@
   ...
 }: let
   basePkgs = with pkgs; [
+    gnome.gnome-tweaks
+
     fortune
     strace
     wl-clipboard
