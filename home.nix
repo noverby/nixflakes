@@ -102,6 +102,7 @@ in
         "Work/proj".source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Projects";
         "Work/wiki".source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Documents/Wiki";
         "Work/tmp/.keep".source = builtins.toFile "keep" "";
+        ".ssh/socket/.keep".source = builtins.toFile "keep" "";
         ".local/bin/vi" = {
           executable = true;
           text = ''
