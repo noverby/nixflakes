@@ -9,6 +9,7 @@
     wl-clipboard
     fpp
     alejandra
+    nil
     distrobox
     lldb
     util-linux
