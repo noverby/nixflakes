@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    <nixos-hardware/framework/13th-gen-intel>
     ./hardware-configuration.nix
     <home-manager/nixos>
   ];
@@ -65,7 +66,6 @@
     printing.enable = true;
     openssh.enable = true;
     flatpak.enable = true;
-    fprintd.enable = true;
     fwupd.enable = true;
     pipewire = {
       enable = true;
