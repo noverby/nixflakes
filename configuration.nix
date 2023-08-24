@@ -53,6 +53,17 @@
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
+  # Virtualisation
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
+
   # Users
   users.users.noverby = {
     isNormalUser = true;
