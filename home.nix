@@ -4,7 +4,6 @@
   ...
 }: let
   basePkgs = with pkgs; [
-    gjs
     gnome.gnome-tweaks
     xorg.xkill
 

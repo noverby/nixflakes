@@ -70,7 +70,12 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
+    gjs
   ];
+  # ddterm deps
+  environment.sessionVariables = with pkgs; {
+    GI_TYPELIB_PATH = map (pkg: "${pkg}/lib/girepository-1.0") [vte pango harfbuzz gtk3 gdk-pixbuf at-spi2-core];
+  };
 
   # Services
   services = {
