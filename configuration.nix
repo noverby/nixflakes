@@ -65,6 +65,7 @@
     printing.enable = true;
     openssh.enable = true;
     flatpak.enable = true;
+    fprintd.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
