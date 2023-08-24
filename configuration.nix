@@ -84,6 +84,9 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    gnome = {
+      gnome-browser-connector.enable = true;
+    };
   };
 
   system.stateVersion = "23.05";

@@ -126,6 +126,15 @@
     '';
   };
 
+  firefox = {
+    enable = true;
+    package = pkgs.firefox.override {
+      cfg = {
+        enableGnomeExtensions = true;
+      };
+    };
+  };
+
   git = import ./git.nix {};
   vscode = import ./vscode.nix {
     pkgs = pkgs;
