@@ -6,6 +6,7 @@
   basePkgs = with pkgs; [
     firefox
     gnome.gnome-tweaks
+    xorg.xkill
 
     pciutils
     usbutils
