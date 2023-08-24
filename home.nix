@@ -7,6 +7,7 @@
     firefox
     gnome.gnome-tweaks
 
+    usbutils
     lshw
     fortune
     strace
