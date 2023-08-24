@@ -7,6 +7,7 @@
     firefox
     gnome.gnome-tweaks
 
+    lshw
     fortune
     strace
     wl-clipboard
