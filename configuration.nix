@@ -55,20 +55,14 @@
 
   # Virtualisation
   virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
+    docker.enable = true;
   };
 
   # Users
   users.users.noverby = {
     isNormalUser = true;
     description = "Niclas Overby";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
   home-manager.users.noverby = import ./home.nix;
 
