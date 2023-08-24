@@ -9,6 +9,7 @@
 
     wget
     unzip
+    file
     pciutils
     usbutils
     lshw
