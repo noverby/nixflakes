@@ -19,6 +19,12 @@
     };
   };
 
+  # System
+  system = {
+    copySystemConfiguration = true;
+    extraSystemBuilderCmds = "ln -s ${./.} $out/full-config";
+  };
+
   # Network
   networking.hostName = "levitas";
   networking.networkmanager.enable = true;
