@@ -7,6 +7,7 @@
     firefox
     gnome.gnome-tweaks
 
+    pciutils
     usbutils
     lshw
     fortune
