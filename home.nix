@@ -7,6 +7,7 @@
     gnome.gnome-tweaks
     xorg.xkill
 
+    unzip
     pciutils
     usbutils
     lshw
