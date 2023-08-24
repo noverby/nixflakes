@@ -9,9 +9,15 @@
     <home-manager/nixos>
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+    };
+  };
 
   # Network
   networking.hostName = "levitas";
