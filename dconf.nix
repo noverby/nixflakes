@@ -34,8 +34,5 @@
         "onehalf"
       ];
     };
-    "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list = ["com.spotify.Client.desktop:2"];
-    };
   };
 }

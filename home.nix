@@ -44,7 +44,6 @@
   gnomeExtensions = with pkgs.gnomeExtensions; [
     ddterm
     caffeine
-    auto-move-windows
     another-window-session-manager
     coverflow-alt-tab
     blur-my-shell
