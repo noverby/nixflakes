@@ -4,7 +4,9 @@
   ...
 }: let
   basePkgs = with pkgs; [
+    appimage-run
     gnome.gnome-tweaks
+    protonmail-bridge
     xorg.xkill
 
     wget
@@ -22,7 +24,6 @@
     distrobox
     lldb
     util-linux
-    protonmail-bridge
 
     fd
     glab
@@ -104,6 +105,23 @@ in
         pkgs = pkgs;
         config = config;
         homeDirectory = homeDirectory;
+      };
+    };
+
+    xdg = {
+      enable = true;
+      desktopEntries = {
+        beeper = {
+          name = "Beeper";
+          comment = "Beeper: Unified Messenger";
+          exec = "${pkgs.appimage-run}/bin/appimage-run ${homeDirectory}/Apps/beeper.AppImage";
+          icon = "${homeDirectory}/Apps/beeper.png";
+          terminal = false;
+          categories = ["Utility"];
+          settings = {
+            StartupWMClass = "Beeper";
+          };
+        };
       };
     };
 
