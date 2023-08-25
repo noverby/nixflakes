@@ -8,6 +8,7 @@
     gnome.gnome-tweaks
     protonmail-bridge
     xorg.xkill
+    bitwarden
 
     wget
     unzip
