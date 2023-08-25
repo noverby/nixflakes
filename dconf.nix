@@ -6,9 +6,12 @@
       favorite-apps = [
         "firefox.desktop"
         "codium.desktop"
+        "org.gnome.Nautilus.desktop"
         "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop'"
         "org.gnome.Geary.desktop"
+        "org.gnome.Calendar.desktop"
+        "beeper.desktop"
+        "com.spotify.Client.desktop"
       ];
     };
     "org/gnome/desktop/peripherals/mouse" = {
