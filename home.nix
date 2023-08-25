@@ -113,6 +113,10 @@ in
       vscodeExtensions = vscodeExtensions;
     };
 
+    services = {
+      gnome-keyring.enable = true;
+    };
+
     systemd = import ./systemd.nix {pkgs = pkgs;};
     dconf = import ./dconf.nix {gnomeExtensions = gnomeExtensions;};
   }
