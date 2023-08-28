@@ -97,6 +97,7 @@
       '';
     };
   };
+  programs.seahorse.enable = true;
 
   # Users
   users.users.noverby = {
