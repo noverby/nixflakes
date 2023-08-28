@@ -113,6 +113,9 @@
     vim
   ];
 
+  # Env
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Services
   services = {
     printing.enable = true;
