@@ -58,6 +58,11 @@
     excludePackages = [pkgs.xterm];
   };
 
+  # Fonts
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
+  ];
+
   # Audio
   sound.enable = true;
   hardware.pulseaudio.enable = false;
