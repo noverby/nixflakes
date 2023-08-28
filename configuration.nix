@@ -64,6 +64,11 @@
   #  docker.enable = true;
   #};
 
+  # Security
+  security = {
+    pam.services.gdm.enableGnomeKeyring = true;
+  };
+
   # Users
   users.users.noverby = {
     isNormalUser = true;
