@@ -4,11 +4,12 @@
   ...
 }: let
   basePkgs = with pkgs; [
-    appimage-run
     gnome.gnome-tweaks
+    bitwarden
+    slack
+    appimage-run
     protonmail-bridge
     xorg.xkill
-    bitwarden
 
     wget
     unzip
@@ -68,6 +69,7 @@
   ];
 in
   with config.home; {
+    nixpkgs.config.allowUnfree = true;
     home = {
       username = "noverby";
       homeDirectory = "/home/${username}";
