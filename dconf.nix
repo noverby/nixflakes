@@ -7,7 +7,7 @@
         "firefox.desktop"
         "codium.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.gnome.Console.desktop"
+        "Alacritty.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Calendar.desktop"
         "beeper.desktop"
@@ -29,13 +29,6 @@
     };
     "org/gnome/settings-daemon.plugins/color" = {
       night-light-enabled = true;
-    };
-    "com/github/amezin/ddterm" = {
-      command = "custom-command";
-      custom-command = "tmux-dir";
-      ddterm-toggle-hotkey = [
-        "onehalf"
-      ];
     };
   };
 }

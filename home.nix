@@ -43,7 +43,7 @@
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
-    ddterm
+    quake-mode
     caffeine
     another-window-session-manager
     coverflow-alt-tab

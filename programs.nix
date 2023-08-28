@@ -135,6 +135,19 @@
     };
   };
 
+  alacritty = {
+    enable = true;
+    settings = {
+      shell = {
+        program = "tmux-dir";
+      };
+      window = {
+        decorations = "None";
+        opacity = 0.9;
+      };
+    };
+  };
+
   git = import ./git.nix {};
   vscode = import ./vscode.nix {
     pkgs = pkgs;
