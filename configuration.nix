@@ -12,14 +12,34 @@
   # Nix
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Console
+  console = {
+    font = "ter-132n";
+    packages = [pkgs.terminus_font];
+  };
+
+  # TTY
+  services.kmscon = {
+    enable = true;
+    hwRender = true;
+    extraConfig = ''
+      font-name=MesloLGS NF
+      font-size=14
+    '';
+  };
+
   # Bootloader
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    plymouth = {
-      enable = true;
-      theme = "breeze";
+    loader = {
+      timeout = 1;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
+    # Silent boot
+    plymouth.enable = true;
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = ["quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail"];
   };
 
   # System
@@ -62,9 +82,11 @@
   };
 
   # Fonts
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
-  ];
+  fonts.fonts = with pkgs;
+    [
+      (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
+    ]
+    ++ [meslo-lgs-nf];
 
   # Audio
   sound.enable = true;
