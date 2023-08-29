@@ -94,9 +94,9 @@
   security.rtkit.enable = true;
 
   # Virtualisation
-  #virtualisation = {
-  #  docker.enable = true;
-  #};
+  virtualisation = {
+    docker.enable = true;
+  };
 
   # Security
   security.pam.services = {
