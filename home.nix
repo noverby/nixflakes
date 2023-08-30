@@ -34,6 +34,10 @@
     xcp
     ripgrep
 
+    arch-install-scripts
+    debootstrap
+    microdnf
+
     cling
     evcxr
     rustc
