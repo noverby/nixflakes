@@ -107,6 +107,7 @@ in
         man = "tldr";
         top = "htop";
         cd = "z";
+        tree = "broot";
         assume = "source assume";
       };
 
