@@ -30,6 +30,7 @@
     fd
     glab
 
+    du-dust
     duf
     xcp
     ripgrep
@@ -98,6 +99,7 @@ in
         gr = "git rebase";
         gcp = "git cherry-pick";
         df = "duf";
+        du = "dust";
         cp = "xcp";
         cat = "bat";
         find = "fd";
