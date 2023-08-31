@@ -52,7 +52,6 @@
     quake-mode
     caffeine
     another-window-session-manager
-    coverflow-alt-tab
     blur-my-shell
     bluetooth-quick-connect
     sound-output-device-chooser
