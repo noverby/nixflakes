@@ -104,6 +104,7 @@ in
         grep = "rg";
         man = "tldr";
         top = "htop";
+        cd = "z";
         assume = "source assume";
       };
 
