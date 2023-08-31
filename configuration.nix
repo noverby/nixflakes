@@ -96,6 +96,7 @@
   # Virtualisation
   virtualisation = {
     docker.enable = true;
+    libvirtd.enable = true;
   };
 
   # Security
@@ -128,13 +129,14 @@
   users.users.noverby = {
     isNormalUser = true;
     description = "Niclas Overby";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
   };
   home-manager.users.noverby = import ./home.nix;
 
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    gnome.gnome-boxes
     vim
   ];
 
