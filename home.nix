@@ -34,6 +34,7 @@
     duf
     xcp
     ripgrep
+    tokei
 
     arch-install-scripts
     debootstrap
