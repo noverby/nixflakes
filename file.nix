@@ -64,6 +64,7 @@ with config.lib.file; {
       #!/usr/bin/env sh
 
       SESSION=''${PWD//./_}
+      [[ "$SESSION" =~ ^"$HOME"(/|$) ]] && SESSION=\~''${SESSION#$HOME}
       tmux has-session -t $SESSION 2>/dev/null
       if [ $? != 0 ]; then
         tmux new -s $SESSION "$@"
