@@ -138,6 +138,7 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-boxes
     vim
+    python3
   ];
 
   # Env
