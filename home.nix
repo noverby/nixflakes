@@ -85,7 +85,7 @@ in
       sessionVariables = {
         EDITOR = "vi";
         VISUAL = "vi";
-        PYTHONSTARTUP = "~/.pystartup";
+        PYTHONSTARTUP = "${homeDirectory}/.pystartup";
         DIRENV_LOG_FORMAT = "";
       };
 
