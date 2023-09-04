@@ -134,7 +134,15 @@
   home-manager.users.noverby = import ./home.nix;
 
   # Packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    # Create an alias for the unstable channel
+    packageOverrides = pkgs: {
+      unstable = import <nixos-unstable> {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
   environment.systemPackages = with pkgs; [
     gnome.gnome-boxes
     vim
