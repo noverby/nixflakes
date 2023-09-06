@@ -78,7 +78,9 @@ with config.lib.file; {
     text = ''
       #!/usr/bin/env sh
       args="-start-debugger-server 6000 -P dev http://localhost:3000"
-      if [ -x "$(command -v flatpak)" ]; then
+      if [ -x "$(command -v firefox)" ]; then
+        cmd='firefox'
+      elif [ -x "$(command -v flatpak)" ]; then
         cmd='flatpak run org.mozilla.firefox'
       else
         cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.mozilla.firefox'
