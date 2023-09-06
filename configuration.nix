@@ -11,6 +11,7 @@
 
   # Nix
   nix.settings = {
+    max-jobs = 100;
     trusted-users = ["root" "noverby"];
     experimental-features = "nix-command flakes";
   };
