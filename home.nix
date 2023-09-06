@@ -9,6 +9,7 @@
     slack
     appimage-run
     protonmail-bridge
+    chromium
     xorg.xkill
 
     wget
