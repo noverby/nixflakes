@@ -94,6 +94,8 @@ with config.lib.file; {
       #!/usr/bin/env sh
       args="--remote-debugging-port=9220"
       if [ -x "$(command -v flatpak)" ]; then
+        cmd='chromium'
+      elif [ -x "$(command -v flatpak)" ]; then
         cmd='flatpak run org.chromium.Chromium'
       else
         cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.chromium.Chromium'
