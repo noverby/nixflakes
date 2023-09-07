@@ -45,6 +45,7 @@
     evcxr
     rustc
 
+    nodejs
     yarn
     nodePackages.pnpm
     imagemagick
