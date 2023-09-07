@@ -46,6 +46,7 @@
     rustc
 
     yarn
+    nodePackages.pnpm
     imagemagick
     optipng
   ];
