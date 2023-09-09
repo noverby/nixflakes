@@ -45,6 +45,7 @@
     evcxr
     rustc
 
+    unstable.bun
     nodejs
     yarn
     nodePackages.pnpm
