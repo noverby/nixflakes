@@ -16,20 +16,18 @@
     experimental-features = "nix-command flakes";
   };
 
-  # Console
-  console = {
-    font = "ter-132n";
-    packages = [pkgs.terminus_font];
+  # System
+  system = {
+    stateVersion = "23.05";
+    copySystemConfiguration = true;
+    extraSystemBuilderCmds = "ln -s ${./.} $out/full-config";
   };
 
-  # TTY
-  services.kmscon = {
-    enable = true;
-    hwRender = true;
-    extraConfig = ''
-      font-name=MesloLGS NF
-      font-size=14
-    '';
+  # Console
+  console = {
+    keyMap = "dk-latin1";
+    font = "ter-132n";
+    packages = [pkgs.terminus_font];
   };
 
   # Bootloader
@@ -46,30 +44,27 @@
     kernelParams = ["quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail" "i915.fastboot=1"];
   };
 
-  # System
-  system = {
-    copySystemConfiguration = true;
-    extraSystemBuilderCmds = "ln -s ${./.} $out/full-config";
+  # Network
+  networking = {
+    hostName = "levitas";
+    networkmanager.enable = true;
   };
 
-  # Network
-  networking.hostName = "levitas";
-  networking.networkmanager.enable = true;
-
   # Locale
-  console.keyMap = "dk-latin1";
   time.timeZone = "Europe/Copenhagen";
-  i18n.defaultLocale = "en_DK.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "da_DK.UTF-8";
-    LC_IDENTIFICATION = "da_DK.UTF-8";
-    LC_MEASUREMENT = "da_DK.UTF-8";
-    LC_MONETARY = "da_DK.UTF-8";
-    LC_NAME = "da_DK.UTF-8";
-    LC_NUMERIC = "da_DK.UTF-8";
-    LC_PAPER = "da_DK.UTF-8";
-    LC_TELEPHONE = "da_DK.UTF-8";
-    LC_TIME = "da_DK.UTF-8";
+  i18n = {
+    defaultLocale = "en_DK.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "da_DK.UTF-8";
+      LC_IDENTIFICATION = "da_DK.UTF-8";
+      LC_MEASUREMENT = "da_DK.UTF-8";
+      LC_MONETARY = "da_DK.UTF-8";
+      LC_NAME = "da_DK.UTF-8";
+      LC_NUMERIC = "da_DK.UTF-8";
+      LC_PAPER = "da_DK.UTF-8";
+      LC_TELEPHONE = "da_DK.UTF-8";
+      LC_TIME = "da_DK.UTF-8";
+    };
   };
 
   # X11
@@ -132,7 +127,6 @@
   # Packages
   nixpkgs.config = {
     allowUnfree = true;
-    # Create an alias for the unstable channel
     packageOverrides = pkgs: {
       unstable = import <nixos-unstable> {
         config = config.nixpkgs.config;
@@ -151,11 +145,10 @@
     description = "Niclas Overby";
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
   };
-  home-manager.extraSpecialArgs = {inherit pkgs;};
-  home-manager.users.noverby = import ./home.nix;
-
-  # Env
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  home-manager = {
+    extraSpecialArgs = {inherit pkgs;};
+    users.noverby = import ./home.nix;
+  };
 
   # Services
   services = {
@@ -173,7 +166,13 @@
       gnome-keyring.enable = true;
       gnome-browser-connector.enable = true;
     };
+    kmscon = {
+      enable = true;
+      hwRender = true;
+      extraConfig = ''
+        font-name=MesloLGS NF
+        font-size=14
+      '';
+    };
   };
-
-  system.stateVersion = "23.05";
 }

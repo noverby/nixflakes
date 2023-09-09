@@ -91,6 +91,7 @@ in
         VISUAL = "vi";
         PYTHONSTARTUP = "${homeDirectory}/.pystartup";
         DIRENV_LOG_FORMAT = "";
+        NIXOS_OZONE_WL = "1";
       };
 
       shellAliases = {

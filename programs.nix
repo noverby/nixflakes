@@ -129,18 +129,14 @@
   firefox = {
     enable = true;
     package = pkgs.firefox.override {
-      cfg = {
-        enableGnomeExtensions = true;
-      };
+      cfg.enableGnomeExtensions = true;
     };
   };
 
   alacritty = {
     enable = true;
     settings = {
-      shell = {
-        program = "tmux-dir";
-      };
+      shell.program = "tmux-dir";
       window = {
         decorations = "None";
         opacity = 0.9;
