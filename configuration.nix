@@ -3,12 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    <nixos-hardware/framework/13th-gen-intel>
-    ./hardware-configuration.nix
-    <home-manager/nixos>
-  ];
-
   # Nix
   nix.settings = {
     max-jobs = 100;
@@ -19,7 +13,6 @@
   # System
   system = {
     stateVersion = "23.05";
-    copySystemConfiguration = true;
     extraSystemBuilderCmds = "ln -s ${./.} $out/full-config";
   };
 
@@ -125,14 +118,6 @@
   programs.seahorse.enable = true;
 
   # Packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import <nixos-unstable> {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
   environment.systemPackages = with pkgs; [
     gnome.gnome-boxes
     vim
@@ -144,10 +129,6 @@
     isNormalUser = true;
     description = "Niclas Overby";
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
-  };
-  home-manager = {
-    extraSpecialArgs = {inherit pkgs;};
-    users.noverby = import ./home.nix;
   };
 
   # Services
