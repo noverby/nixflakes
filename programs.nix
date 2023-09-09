@@ -150,8 +150,7 @@
 
   git = import ./git.nix {};
   vscode = import ./vscode.nix {
-    pkgs = pkgs;
-    vscodeExtensions = vscodeExtensions;
+    inherit pkgs vscodeExtensions;
   };
-  tmux = import ./tmux.nix {pkgs = pkgs;};
+  tmux = import ./tmux.nix {inherit pkgs;};
 }

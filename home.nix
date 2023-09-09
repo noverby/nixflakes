@@ -116,9 +116,7 @@ in
       };
 
       file = import ./file.nix {
-        pkgs = pkgs;
-        config = config;
-        homeDirectory = homeDirectory;
+        inherit pkgs config homeDirectory;
       };
     };
 
@@ -140,11 +138,9 @@ in
     };
 
     programs = import ./programs.nix {
-      pkgs = pkgs;
-      username = username;
-      vscodeExtensions = vscodeExtensions;
+      inherit pkgs username vscodeExtensions;
     };
 
-    systemd = import ./systemd.nix {pkgs = pkgs;};
-    dconf = import ./dconf.nix {gnomeExtensions = gnomeExtensions;};
+    systemd = import ./systemd.nix {inherit pkgs;};
+    dconf = import ./dconf.nix {inherit gnomeExtensions;};
   }
