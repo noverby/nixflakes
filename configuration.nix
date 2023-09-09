@@ -129,14 +129,6 @@
   };
   programs.seahorse.enable = true;
 
-  # Users
-  users.users.noverby = {
-    isNormalUser = true;
-    description = "Niclas Overby";
-    extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
-  };
-  home-manager.users.noverby = import ./home.nix;
-
   # Packages
   nixpkgs.config = {
     allowUnfree = true;
@@ -152,6 +144,15 @@
     vim
     python3
   ];
+
+  # Users
+  users.users.noverby = {
+    isNormalUser = true;
+    description = "Niclas Overby";
+    extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
+  };
+  home-manager.extraSpecialArgs = {inherit pkgs;};
+  home-manager.users.noverby = import ./home.nix;
 
   # Env
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
