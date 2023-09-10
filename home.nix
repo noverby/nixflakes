@@ -12,6 +12,7 @@
     chromium
     xorg.xkill
 
+    whois
     wget
     unzip
     file
