@@ -43,6 +43,7 @@
     ];
     "explorer.confirmDelete" = false;
     "window.openFoldersInNewWindow" = "on";
+    "window.autoDetectColorScheme" = true;
     "files.exclude" = {
       "**/.DS_Store" = true;
       "**/.bsb.lock" = true;
