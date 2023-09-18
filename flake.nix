@@ -17,7 +17,7 @@
     nixos-hardware,
     home-manager,
     ...
-  } @ inputs: let
+  }: let
     system = "x86_64-linux";
     config = {
       allowUnfree = true;

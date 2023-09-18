@@ -11,6 +11,7 @@
     protonmail-bridge
     chromium
     xorg.xkill
+    mpv
 
     whois
     wget
