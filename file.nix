@@ -65,13 +65,13 @@ with config.lib.file; {
 
       SESSION=''${PWD//./_}
       [[ "$SESSION" =~ ^"$HOME"(/|$) ]] && SESSION=\~''${SESSION#$HOME}
-      SESSION_CMD=''${PWD//./_}
-      [[ "$SESSION_CMD" =~ ^"$HOME"(/|$) ]] && SESSION_CMD="\~''${SESSION_CMD#$HOME}"
-      tmux has-session -t $SESSION_CMD 2>/dev/null
+      SESSION_ESCAPE=''${PWD//./_}
+      [[ "$SESSION_ESCAPE" =~ ^"$HOME"(/|$) ]] && SESSION_ESCAPE="\~''${SESSION_ESCAPE#$HOME}"
+      tmux has-session -t $SESSION_ESCAPE 2>/dev/null
       if [ $? != 0 ]; then
         tmux new -s $SESSION "$@"
       else
-        tmux attach-session -t $SESSION
+        tmux attach-session -t $SESSION_ESCAPE
       fi
     '';
   };
