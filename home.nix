@@ -12,6 +12,7 @@
     chromium
     xorg.xkill
     mpv
+    libreoffice
 
     whois
     wget
