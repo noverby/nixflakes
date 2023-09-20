@@ -62,7 +62,6 @@
     another-window-session-manager
     blur-my-shell
     bluetooth-quick-connect
-    sound-output-device-chooser
   ];
 
   vscodeExtensions = with pkgs.vscode-extensions; [
