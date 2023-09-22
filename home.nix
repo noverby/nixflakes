@@ -113,6 +113,7 @@ in
         gpl = "git pull";
         gps = "git push";
         gr = "git rebase";
+        gri = "git rebase -i";
         grc = "git rebase --continue";
         gs = "git status";
         gsh = "git stash";
