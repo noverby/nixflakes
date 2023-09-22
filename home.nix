@@ -14,6 +14,7 @@
     mpv
     libreoffice
 
+    lsof
     whois
     wget
     unzip
