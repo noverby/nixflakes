@@ -31,6 +31,7 @@
     distrobox
     lldb
     util-linux
+    bubblewrap
 
     fd
     glab
