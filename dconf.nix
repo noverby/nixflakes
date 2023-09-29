@@ -7,7 +7,7 @@
         "firefox.desktop"
         "codium.desktop"
         "org.gnome.Nautilus.desktop"
-        "Alacritty.desktop"
+        "org.wezfurlong.wezterm.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Calendar.desktop"
         "beeper.desktop"

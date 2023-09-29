@@ -13,6 +13,7 @@
     xorg.xkill
     mpv
     libreoffice
+    wezterm
 
     lsof
     whois
