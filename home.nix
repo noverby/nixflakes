@@ -15,6 +15,7 @@
     libreoffice
     wezterm
 
+    acpi
     lsof
     whois
     wget
