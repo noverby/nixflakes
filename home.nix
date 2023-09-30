@@ -16,7 +16,6 @@
     wezterm
 
     acpi
-    powertop
     lsof
     whois
     wget

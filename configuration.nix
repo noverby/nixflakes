@@ -156,4 +156,18 @@
       '';
     };
   };
+
+  # Systemd
+  systemd.services = {
+    powertop = {
+      enable = true;
+      description = "Powertop tunings";
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = "yes";
+        ExecStart = "${pkgs.powertop}/bin/powertop --auto-tune";
+      };
+      wantedBy = ["multi-user.target"];
+    };
+  };
 }
