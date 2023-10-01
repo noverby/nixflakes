@@ -122,6 +122,7 @@
     gnome.gnome-boxes
     vim
     python3
+    powertop
   ];
 
   # Users
