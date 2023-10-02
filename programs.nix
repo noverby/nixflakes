@@ -109,6 +109,10 @@
         hostname = "localhost";
         user = username;
       };
+      macbook-x64 = {
+        hostname = "10.0.20.137";
+        user = "noverby";
+      };
     };
   };
 
