@@ -15,6 +15,7 @@
     libreoffice
     wezterm
 
+    openssl
     acpi
     lsof
     whois
