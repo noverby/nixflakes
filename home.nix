@@ -112,7 +112,8 @@ in
         gcn = "git commit --no-verify";
         gcp = "git cherry-pick";
         gf = "git fetch";
-        gl = "git log --graph --oneline";
+        gl = "git log --oneline --no-abbrev-commit";
+        glg = "git log --graph";
         gpl = "git pull";
         gps = "git push";
         gr = "git rebase";
@@ -121,6 +122,8 @@ in
         gs = "git status";
         gsh = "git stash";
         gsw = "git switch";
+        gco = "git checkout";
+        gcb = "git checkout -b";
         df = "duf";
         du = "dust";
         cp = "xcp";
