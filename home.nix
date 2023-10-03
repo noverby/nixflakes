@@ -15,6 +15,7 @@
     libreoffice
     wezterm
 
+    zip
     openssl
     acpi
     lsof
