@@ -188,6 +188,7 @@ with config.lib.file; {
     config.default_prog = { 'tmux-dir' }
     config.enable_tab_bar = false
     config.window_decorations = "RESIZE"
+    config.adjust_window_size_when_changing_font_size = false
 
     return config
   '';
