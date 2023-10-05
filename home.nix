@@ -58,6 +58,7 @@
     nodejs
     yarn
     nodePackages.pnpm
+    nodePackages.ts-node
     imagemagick
     optipng
   ];
