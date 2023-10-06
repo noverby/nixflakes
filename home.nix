@@ -14,6 +14,7 @@
     mpv
     libreoffice
     wezterm
+    obs-studio
 
     zip
     openssl
