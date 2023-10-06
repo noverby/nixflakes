@@ -137,6 +137,13 @@
     };
   };
 
+  obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-3d-effect
+    ];
+  };
+
   git = import ./git.nix {};
   vscode = import ./vscode.nix {
     inherit pkgs vscodeExtensions;
