@@ -64,12 +64,9 @@
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
-    quake-mode
+    material-shell
     caffeine
-    another-window-session-manager
-    blur-my-shell
     bluetooth-quick-connect
-    always-show-titles-in-overview
   ];
 
   vscodeExtensions = with pkgs.vscode-extensions; [
