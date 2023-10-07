@@ -166,6 +166,7 @@
     "workbench.editorLargeFileConfirmation" = 20;
     "diffEditor.maxComputationTime" = 0;
     "window.zoomLevel" = -1;
+    "window.title" = "\${rootName}\${separator}\${activeEditorShort}";
   };
   keybindings = [
     {
