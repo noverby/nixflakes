@@ -125,7 +125,12 @@
     vim
     python3
     powertop
+    gjs
   ];
+  # ddterm packages
+  environment.sessionVariables = with pkgs; {
+    GI_TYPELIB_PATH = map (pkg: "${pkg}/lib/girepository-1.0") [vte pango harfbuzz gtk3 gdk-pixbuf at-spi2-core];
+  };
 
   # Users
   users.users.noverby = {

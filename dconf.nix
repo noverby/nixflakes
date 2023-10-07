@@ -7,7 +7,7 @@
         "firefox.desktop"
         "codium.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.wezfurlong.wezterm.desktop"
+        "org.gnome.Console.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Calendar.desktop"
         "beeper.desktop"
@@ -32,6 +32,13 @@
     };
     "org/gnome/Console" = {
       shell = ["tmux-dir"];
+    };
+    "com/github/amezin/ddterm" = {
+      command = "custom-command";
+      custom-command = "tmux-dir";
+      ddterm-toggle-hotkey = [
+        "onehalf"
+      ];
     };
   };
 }

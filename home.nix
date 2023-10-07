@@ -13,7 +13,6 @@
     xorg.xkill
     mpv
     libreoffice
-    wezterm
 
     zip
     openssl
@@ -65,6 +64,7 @@
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
     material-shell
+    ddterm
     caffeine
     bluetooth-quick-connect
   ];
