@@ -102,8 +102,6 @@ in
       };
 
       shellAliases = {
-        "..." = "../..";
-        "...." = "../../..";
         open = "xdg-open";
         vim = "nvim";
         ga = "git add";
