@@ -126,6 +126,7 @@
     python3
     powertop
     gjs
+    glib.dev
   ];
   # ddterm packages
   environment.sessionVariables = with pkgs; {
