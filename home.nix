@@ -53,6 +53,7 @@
     evcxr
     rustc
 
+    nix-tree
     unstable.bun
     nodejs
     yarn
