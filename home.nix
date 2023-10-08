@@ -68,6 +68,7 @@
     ddterm
     caffeine
     bluetooth-quick-connect
+    current-screen-only-for-alternate-tab
   ];
 
   vscodeExtensions = with pkgs.vscode-extensions; [
