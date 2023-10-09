@@ -136,6 +136,8 @@
       "editor.lineHighlightBackground" = "#1073cf2d";
       "editor.lineHighlightBorder" = "#9fced11f";
     };
+    "workbench.editor.limit.enabled" = true;
+    "workbench.editor.limit.value" = 6;
     "workbench.editorAssociations" = {
       "*.ipynb" = "jupyter-notebook";
       "*.md" = "default";
