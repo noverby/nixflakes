@@ -18,7 +18,7 @@ with config.lib.file; {
     executable = true;
     text = ''
       #!/usr/bin/env sh
-      cmd=${pkgs.vscodium}/bin/codium
+      cmd=${pkgs.unstable.vscodium}/bin/codium
       files=()
       args=()
       line=0

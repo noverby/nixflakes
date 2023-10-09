@@ -71,7 +71,7 @@
     current-screen-only-for-alternate-tab
   ];
 
-  vscodeExtensions = with pkgs.vscode-extensions; [
+  vscodeExtensions = with pkgs.unstable.vscode-extensions; [
     vscodevim.vim
     vspacecode.vspacecode
     vspacecode.whichkey
