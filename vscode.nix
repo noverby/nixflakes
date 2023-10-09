@@ -64,6 +64,7 @@
       "default" = "right";
       "jupyter-notebook" = "left";
     };
+    "semanticdiff.defaultDiffViewer" = true;
     "security.workspace.trust.untrustedFiles" = "open";
     "telemetry.telemetryLevel" = "off";
     "terminal.integrated.fontSize" = 13;
