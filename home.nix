@@ -125,7 +125,7 @@ in
         gco = "git checkout";
         gcb = "git checkout -b";
         gundo = "git reset HEAD~1 --soft";
-        ghash = "git rev-parse HEAD | wl-copy; git rev-parse HEAD";
+        ghash = "git rev-parse HEAD | tr -d '\n' | wl-copy; git rev-parse HEAD";
         df = "duf";
         du = "dust";
         cp = "xcp";
