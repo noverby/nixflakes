@@ -40,9 +40,48 @@
         "onehalf"
       ];
     };
+    "org/gnome/mutter/wayland/keybindings" = {
+      restore-shortcuts = [];
+    };
+    "org/gnome/shell/keybindings" = {
+      open-application-menu = [];
+      toggle-message-tray = ["<Super>v"];
+      toggle-overview = [];
+    };
     "org/gnome/desktop/wm/keybindings" = {
+      # Not pop-shell
       switch-windows = ["<Alt>Tab"];
       switch-windows-backward = ["<Shift><Alt>Tab"];
+
+      minimize = ["<Super>comma"];
+      switch-to-workspace-left = [];
+      switch-to-workspace-right = [];
+      maximize = [];
+      unmaximize = [];
+      move-to-monitor-up = [];
+      move-to-monitor-down = [];
+      move-to-monitor-left = [];
+      move-to-workspace-down = [];
+      move-to-workspace-up = [];
+      move-to-monitor-right = [];
+      switch-to-workspace-down = ["<Primary><Super>Down" "<Primary><Super>j"];
+      switch-to-workspace-up = ["<Primary><Super>Up" "<Primary><Super>k"];
+      toggle-maximized = ["<Super>m"];
+      close = ["<Super>q" "<Alt>F4"];
+    };
+
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [];
+      toggle-tiled-right = [];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = ["<Super>Escape"];
+      home = ["<Super>f"];
+      email = ["<Super>e"];
+      www = ["<Super>b"];
+      terminal = ["<Super>t"];
+      rotate-video-lock-static = [];
     };
   };
 }
