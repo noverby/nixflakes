@@ -64,7 +64,8 @@
   ];
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
-    material-shell
+    pop-shell
+    another-window-session-manager
     ddterm
     caffeine
     bluetooth-quick-connect
