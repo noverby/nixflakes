@@ -66,6 +66,7 @@
   gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
     another-window-session-manager
+    pop-launcher-super-key
     ddterm
     caffeine
     bluetooth-quick-connect
