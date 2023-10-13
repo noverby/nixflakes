@@ -2,6 +2,7 @@
   pkgs,
   config,
   homeDirectory,
+  ...
 }:
 with config.lib.file; {
   Pictures.source = mkOutOfStoreSymlink "${homeDirectory}/Sync/Pictures";

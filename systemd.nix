@@ -1,4 +1,4 @@
-{pkgs}: {
+{pkgs, ...}: {
   user.services = {
     tmux = {
       Unit = {

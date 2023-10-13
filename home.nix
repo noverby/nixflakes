@@ -1,8 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...} @ inputs: let
+  username = "noverby";
+  homeDirectory = "/home/${username}";
   basePkgs = with pkgs; [
     gnome.gnome-tweaks
     bitwarden
@@ -87,86 +85,80 @@
     ms-vscode.hexeditor
     esbenp.prettier-vscode
   ];
-in
-  with config.home; {
-    nixpkgs.config.allowUnfree = true;
-    home = {
-      username = "noverby";
-      homeDirectory = "/home/${username}";
-      stateVersion = "23.05";
-      packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
-      enableDebugInfo = true;
+  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory basePkgs gnomeExtensions vscodeExtensions;});
+in {
+  nixpkgs.config.allowUnfree = true;
+  home = {
+    inherit username homeDirectory;
+    stateVersion = "23.05";
+    packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
+    enableDebugInfo = true;
 
-      sessionVariables = {
-        EDITOR = "vi";
-        VISUAL = "vi";
-        PYTHONSTARTUP = "${homeDirectory}/.pystartup";
-        DIRENV_LOG_FORMAT = "";
-        NIXOS_OZONE_WL = "1";
-      };
-
-      shellAliases = {
-        open = "xdg-open";
-        vim = "nvim";
-        ga = "git add";
-        gc = "git commit";
-        gca = "git commit --amend";
-        gcn = "git commit --no-verify";
-        gcp = "git cherry-pick";
-        gf = "git fetch";
-        gl = "git log --oneline --no-abbrev-commit";
-        glg = "git log --graph";
-        gpl = "git pull";
-        gps = "git push";
-        gr = "git rebase";
-        gri = "git rebase -i";
-        grc = "git rebase --continue";
-        gs = "git status";
-        gsh = "git stash";
-        gsw = "git switch";
-        gco = "git checkout";
-        gcb = "git checkout -b";
-        gundo = "git reset HEAD~1 --soft";
-        ghash = "git rev-parse HEAD | tr -d '\n' | wl-copy; git rev-parse HEAD";
-        df = "duf";
-        du = "dust";
-        cp = "xcp";
-        cat = "bat";
-        find = "fd";
-        grep = "rg";
-        man = "tldr";
-        top = "htop";
-        cd = "z";
-        tree = "broot";
-        assume = "source assume";
-      };
-
-      file = import ./file.nix {
-        inherit pkgs config homeDirectory;
-      };
+    sessionVariables = {
+      EDITOR = "vi";
+      VISUAL = "vi";
+      PYTHONSTARTUP = "${homeDirectory}/.pystartup";
+      DIRENV_LOG_FORMAT = "";
+      NIXOS_OZONE_WL = "1";
     };
 
-    xdg = {
-      enable = true;
-      desktopEntries = {
-        beeper = {
-          name = "Beeper";
-          comment = "Beeper: Unified Messenger";
-          exec = "${pkgs.appimage-run}/bin/appimage-run ${homeDirectory}/Apps/beeper.AppImage --ozone-platform-hint=auto";
-          icon = "${homeDirectory}/Apps/beeper.png";
-          terminal = false;
-          categories = ["Utility"];
-          settings = {
-            StartupWMClass = "Beeper";
-          };
+    shellAliases = {
+      open = "xdg-open";
+      vim = "nvim";
+      ga = "git add";
+      gc = "git commit";
+      gca = "git commit --amend";
+      gcn = "git commit --no-verify";
+      gcp = "git cherry-pick";
+      gf = "git fetch";
+      gl = "git log --oneline --no-abbrev-commit";
+      glg = "git log --graph";
+      gpl = "git pull";
+      gps = "git push";
+      gr = "git rebase";
+      gri = "git rebase -i";
+      grc = "git rebase --continue";
+      gs = "git status";
+      gsh = "git stash";
+      gsw = "git switch";
+      gco = "git checkout";
+      gcb = "git checkout -b";
+      gundo = "git reset HEAD~1 --soft";
+      ghash = "git rev-parse HEAD | tr -d '\n' | wl-copy; git rev-parse HEAD";
+      df = "duf";
+      du = "dust";
+      cp = "xcp";
+      cat = "bat";
+      find = "fd";
+      grep = "rg";
+      man = "tldr";
+      top = "htop";
+      cd = "z";
+      tree = "broot";
+      assume = "source assume";
+    };
+
+    file = importModule ./file.nix;
+  };
+
+  xdg = {
+    enable = true;
+    desktopEntries = {
+      beeper = {
+        name = "Beeper";
+        comment = "Beeper: Unified Messenger";
+        exec = "${pkgs.appimage-run}/bin/appimage-run ${homeDirectory}/Apps/beeper.AppImage --ozone-platform-hint=auto";
+        icon = "${homeDirectory}/Apps/beeper.png";
+        terminal = false;
+        categories = ["Utility"];
+        settings = {
+          StartupWMClass = "Beeper";
         };
       };
     };
+  };
 
-    programs = import ./programs.nix {
-      inherit pkgs username vscodeExtensions;
-    };
-
-    systemd = import ./systemd.nix {inherit pkgs;};
-    dconf = import ./dconf.nix {inherit gnomeExtensions;};
-  }
+  programs = importModule ./programs.nix;
+  systemd = importModule ./systemd.nix;
+  dconf = importModule ./dconf.nix;
+}

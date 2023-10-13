@@ -2,6 +2,8 @@
   pkgs,
   username,
   vscodeExtensions,
+  importModule,
+  ...
 }: {
   home-manager.enable = true;
   gh.enable = true;
@@ -144,9 +146,7 @@
     ];
   };
 
-  git = import ./git.nix {};
-  vscode = import ./vscode.nix {
-    inherit pkgs vscodeExtensions;
-  };
-  tmux = import ./tmux.nix {inherit pkgs;};
+  git = importModule ./git.nix;
+  vscode = importModule ./vscode.nix;
+  tmux = importModule ./tmux.nix;
 }

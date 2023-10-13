@@ -1,4 +1,4 @@
-{}: {
+{...}: {
   enable = true;
   userName = "Niclas Overby";
   userEmail = "niclas@overby.me";

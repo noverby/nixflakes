@@ -1,6 +1,7 @@
 {
   pkgs,
   vscodeExtensions,
+  ...
 }: {
   enable = true;
   package = pkgs.unstable.vscodium;

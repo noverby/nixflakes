@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "NixOS + Home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/23.05";

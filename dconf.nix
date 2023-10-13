@@ -1,4 +1,4 @@
-{gnomeExtensions}: {
+{gnomeExtensions, ...}: {
   settings = {
     "org/gnome/shell" = {
       enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
