@@ -65,6 +65,7 @@
 
   gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
+    dash2dock-lite
     another-window-session-manager
     pop-launcher-super-key
     ddterm
