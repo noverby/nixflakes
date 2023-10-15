@@ -69,12 +69,10 @@
       toggle-maximized = ["<Super>m"];
       close = ["<Super>q" "<Alt>F4"];
     };
-
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = [];
       toggle-tiled-right = [];
     };
-
     "org/gnome/settings-daemon/plugins/media-keys" = {
       screensaver = ["<Super>Escape"];
       home = ["<Super>f"];
@@ -82,6 +80,14 @@
       www = ["<Super>b"];
       terminal = ["<Super>t"];
       rotate-video-lock-static = [];
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      titlebar-uses-system-font = "Fira Sans Book 10";
+    };
+    "org/gnome/desktop/interface" = {
+      interface-font-name = "Fira Sans Book 10";
+      document-font-name = "Roboto Slab Regular 11";
+      monospace-font-name = "Fira Mono Regular 11";
     };
   };
 }

@@ -76,7 +76,7 @@
     [
       (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
     ]
-    ++ [meslo-lgs-nf];
+    ++ [fira roboto roboto-slab meslo-lgs-nf];
 
   # Audio
   sound.enable = true;
