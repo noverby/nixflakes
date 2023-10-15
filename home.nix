@@ -2,6 +2,7 @@
   username = "noverby";
   homeDirectory = "/home/${username}";
   basePkgs = with pkgs; [
+    pop-launcher
     gnome.gnome-tweaks
     bitwarden
     slack
