@@ -4,6 +4,7 @@
   basePkgs = with pkgs; [
     pop-launcher
     pop-icon-theme
+    pop-gtk-theme
     gnome.gnome-tweaks
     bitwarden
     slack
