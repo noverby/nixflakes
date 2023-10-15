@@ -67,6 +67,7 @@
   gnomeExtensions = with pkgs.unstable.gnomeExtensions; [
     pop-shell
     dash2dock-lite
+    legacy-gtk3-theme-scheme-auto-switcher
     another-window-session-manager
     pop-launcher-super-key
     ddterm
