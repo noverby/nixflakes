@@ -63,7 +63,7 @@
     optipng
   ];
 
-  gnomeExtensions = with pkgs.gnomeExtensions; [
+  gnomeExtensions = with pkgs.unstable.gnomeExtensions; [
     pop-shell
     dash2dock-lite
     another-window-session-manager
