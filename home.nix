@@ -3,6 +3,7 @@
   homeDirectory = "/home/${username}";
   basePkgs = with pkgs; [
     pop-launcher
+    pop-icon-theme
     gnome.gnome-tweaks
     bitwarden
     slack
