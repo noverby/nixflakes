@@ -15,6 +15,7 @@
     mpv
     libreoffice
 
+    pdfgrep
     zip
     openssl
     acpi
