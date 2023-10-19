@@ -17,6 +17,7 @@
     gnome.gnome-tweaks
 
     # System and hardware tools
+    (uutils-coreutils.override {prefix = "";})
     xorg.xkill
     openssl
     lsof
