@@ -2,67 +2,80 @@
   username = "noverby";
   homeDirectory = "/home/${username}";
   basePkgs = with pkgs; [
+    # Cosmic
     pop-launcher
     pop-icon-theme
     pop-gtk-theme
-    gnome.gnome-tweaks
+
+    # General apps
     bitwarden
     slack
-    appimage-run
     protonmail-bridge
     chromium
-    xorg.xkill
     mpv
     libreoffice
+    gnome.gnome-tweaks
 
-    pdfgrep
-    zip
+    # System and hardware tools
+    xorg.xkill
     openssl
-    acpi
     lsof
     whois
     wget
-    unzip
-    file
-    pciutils
-    usbutils
-    lshw
     fortune
     strace
     wl-clipboard
     fpp
-    alejandra
-    nil
-    distrobox
-    lldb
-    util-linux
-    bubblewrap
 
+    # System and hardware tools
+    acpi
+    util-linux
+    pciutils
+    lshw
+    usbutils
+
+    # File tools
+    file
     fd
     glab
-
     du-dust
     duf
     xcp
     ripgrep
+    pdfgrep
     tokei
+    zip
+    unzip
 
+    # Container tools
     arch-install-scripts
     debootstrap
     microdnf
+    distrobox
+    bubblewrap
+    appimage-run
 
+    # System dev
+    lldb
     cling
     evcxr
     rustc
 
+    # Nix dev
+    alejandra
+    nil
     nix-tree
-    unstable.bun
+
+    # Media tools
+    imagemagick
+    optipng
+
+    # Web dev
     nodejs
     yarn
     nodePackages.pnpm
     nodePackages.ts-node
-    imagemagick
-    optipng
+    unstable.bun
   ];
 
   gnomeExtensions = with pkgs.unstable.gnomeExtensions; [
