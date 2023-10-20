@@ -30,7 +30,7 @@
     nixosConfigurations = {
       levitas = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit pkgs;};
+        specialArgs = {inherit pkgs pkgs-unstable;};
         modules = [
           ./framework/hardware-configuration.nix
           nixos-hardware
