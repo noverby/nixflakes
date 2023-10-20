@@ -66,6 +66,7 @@
     appimage-run
 
     # System dev
+    just
     lldb
     cling
     evcxr
