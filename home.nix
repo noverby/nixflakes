@@ -24,6 +24,7 @@
     # Rust userspace
     (uutils-coreutils.override {prefix = "";})
     #sudo-rs
+    fortune-kind
 
     # System and hardware tools
     xorg.xkill
@@ -31,7 +32,6 @@
     lsof
     whois
     wget
-    fortune
     strace
     wl-clipboard
     fpp
