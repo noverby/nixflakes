@@ -19,6 +19,7 @@
     libreoffice
     gnome.gnome-tweaks
     gnome.dconf-editor
+    unstable.celeste
 
     # Rust userspace
     (uutils-coreutils.override {prefix = "";})
