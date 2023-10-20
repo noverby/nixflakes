@@ -129,42 +129,6 @@ in {
       NIXOS_OZONE_WL = "1";
     };
 
-    shellAliases = {
-      open = "xdg-open";
-      vim = "nvim";
-      ga = "git add";
-      gc = "git commit";
-      gca = "git commit --amend";
-      gcn = "git commit --no-verify";
-      gcp = "git cherry-pick";
-      gf = "git fetch";
-      gl = "git log --oneline --no-abbrev-commit";
-      glg = "git log --graph";
-      gpl = "git pull";
-      gps = "git push";
-      gr = "git rebase";
-      gri = "git rebase -i";
-      grc = "git rebase --continue";
-      gs = "git status";
-      gsh = "git stash";
-      gsw = "git switch";
-      gco = "git checkout";
-      gcb = "git checkout -b";
-      gundo = "git reset HEAD~1 --soft";
-      ghash = "git rev-parse HEAD | tr -d '\n' | wl-copy; git rev-parse HEAD";
-      df = "duf";
-      du = "dust";
-      cp = "xcp";
-      cat = "bat";
-      find = "fd";
-      grep = "rg";
-      man = "tldr";
-      top = "htop";
-      cd = "z";
-      tree = "broot";
-      assume = "source assume";
-    };
-
     file = importModule ./file.nix;
   };
 
