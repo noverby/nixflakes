@@ -55,6 +55,7 @@
     tokei
     zip
     unzip
+    jql
 
     # Container tools
     arch-install-scripts

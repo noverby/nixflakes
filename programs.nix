@@ -9,7 +9,6 @@
   bat.enable = true;
   tealdeer.enable = true;
   htop.enable = true;
-  jq.enable = true;
 
   nushell = {
     enable = true;
@@ -51,6 +50,7 @@
       man = "tldr";
       top = "htop";
       cd = "z";
+      jq = "jql";
     };
   };
 
