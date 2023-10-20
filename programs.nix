@@ -33,11 +33,6 @@
     enableZshIntegration = true;
   };
 
-  eza = {
-    enable = true;
-    enableAliases = true;
-  };
-
   zoxide = {
     enable = true;
     enableNushellIntegration = true;
