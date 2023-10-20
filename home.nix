@@ -22,7 +22,7 @@
     celeste
 
     # Rust userspace
-    (uutils-coreutils.override {prefix = "";})
+    uutils-coreutils-noprefix
     #sudo-rs
     fortune-kind
     lurk
