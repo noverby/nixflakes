@@ -71,7 +71,7 @@
     "terminal.integrated.gpuAcceleration" = "on";
     "editor.renderLineHighlight" = "none";
     "terminal.integrated.automationProfile.linux" = {
-      "path" = "${pkgs.zsh}/bin/zsh";
+      "path" = "${pkgs.nushell}/bin/nu";
     };
     "terminal.integrated.defaultProfile.linux" = "tmux-dir";
     "terminal.integrated.profiles.linux" = {
