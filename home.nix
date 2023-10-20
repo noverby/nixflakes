@@ -10,6 +10,7 @@
     # General apps
     bitwarden
     slack
+    unstable.spotify
     protonmail-bridge
     chromium
     mpv
