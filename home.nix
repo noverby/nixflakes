@@ -51,7 +51,7 @@
     duf
     xcp
     ripgrep
-    pdfgrep
+    ripgrep-all
     tokei
     zip
     unzip
