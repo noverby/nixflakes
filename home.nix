@@ -16,8 +16,11 @@
     libreoffice
     gnome.gnome-tweaks
 
-    # System and hardware tools
+    # Rust userspace
     (uutils-coreutils.override {prefix = "";})
+    unstable.sudo-rs
+
+    # System and hardware tools
     xorg.xkill
     openssl
     lsof
