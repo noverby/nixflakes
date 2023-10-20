@@ -33,12 +33,6 @@
     enableAliases = true;
   };
 
-  fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    tmux.enableShellIntegration = true;
-  };
-
   zoxide = {
     enable = true;
     enableNushellIntegration = true;
