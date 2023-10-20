@@ -21,9 +21,13 @@
     system = "x86_64-linux";
     config = {
       allowUnfree = true;
-      packageOverrides = pkgs: {
+      packageOverrides = pkgs: let
+        config = {
+          allowUnfree = true;
+        };
+      in {
         unstable = import nixpkgs-unstable {
-          inherit pkgs system;
+          inherit pkgs config system;
         };
       };
     };
