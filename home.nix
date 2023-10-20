@@ -18,7 +18,7 @@
 
     # Rust userspace
     (uutils-coreutils.override {prefix = "";})
-    unstable.sudo-rs
+    #unstable.sudo-rs
 
     # System and hardware tools
     xorg.xkill
