@@ -77,7 +77,7 @@
 
     # Media tools
     imagemagick
-    optipng
+    oxipng
 
     # Web dev
     nodejs
