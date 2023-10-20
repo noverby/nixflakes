@@ -11,6 +11,7 @@
     bitwarden
     slack
     fragments
+    evince
     unstable.spotify
     protonmail-bridge
     chromium
