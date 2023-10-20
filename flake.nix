@@ -6,8 +6,8 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -21,15 +21,9 @@
     system = "x86_64-linux";
     config = {
       allowUnfree = true;
-      packageOverrides = pkgs: let
-        config = {
-          allowUnfree = true;
-        };
-      in {
-        unstable = import nixpkgs-unstable {
-          inherit pkgs config system;
-        };
-      };
+    };
+    pkgs-unstable = import nixpkgs-unstable {
+      inherit pkgs config system;
     };
     pkgs = import nixpkgs {inherit config system;};
   in {
@@ -48,7 +42,9 @@
               useUserPackages = true;
               useGlobalPkgs = true;
               users.noverby = ./home.nix;
-              extraSpecialArgs = {inherit pkgs;};
+              extraSpecialArgs = {
+                pkgs = pkgs-unstable;
+              };
             };
           }
           ./configuration.nix

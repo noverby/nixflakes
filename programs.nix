@@ -13,7 +13,12 @@
 
   nushell = {
     enable = true;
-    package = pkgs.unstable.nushell;
+    configFile.text = ''
+      $env.config = {
+        show_banner: false
+        keybindings: []
+      }
+    '';
   };
 
   starship = {
@@ -28,7 +33,7 @@
     enableZshIntegration = true;
   };
 
-  exa = {
+  eza = {
     enable = true;
     enableAliases = true;
   };

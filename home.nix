@@ -12,18 +12,18 @@
     slack
     fragments
     evince
-    unstable.spotify
+    spotify
     protonmail-bridge
     chromium
     mpv
     libreoffice
     gnome.gnome-tweaks
     gnome.dconf-editor
-    unstable.celeste
+    celeste
 
     # Rust userspace
     (uutils-coreutils.override {prefix = "";})
-    #unstable.sudo-rs
+    #sudo-rs
 
     # System and hardware tools
     xorg.xkill
@@ -84,10 +84,10 @@
     yarn
     nodePackages.pnpm
     nodePackages.ts-node
-    unstable.bun
+    bun
   ];
 
-  gnomeExtensions = with pkgs.unstable.gnomeExtensions; [
+  gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
     legacy-gtk3-theme-scheme-auto-switcher
     another-window-session-manager
@@ -98,7 +98,7 @@
     current-screen-only-for-alternate-tab
   ];
 
-  vscodeExtensions = with pkgs.unstable.vscode-extensions; [
+  vscodeExtensions = with pkgs.vscode-extensions; [
     vscodevim.vim
     vspacecode.vspacecode
     vspacecode.whichkey
@@ -117,7 +117,7 @@ in {
   nixpkgs.config.allowUnfree = true;
   home = {
     inherit username homeDirectory;
-    stateVersion = "23.05";
+    stateVersion = "23.11";
     packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
     enableDebugInfo = true;
 

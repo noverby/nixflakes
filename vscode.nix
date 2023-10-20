@@ -4,7 +4,7 @@
   ...
 }: {
   enable = true;
-  package = pkgs.unstable.vscodium;
+  package = pkgs.vscodium;
   extensions = vscodeExtensions;
   userSettings = {
     "[javascript]" = {
