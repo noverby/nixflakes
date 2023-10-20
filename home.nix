@@ -25,6 +25,7 @@
     (uutils-coreutils.override {prefix = "";})
     #sudo-rs
     fortune-kind
+    lurk
 
     # System and hardware tools
     xorg.xkill
@@ -32,7 +33,6 @@
     lsof
     whois
     wget
-    strace
     wl-clipboard
     fpp
 
