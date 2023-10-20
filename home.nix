@@ -18,6 +18,7 @@
     mpv
     libreoffice
     gnome.gnome-tweaks
+    gnome.dconf-editor
 
     # Rust userspace
     (uutils-coreutils.override {prefix = "";})
