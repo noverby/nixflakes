@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   # Nix
   nix.settings = {
     max-jobs = 100;
@@ -85,7 +89,11 @@
 
   # Virtualisation
   virtualisation = {
-    docker.enable = true;
+    podman = {
+      enable = true;
+      package = pkgs-unstable.podman;
+      dockerCompat = true;
+    };
     libvirtd.enable = true;
   };
 
@@ -117,6 +125,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    docker-compose
     gnome.gnome-boxes
     vim
     python3
