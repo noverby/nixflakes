@@ -44,11 +44,6 @@
     enableZshIntegration = true;
   };
 
-  broot = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   atuin = {
     enable = true;
     enableNushellIntegration = true;
