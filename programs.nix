@@ -1,7 +1,6 @@
 {
   pkgs,
   username,
-  vscodeExtensions,
   importModule,
   ...
 }: {
@@ -11,7 +10,11 @@
   tealdeer.enable = true;
   htop.enable = true;
   jq.enable = true;
-  nushell.enable = true;
+
+  nushell = {
+    enable = true;
+    package = pkgs.unstable.nushell;
+  };
 
   starship = {
     enable = true;
