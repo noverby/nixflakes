@@ -35,6 +35,7 @@
     wget
     wl-clipboard
     fpp
+    zellij
 
     # System and hardware tools
     acpi
