@@ -123,15 +123,6 @@ in {
     stateVersion = "23.11";
     packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
     enableDebugInfo = true;
-
-    sessionVariables = {
-      EDITOR = "vi";
-      VISUAL = "vi";
-      PYTHONSTARTUP = "${homeDirectory}/.pystartup";
-      DIRENV_LOG_FORMAT = "";
-      NIXOS_OZONE_WL = "1";
-    };
-
     file = importModule ./file.nix;
   };
 

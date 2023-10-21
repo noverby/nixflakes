@@ -2,6 +2,7 @@
   pkgs,
   username,
   importModule,
+  homeDirectory,
   ...
 }: {
   home-manager.enable = true;
@@ -19,6 +20,13 @@
       }
       def ghash [] {git rev-parse HEAD | tr -d '\\n' | wl-copy; git rev-parse HEAD}
     '';
+    environmentVariables = {
+      EDITOR = "vi";
+      VISUAL = "vi";
+      PYTHONSTARTUP = "${homeDirectory}/.pystartup";
+      DIRENV_LOG_FORMAT = "";
+      NIXOS_OZONE_WL = "1";
+    };
     shellAliases = {
       open = "xdg-open";
       vim = "nvim";
