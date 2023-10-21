@@ -93,7 +93,6 @@
   gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
     legacy-gtk3-theme-scheme-auto-switcher
-    another-window-session-manager
     pop-launcher-super-key
     ddterm
     caffeine
