@@ -26,6 +26,13 @@
       PYTHONSTARTUP = "${homeDirectory}/.pystartup";
       DIRENV_LOG_FORMAT = "";
       NIXOS_OZONE_WL = "1";
+      PATH = "${homeDirectory}/.local/bin:$PATH";
+      XDG_DATA_DIRS = builtins.concatStringsSep ":" [
+        "${homeDirectory}/.nix-profile/share"
+        "/usr/share:/var/lib/flatpak/exports/share"
+        "${homeDirectory}/.local/share/flatpak/exports/share"
+        "$XDG_DATA_DIRS"
+      ];
     };
     shellAliases = {
       open = "xdg-open";
@@ -103,9 +110,6 @@
       if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
         source ~/.nix-profile/etc/profile.d/nix.sh
       fi
-      export PATH=~/.local/bin:$PATH
-      export XDG_DATA_DIRS="~/.nix-profile/share:$XDG_DATA_DIRS"
-      export XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
     '';
     historyControl = ["ignoredups" "erasedups"];
   };
