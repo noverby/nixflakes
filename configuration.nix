@@ -62,7 +62,7 @@
     };
   };
 
-  # X11
+  # Display
   services.xserver = {
     enable = true;
     layout = "dk";
