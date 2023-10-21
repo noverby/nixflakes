@@ -1,4 +1,8 @@
-{gnomeExtensions, ...}: {
+{
+  gnomeExtensions,
+  zellij-dir,
+  ...
+}: {
   settings = {
     "org/gnome/shell" = {
       enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
@@ -31,11 +35,11 @@
       night-light-enabled = true;
     };
     "org/gnome/Console" = {
-      shell = ["zellij-dir"];
+      shell = [zellij-dir];
     };
     "com/github/amezin/ddterm" = {
       command = "custom-command";
-      custom-command = "zellij-dir";
+      custom-command = zellij-dir;
       ddterm-toggle-hotkey = [
         "onehalf"
       ];

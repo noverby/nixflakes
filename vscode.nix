@@ -1,6 +1,7 @@
 {
   pkgs,
   vscodeExtensions,
+  zellij-dir,
   ...
 }: {
   enable = true;
@@ -76,7 +77,7 @@
     "terminal.integrated.defaultProfile.linux" = "zellij-dir";
     "terminal.integrated.profiles.linux" = {
       "zellij-dir" = {
-        "path" = "zellij-dir";
+        "path" = zellij-dir;
       };
     };
     "vspacecode.bindingOverrides" = [];

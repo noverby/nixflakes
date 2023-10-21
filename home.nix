@@ -114,7 +114,10 @@
     ms-vscode.hexeditor
     esbenp.prettier-vscode
   ];
-  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory basePkgs gnomeExtensions vscodeExtensions;});
+
+  zellij-dir = "${homeDirectory}/.local/bin/zellij-dir";
+
+  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory zellij-dir basePkgs gnomeExtensions vscodeExtensions;});
 in {
   nixpkgs.config.allowUnfree = true;
   home = {
