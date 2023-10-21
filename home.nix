@@ -21,13 +21,10 @@
     gnome.dconf-editor
     celeste
 
-    # Rust userspace
-    uutils-coreutils-noprefix
-    #sudo-rs
-    fortune-kind
-    lurk
-
     # System and hardware tools
+    #sudo-rs
+    uutils-coreutils-noprefix
+    fortune-kind
     xorg.xkill
     openssl
     lsof
@@ -74,6 +71,7 @@
     cling
     evcxr
     rustc
+    lurk
 
     # Nix dev
     alejandra
