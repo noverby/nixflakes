@@ -141,6 +141,7 @@
 
   # Users
   users.users.noverby = {
+    shell = "${pkgs-unstable.nushell}/bin/nu";
     isNormalUser = true;
     description = "Niclas Overby";
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
