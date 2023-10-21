@@ -125,6 +125,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    pkgs-unstable.youki
     docker-compose
     gnome.gnome-boxes
     vim
