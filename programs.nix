@@ -53,6 +53,7 @@
       top = "htop";
       cd = "z";
       jq = "jql";
+      optpng = "oxipng";
     };
   };
 
