@@ -49,6 +49,7 @@
     glab
     du-dust
     xcp
+    rm-improved
     sd
     choose
     ripgrep
