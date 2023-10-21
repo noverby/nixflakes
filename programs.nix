@@ -24,14 +24,15 @@
       EDITOR = "vi";
       VISUAL = "vi";
       PYTHONSTARTUP = "${homeDirectory}/.pystartup";
-      DIRENV_LOG_FORMAT = "";
+      DIRENV_LOG_FORMAT = "\"\"";
       NIXOS_OZONE_WL = "1";
-      PATH = "${homeDirectory}/.local/bin:$PATH";
+      PATH = "${homeDirectory}/.local/bin:($env.PATH)";
       XDG_DATA_DIRS = builtins.concatStringsSep ":" [
+        "/usr/share"
+        "/var/lib/flatpak/exports/share"
         "${homeDirectory}/.nix-profile/share"
-        "/usr/share:/var/lib/flatpak/exports/share"
         "${homeDirectory}/.local/share/flatpak/exports/share"
-        "$XDG_DATA_DIRS"
+        "($env.XDG_DATA_DIRS)"
       ];
     };
     shellAliases = {
