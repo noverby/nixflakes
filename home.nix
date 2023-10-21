@@ -50,6 +50,7 @@
     du-dust
     xcp
     sd
+    choose
     ripgrep
     #ripgrep-all
     tokei

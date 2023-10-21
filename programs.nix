@@ -45,6 +45,7 @@
       cp = "xcp";
       cat = "bat";
       sed = "sd";
+      cut = "choose";
       find = "fd";
       grep = "rg";
       man = "tldr";
