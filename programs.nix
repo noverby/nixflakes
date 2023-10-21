@@ -41,7 +41,6 @@
       gco = "git checkout";
       gcb = "git checkout -b";
       gundo = "git reset HEAD~1 --soft";
-      df = "duf";
       du = "dust";
       cp = "xcp";
       cat = "bat";

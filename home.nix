@@ -48,7 +48,6 @@
     fd
     glab
     du-dust
-    duf
     xcp
     ripgrep
     #ripgrep-all
