@@ -60,43 +60,26 @@
   starship = {
     enable = true;
     enableNushellIntegration = true;
-    enableZshIntegration = true;
   };
 
   direnv = {
     enable = true;
     enableNushellIntegration = true;
-    enableZshIntegration = true;
   };
 
   zoxide = {
     enable = true;
     enableNushellIntegration = true;
-    enableZshIntegration = true;
   };
 
   nix-index = {
     enable = true;
-    enableZshIntegration = true;
   };
 
   atuin = {
     enable = true;
     enableNushellIntegration = true;
-    enableZshIntegration = true;
     enableBashIntegration = true;
-  };
-
-  zsh = {
-    enable = true;
-    enableVteIntegration = true;
-    autocd = true;
-    oh-my-zsh = {
-      enable = true;
-    };
-    profileExtra = ''
-      [[ -f ~/.profile ]] && . ~/.profile
-    '';
   };
 
   bash = {
