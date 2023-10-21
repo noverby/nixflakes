@@ -44,6 +44,7 @@
       du = "dust";
       cp = "xcp";
       cat = "bat";
+      sed = "sd";
       find = "fd";
       grep = "rg";
       man = "tldr";

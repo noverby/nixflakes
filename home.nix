@@ -49,6 +49,7 @@
     glab
     du-dust
     xcp
+    sd
     ripgrep
     #ripgrep-all
     tokei
