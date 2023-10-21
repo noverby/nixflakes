@@ -59,21 +59,15 @@ with config.lib.file; {
       done
     '';
   };
-  ".local/bin/tmux-dir" = {
+  ".local/bin/zellij-dir" = {
     executable = true;
     text = ''
       #!/usr/bin/env sh
 
       SESSION=''${PWD//./_}
-      [[ "$SESSION" =~ ^"$HOME"(/|$) ]] && SESSION=\~''${SESSION#$HOME}
-      SESSION_ESCAPE=''${PWD//./_}
-      [[ "$SESSION_ESCAPE" =~ ^"$HOME"(/|$) ]] && SESSION_ESCAPE="\~''${SESSION_ESCAPE#$HOME}"
-      tmux has-session -t $SESSION_ESCAPE 2>/dev/null
-      if [ $? != 0 ]; then
-        tmux new -s $SESSION "$@"
-      else
-        tmux attach-session -t $SESSION_ESCAPE
-      fi
+      [[ "$SESSION" =~ ^"$HOME"(/|$) ]] && SESSION="~''${SESSION#$HOME}"
+      SESSION=''${SESSION//\//|}
+      zellij attach -c $SESSION
     '';
   };
   ".local/bin/firefox-dev" = {
@@ -133,65 +127,5 @@ with config.lib.file; {
 
     atexit.register(save_history)
     del os, atexit, readline, rlcompleter, save_history, historyPath
-  '';
-  ".config/wezterm/wezterm.lua".text = ''
-    local wezterm = require 'wezterm'
-
-    function query_appearance_gnome()
-      local success, stdout = wezterm.run_child_process {
-        'gsettings',
-        'get',
-        'org.gnome.desktop.interface',
-        'color-scheme',
-      }
-      -- lowercase and remove whitespace
-      stdout = stdout:lower():gsub('%s+', ''')
-      local mapping = {
-        highcontrast = 'LightHighContrast',
-        highcontrastinverse = 'DarkHighContrast',
-        adwaita = 'Light',
-        ['adwaita-dark'] = 'Dark',
-      }
-      local appearance = mapping[stdout]
-      if appearance then
-        return appearance
-      end
-      if stdout:find 'dark' then
-        return 'Dark'
-      end
-      return 'Light'
-    end
-
-    function scheme_for_appearance(appearance)
-      if appearance:find 'Dark' then
-        return 'Builtin Dark'
-      else
-        return 'Builtin Light'
-      end
-    end
-
-    wezterm.on('update-right-status', function(window, pane)
-      local overrides = window:get_config_overrides() or {}
-      local appearance = query_appearance_gnome()
-      local scheme = scheme_for_appearance(appearance)
-      if overrides.color_scheme ~= scheme then
-        overrides.color_scheme = scheme
-        window:set_config_overrides(overrides)
-      end
-    end)
-
-    local config = {}
-
-    if wezterm.config_builder then
-      config = wezterm.config_builder()
-    end
-
-    config.default_prog = { 'tmux-dir' }
-    config.enable_tab_bar = false
-    config.window_decorations = "RESIZE"
-    config.adjust_window_size_when_changing_font_size = false
-    config.font_size = 10.0
-
-    return config
   '';
 }

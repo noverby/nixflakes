@@ -160,5 +160,4 @@
 
   git = importModule ./git.nix;
   vscode = importModule ./vscode.nix;
-  tmux = importModule ./tmux.nix;
 }

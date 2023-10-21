@@ -73,10 +73,10 @@
     "terminal.integrated.automationProfile.linux" = {
       "path" = "${pkgs.nushell}/bin/nu";
     };
-    "terminal.integrated.defaultProfile.linux" = "tmux-dir";
+    "terminal.integrated.defaultProfile.linux" = "zellij-dir";
     "terminal.integrated.profiles.linux" = {
-      "tmux-dir" = {
-        "path" = "tmux-dir";
+      "zellij-dir" = {
+        "path" = "zellij-dir";
       };
     };
     "vspacecode.bindingOverrides" = [];

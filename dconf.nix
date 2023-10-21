@@ -31,11 +31,11 @@
       night-light-enabled = true;
     };
     "org/gnome/Console" = {
-      shell = ["tmux-dir"];
+      shell = ["zellij-dir"];
     };
     "com/github/amezin/ddterm" = {
       command = "custom-command";
-      custom-command = "tmux-dir";
+      custom-command = "zellij-dir";
       ddterm-toggle-hotkey = [
         "onehalf"
       ];
