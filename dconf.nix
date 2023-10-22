@@ -37,13 +37,6 @@
     "org/gnome/Console" = {
       shell = [zellij-dir];
     };
-    "com/github/amezin/ddterm" = {
-      command = "custom-command";
-      custom-command = zellij-dir;
-      ddterm-toggle-hotkey = [
-        "onehalf"
-      ];
-    };
     "org/gnome/mutter/wayland/keybindings" = {
       restore-shortcuts = [];
     };

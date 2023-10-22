@@ -8,6 +8,7 @@
     pop-gtk-theme
 
     # General apps
+    wezterm
     bitwarden
     slack
     fragments
@@ -94,7 +95,7 @@
     pop-shell
     legacy-gtk3-theme-scheme-auto-switcher
     pop-launcher-super-key
-    ddterm
+    quake-mode
     caffeine
     bluetooth-quick-connect
     current-screen-only-for-alternate-tab
