@@ -116,9 +116,9 @@
     esbenp.prettier-vscode
   ];
 
-  zellij-dir = "${homeDirectory}/.local/bin/zellij-dir";
+  zellij-cwd = "${homeDirectory}/.local/bin/zellij-cwd";
 
-  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory zellij-dir basePkgs gnomeExtensions vscodeExtensions;});
+  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory zellij-cwd basePkgs gnomeExtensions vscodeExtensions;});
 in {
   nixpkgs.config.allowUnfree = true;
   home = {

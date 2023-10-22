@@ -2,7 +2,7 @@
   pkgs,
   config,
   homeDirectory,
-  zellij-dir,
+  zellij-cwd,
   ...
 }:
 with config.lib.file; {
@@ -60,7 +60,7 @@ with config.lib.file; {
       done
     '';
   };
-  ".local/bin/zellij-dir" = {
+  ".local/bin/zellij-cwd" = {
     executable = true;
     text = ''
       #!/usr/bin/env sh
@@ -191,7 +191,7 @@ with config.lib.file; {
       config = wezterm.config_builder()
     end
 
-    config.default_prog = { '${zellij-dir}' }
+    config.default_prog = { '${zellij-cwd}' }
     config.enable_tab_bar = false
     config.window_decorations = "RESIZE"
     config.adjust_window_size_when_changing_font_size = false

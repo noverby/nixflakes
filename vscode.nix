@@ -1,7 +1,7 @@
 {
   pkgs,
   vscodeExtensions,
-  zellij-dir,
+  zellij-cwd,
   ...
 }: {
   enable = true;
@@ -74,10 +74,10 @@
     "terminal.integrated.automationProfile.linux" = {
       "path" = "${pkgs.nushell}/bin/nu";
     };
-    "terminal.integrated.defaultProfile.linux" = "zellij-dir";
+    "terminal.integrated.defaultProfile.linux" = "zellij-cwd";
     "terminal.integrated.profiles.linux" = {
-      "zellij-dir" = {
-        "path" = zellij-dir;
+      "zellij-cwd" = {
+        "path" = zellij-cwd;
       };
     };
     "vspacecode.bindingOverrides" = [];

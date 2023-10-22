@@ -1,6 +1,6 @@
 {
   gnomeExtensions,
-  zellij-dir,
+  zellij-cwd,
   ...
 }: {
   settings = {
@@ -35,7 +35,7 @@
       night-light-enabled = true;
     };
     "org/gnome/Console" = {
-      shell = [zellij-dir];
+      shell = [zellij-cwd];
     };
     "org/gnome/mutter/wayland/keybindings" = {
       restore-shortcuts = [];
