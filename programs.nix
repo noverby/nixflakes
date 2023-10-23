@@ -75,6 +75,9 @@
 
   zellij = {
     enable = true;
+    settings = {
+      copy_command = "wl-copy";
+    };
   };
 
   starship = {
