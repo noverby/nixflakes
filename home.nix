@@ -72,6 +72,7 @@
     evcxr
     rustc
     lurk
+    python311Packages.pip
 
     # Nix dev
     alejandra
