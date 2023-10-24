@@ -88,6 +88,7 @@
     yarn
     nodePackages.pnpm
     nodePackages.ts-node
+    python311Packages.playwright
     bun
   ];
 

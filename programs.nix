@@ -27,6 +27,7 @@
       DIRENV_LOG_FORMAT = "\"\"";
       NIXOS_OZONE_WL = "1";
       PATH = "${homeDirectory}/.local/bin:($env.PATH)";
+      PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
       XDG_DATA_DIRS = builtins.concatStringsSep ":" [
         "/usr/share"
         "/var/lib/flatpak/exports/share"
