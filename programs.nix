@@ -18,6 +18,7 @@
         show_banner: false
         keybindings: []
       }
+      $env.PATH = ${homeDirectory}/.local/bin:($env.PATH)
       def ghash [] {git rev-parse HEAD | tr -d '\\n' | wl-copy; git rev-parse HEAD}
     '';
     environmentVariables = {
@@ -26,7 +27,6 @@
       PYTHONSTARTUP = "${homeDirectory}/.pystartup";
       DIRENV_LOG_FORMAT = "\"\"";
       NIXOS_OZONE_WL = "1";
-      PATH = "${homeDirectory}/.local/bin:($env.PATH)";
       PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
       XDG_DATA_DIRS = builtins.concatStringsSep ":" [
         "/usr/share"
