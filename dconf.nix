@@ -30,6 +30,7 @@
     };
     "org/gnome/desktop/interface" = {
       clock-show-date = true;
+      clock-show-weekday = true;
     };
     "org/gnome/settings-daemon.plugins/color" = {
       night-light-enabled = true;
