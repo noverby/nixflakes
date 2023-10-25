@@ -24,7 +24,6 @@
 
     # System and hardware tools
     #sudo-rs
-    carapace
     uutils-coreutils-noprefix
     fortune-kind
     xorg.xkill
