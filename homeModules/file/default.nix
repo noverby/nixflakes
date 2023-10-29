@@ -66,33 +66,11 @@ with config.lib.file; {
     };
     ".local/bin/firefox-dev" = {
       executable = true;
-      text = ''
-        #!/usr/bin/env sh
-        args="-start-debugger-server 6000 -P dev http://localhost:3000"
-        if [ -x "$(command -v firefox)" ]; then
-          cmd='firefox'
-        elif [ -x "$(command -v flatpak)" ]; then
-          cmd='flatpak run org.mozilla.firefox'
-        else
-          cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.mozilla.firefox'
-        fi
-        $cmd $args "$@"
-      '';
+      source = ./firefox-dev;
     };
     ".local/bin/chromium-dev" = {
       executable = true;
-      text = ''
-        #!/usr/bin/env sh
-        args="--remote-debugging-port=9220"
-        if [ -x "$(command -v flatpak)" ]; then
-          cmd='chromium'
-        elif [ -x "$(command -v flatpak)" ]; then
-          cmd='flatpak run org.chromium.Chromium'
-        else
-          cmd='flatpak-spawn --host gnome-terminal -- flatpak run org.chromium.Chromium'
-        fi
-        $cmd $args "$@"
-      '';
+      source = ./chromium-dev;
     };
     ".npmrc".text = ''
       prefix=~/.global-modules
