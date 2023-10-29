@@ -136,6 +136,7 @@
   };
 
   # Users
+  environment.profiles = ["$HOME/.local"];
   users.users.noverby = {
     shell = "${pkgs.unstable.nushell}/bin/nu";
     isNormalUser = true;
