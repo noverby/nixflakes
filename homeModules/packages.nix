@@ -1,6 +1,5 @@
-{pkgs, ...}: rec {
-  all = base ++ gnomeExtensions;
-  base = with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     # Cosmic
     pop-launcher
     pop-icon-theme
@@ -89,15 +88,5 @@
     nodePackages.ts-node
     python311Packages.playwright
     bun
-  ];
-
-  gnomeExtensions = with pkgs.gnomeExtensions; [
-    pop-shell
-    legacy-gtk3-theme-scheme-auto-switcher
-    pop-launcher-super-key
-    quake-mode
-    caffeine
-    bluetooth-quick-connect
-    current-screen-only-for-alternate-tab
   ];
 }
