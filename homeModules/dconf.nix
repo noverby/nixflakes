@@ -1,9 +1,11 @@
 {
-  gnomeExtensions,
-  zellij-cwd,
+  pkgs,
+  homeDirectory,
   ...
-}: {
-  settings = {
+}: let
+  inherit (import ./packages.nix {inherit pkgs;}) gnomeExtensions;
+in {
+  dconf.settings = {
     "org/gnome/shell" = {
       enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
       disabled-extensions = [];
@@ -37,7 +39,7 @@
       night-light-enabled = true;
     };
     "org/gnome/Console" = {
-      shell = [zellij-cwd];
+      shell = ["${homeDirectory}/.local/bin/zellij-cwd"];
     };
     "org/gnome/mutter/wayland/keybindings" = {
       restore-shortcuts = [];

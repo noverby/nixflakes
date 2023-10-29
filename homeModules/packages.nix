@@ -1,7 +1,6 @@
-{pkgs, ...} @ inputs: let
-  username = "noverby";
-  homeDirectory = "/home/${username}";
-  basePkgs = with pkgs; [
+{pkgs, ...}: rec {
+  all = base ++ gnomeExtensions ++ vscodeExtensions;
+  base = with pkgs; [
     # Cosmic
     pop-launcher
     pop-icon-theme
@@ -116,38 +115,4 @@
     ms-vscode.hexeditor
     esbenp.prettier-vscode
   ];
-
-  zellij-cwd = "${homeDirectory}/.local/bin/zellij-cwd";
-
-  importModule = dir: import dir (inputs // {inherit importModule username homeDirectory zellij-cwd basePkgs gnomeExtensions vscodeExtensions;});
-in {
-  nixpkgs.config.allowUnfree = true;
-  home = {
-    inherit username homeDirectory;
-    stateVersion = "23.11";
-    packages = basePkgs ++ gnomeExtensions ++ vscodeExtensions;
-    enableDebugInfo = true;
-    file = importModule ./file.nix;
-  };
-
-  xdg = {
-    enable = true;
-    desktopEntries = {
-      beeper = {
-        name = "Beeper";
-        comment = "Beeper: Unified Messenger";
-        exec = "${pkgs.appimage-run}/bin/appimage-run ${homeDirectory}/Apps/beeper.AppImage --ozone-platform-hint=auto";
-        icon = "${homeDirectory}/Apps/beeper.png";
-        terminal = false;
-        categories = ["Utility"];
-        settings = {
-          StartupWMClass = "Beeper";
-        };
-      };
-    };
-  };
-
-  programs = importModule ./programs.nix;
-  systemd = importModule ./systemd.nix;
-  dconf = importModule ./dconf.nix;
 }

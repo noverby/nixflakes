@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   # Nix
   nix.settings = {
     max-jobs = 100;
@@ -91,7 +87,7 @@
   virtualisation = {
     podman = {
       enable = true;
-      package = pkgs-unstable.podman;
+      package = pkgs.unstable.podman;
       dockerCompat = true;
     };
     libvirtd.enable = true;
@@ -125,7 +121,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    pkgs-unstable.youki
+    pkgs.unstable.youki
     docker-compose
     gnome.gnome-boxes
     vim
@@ -141,7 +137,7 @@
 
   # Users
   users.users.noverby = {
-    shell = "${pkgs-unstable.nushell}/bin/nu";
+    shell = "${pkgs.unstable.nushell}/bin/nu";
     isNormalUser = true;
     description = "Niclas Overby";
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];

@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  user.services = {
+  systemd.user.services = {
     protonmail-bridge = {
       Unit = {
         Description = "Service to run the Protonmail bridge client";

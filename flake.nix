@@ -9,47 +9,23 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    flakelight.url = "github:accelbread/flakelight";
   };
 
   outputs = {
+    flakelight,
     nixpkgs,
     nixpkgs-unstable,
     nixos-hardware,
     home-manager,
     ...
-  }: let
-    system = "x86_64-linux";
-    config = {
-      allowUnfree = true;
-    };
-    pkgs-unstable = import nixpkgs-unstable {
-      inherit pkgs config system;
-    };
-    pkgs = import nixpkgs {inherit config system;};
-  in {
-    nixosConfigurations = {
-      levitas = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit pkgs pkgs-unstable;};
-        modules = [
-          ./framework/hardware-configuration.nix
-          nixos-hardware
-          .nixosModules
-          .framework-13th-gen-intel
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useUserPackages = true;
-              useGlobalPkgs = true;
-              users.noverby = ./home.nix;
-              extraSpecialArgs = {
-                pkgs = pkgs-unstable;
-              };
-            };
-          }
-          ./configuration.nix
-        ];
-      };
-    };
-  };
+  } @ inputs:
+    flakelight ./. ({
+      lib,
+      system,
+      ...
+    }: {
+      inherit inputs;
+      nixDir = ./.;
+    });
 }
