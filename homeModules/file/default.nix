@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   homeDirectory,
   ...
@@ -34,16 +33,7 @@ with config.lib.file; {
     };
     ".npmrc".source = ./npmrc.ini;
     ".pystartup".source = ./pystartup;
-    ".config/pop-shell/config.json".text =
-      builtins.toJSON
-      {
-        float = [
-          {
-            class = "org.wezfurlong.wezterm";
-          }
-        ];
-        log_on_focus = false;
-      };
+    ".config/pop-shell/config.json".source = ./pop-shell/config.json;
     ".config/wezterm/wezterm.lua".text = ''
       local wezterm = require 'wezterm'
 
