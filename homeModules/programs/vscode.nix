@@ -74,12 +74,12 @@ in {
       "terminal.integrated.gpuAcceleration" = "on";
       "editor.renderLineHighlight" = "none";
       "terminal.integrated.automationProfile.linux" = {
-        "path" = "${pkgs.nushell}/bin/nu";
+        "path" = "nu";
       };
       "terminal.integrated.defaultProfile.linux" = "zellij-cwd";
       "terminal.integrated.profiles.linux" = {
         "zellij-cwd" = {
-          "path" = "${homeDirectory}/.local/bin/zellij-cwd";
+          "path" = "zellij-cwd";
         };
       };
       "vspacecode.bindingOverrides" = [];
