@@ -72,14 +72,7 @@ with config.lib.file; {
       executable = true;
       source = ./chromium-dev;
     };
-    ".npmrc".text = ''
-      prefix=~/.global-modules
-      init.author.name=Niclas Overby
-      init.author.email=niclas@overby.me
-      init.author.url=https://niclas.overby.me/
-      init.version=0.0.1
-      init.license=MIT
-    '';
+    ".npmrc".source = ./npmrc.ini;
     ".pystartup".source = ./pystartup;
     ".config/pop-shell/config.json".text =
       builtins.toJSON
