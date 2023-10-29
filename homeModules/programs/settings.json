@@ -1,0 +1,150 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "kamadorueda.alejandra",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "cmake.configureOnOpen": false,
+  "diffEditor.maxComputationTime": 0,
+  "diffEditor.wordWrap": "off",
+  "editor.cursorStyle": "line",
+  "editor.folding": false,
+  "editor.foldingHighlight": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "errorLens.enabledDiagnosticLevels": ["error", "info"],
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.bsb.lock": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.next": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openDiffOnClick": false,
+  "hexeditor.columnWidth": 16,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "hexeditor.showDecodedText": true,
+  "keyboard.dispatch": "keyCode",
+  "mesonbuild.configureOnOpen": true,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {},
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "redhat.telemetry.enabled": false,
+  "remote.SSH.enableRemoteCommand": true,
+  "remote.autoForwardPorts": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.automationProfile.linux": {
+    "path": "nu"
+  },
+  "terminal.integrated.defaultProfile.linux": "zellij-cwd",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "terminal.integrated.profiles.linux": {
+    "zellij-cwd": {
+      "path": "zellij-cwd"
+    }
+  },
+  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.tabs.title": "${sequence}",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.mode": "none",
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<C-f>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ],
+  "vspacecode.bindingOverrides": [],
+  "window.autoDetectColorScheme": true,
+  "window.openFoldersInNewWindow": "on",
+  "window.title": "${rootName}${separator}${activeEditorShort}",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": -1,
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 6,
+  "workbench.editorAssociations": {
+    "*.bin": "hexEditor.hexedit",
+    "*.ipynb": "jupyter-notebook",
+    "*.md": "default"
+  },
+  "workbench.editorLargeFileConfirmation": 20,
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none"
+}
