@@ -62,14 +62,7 @@ with config.lib.file; {
     };
     ".local/bin/zellij-cwd" = {
       executable = true;
-      text = ''
-        #!/usr/bin/env sh
-
-        SESSION=''${PWD//./_}
-        [[ "$SESSION" =~ ^"$HOME"(/|$) ]] && SESSION="~''${SESSION#$HOME}"
-        SESSION=''${SESSION//\//|}
-        zellij attach -c $SESSION
-      '';
+      source = ./zellij-cwd;
     };
     ".local/bin/firefox-dev" = {
       executable = true;
