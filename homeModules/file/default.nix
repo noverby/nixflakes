@@ -80,26 +80,7 @@ with config.lib.file; {
       init.version=0.0.1
       init.license=MIT
     '';
-    ".pystartup".text = ''
-      import atexit
-      import os
-      import readline
-      import rlcompleter
-
-      historyPath = os.path.expanduser("~/.pyhistory")
-
-      def save_history(historyPath=historyPath):
-          import readline
-          readline.write_history_file(historyPath)
-
-      if os.path.exists(historyPath):
-          readline.read_history_file(historyPath)
-      readline.parse_and_bind('tab: complete')
-
-
-      atexit.register(save_history)
-      del os, atexit, readline, rlcompleter, save_history, historyPath
-    '';
+    ".pystartup".source = ./pystartup;
     ".config/pop-shell/config.json".text =
       builtins.toJSON
       {
