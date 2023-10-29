@@ -1,2 +1,0 @@
-#!/usr/bin/env nu
-firefox -start-debugger-server 6000 -P dev http://localhost:3000 "$@"

@@ -23,14 +23,6 @@ with config.lib.file; {
       executable = true;
       source = ./bin/zellij-cwd;
     };
-    ".local/bin/firefox-dev" = {
-      executable = true;
-      source = ./bin/firefox-dev;
-    };
-    ".local/bin/chromium-dev" = {
-      executable = true;
-      source = ./bin/chromium-dev;
-    };
     ".npmrc".source = ./config/npmrc.ini;
     ".pystartup".source = ./config/pystartup;
     ".config/pop-shell/config.json".source = ./config/pop-shell/config.json;
