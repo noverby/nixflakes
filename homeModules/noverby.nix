@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./home.nix ./systemd.nix ./packages.nix ./dconf.nix ./xdg.nix ./file ./programs];
+  imports = [./home.nix ./systemd.nix ./packages.nix ./gnome.nix ./xdg.nix ./file ./programs];
 }

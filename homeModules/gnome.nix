@@ -13,6 +13,7 @@
     current-screen-only-for-alternate-tab
   ];
 in {
+  home.packages = gnomeExtensions;
   dconf.settings = {
     "org/gnome/shell" = {
       enabled-extensions = map (extension: extension.extensionUuid) gnomeExtensions;
