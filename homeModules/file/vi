@@ -10,7 +10,7 @@ for arg in "$@"; do
     args+=("$arg")
     ;;
   +*)
-    line=("''${arg:1}")
+    line=("${arg:1}")
     ;;
   *)
     files+=("$arg")
@@ -18,8 +18,8 @@ for arg in "$@"; do
   esac
 done
 
-nfile=''${#files[@]}
-for file in "''${files[@]}"; do
+nfile=${#files[@]}
+for file in "${files[@]}"; do
   if [[ "$file" = /* ]]; then
     file=$file
   else
