@@ -199,8 +199,5 @@
         obs-3d-effect
       ];
     };
-
-    #git = importModule ./git.nix;
-    #vscode = importModule ./vscode.nix;
   };
 }
