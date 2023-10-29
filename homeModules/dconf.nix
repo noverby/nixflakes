@@ -3,7 +3,15 @@
   homeDirectory,
   ...
 }: let
-  inherit (import ./packages.nix {inherit pkgs;}) gnomeExtensions;
+  gnomeExtensions = with pkgs.gnomeExtensions; [
+    pop-shell
+    legacy-gtk3-theme-scheme-auto-switcher
+    pop-launcher-super-key
+    quake-mode
+    caffeine
+    bluetooth-quick-connect
+    current-screen-only-for-alternate-tab
+  ];
 in {
   dconf.settings = {
     "org/gnome/shell" = {
