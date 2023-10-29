@@ -114,5 +114,6 @@
     ms-python.python
     ms-vscode.hexeditor
     esbenp.prettier-vscode
+    thenuprojectcontributors.vscode-nushell-lang
   ];
 }
