@@ -1,8 +1,4 @@
-{
-  pkgs,
-  homeDirectory,
-  ...
-}: let
+{pkgs, ...}: let
   gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
     legacy-gtk3-theme-scheme-auto-switcher
@@ -48,7 +44,7 @@ in {
       night-light-enabled = true;
     };
     "org/gnome/Console" = {
-      shell = ["${homeDirectory}/.local/bin/zellij-cwd"];
+      shell = ["zellij-cwd"];
     };
     "org/gnome/mutter/wayland/keybindings" = {
       restore-shortcuts = [];
