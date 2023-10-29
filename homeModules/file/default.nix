@@ -86,7 +86,7 @@ with config.lib.file; {
         config = wezterm.config_builder()
       end
 
-      config.default_prog = { '${homeDirectory}/.local/bin/zellij-cwd' }
+      config.default_prog = { 'zellij-cwd' }
       config.enable_tab_bar = false
       config.window_decorations = "RESIZE"
       config.adjust_window_size_when_changing_font_size = false
