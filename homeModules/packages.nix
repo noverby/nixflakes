@@ -1,5 +1,5 @@
 {pkgs, ...}: rec {
-  all = base ++ gnomeExtensions ++ vscodeExtensions;
+  all = base ++ gnomeExtensions;
   base = with pkgs; [
     # Cosmic
     pop-launcher
@@ -99,21 +99,5 @@
     caffeine
     bluetooth-quick-connect
     current-screen-only-for-alternate-tab
-  ];
-
-  vscodeExtensions = with pkgs.vscode-extensions; [
-    vscodevim.vim
-    vspacecode.vspacecode
-    vspacecode.whichkey
-
-    mkhl.direnv
-    jnoortheen.nix-ide
-    kamadorueda.alejandra
-    rust-lang.rust-analyzer
-    tamasfe.even-better-toml
-    ms-python.python
-    ms-vscode.hexeditor
-    esbenp.prettier-vscode
-    thenuprojectcontributors.vscode-nushell-lang
   ];
 }
