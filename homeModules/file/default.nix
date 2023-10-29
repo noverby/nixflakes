@@ -18,47 +18,7 @@ with config.lib.file; {
     ".ssh/socket/.keep".source = builtins.toFile "keep" "";
     ".local/bin/vi" = {
       executable = true;
-      text = ''
-        #!/usr/bin/env sh
-        cmd=${pkgs.vscodium}/bin/codium
-        files=()
-        args=()
-        line=0
-
-        for arg in "$@"; do
-          case $arg in
-          -*)
-            args+=("$arg")
-            ;;
-          +*)
-            line=("''${arg:1}")
-            ;;
-          *)
-            files+=("$arg")
-            ;;
-          esac
-        done
-
-        nfile=''${#files[@]}
-        for file in "''${files[@]}"; do
-          if [[ "$file" = /* ]]; then
-            file=$file
-          else
-            file="$PWD/$file"
-          fi
-          touch "$file"
-          if [ $nfile -gt 1 ]; then
-            $cmd -r $args "$file" &
-          else
-            if [ -d $file ];
-            then
-              $cmd -n $args "$file"
-            else
-              $cmd -rg $args "$file:$line"
-            fi
-          fi
-        done
-      '';
+      source = ./vi;
     };
     ".local/bin/zellij-cwd" = {
       executable = true;
