@@ -18,6 +18,7 @@
         $env.config = {
           show_banner: false
           keybindings: []
+          shell_integration: true
         }
         $env.PATH = ($env.PATH | split row (char esep))
         $env.PATH = ($env.PATH | prepend  "${homeDirectory}/.local/bin")
