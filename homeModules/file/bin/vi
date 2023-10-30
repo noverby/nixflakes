@@ -40,8 +40,8 @@ done
 
 ## TODO: nushell port
 ## Blocked by: https://github.com/nushell/nushell/issues/10887
-#!/usr/bin/env nu
-#def main [...vargs,--wait,--diff] {
+##!/usr/bin/env nu
+#def main [--wait,--diff,...vargs] {
 #  mut args = $vargs
 #  mut files = []
 #  mut line = 0
@@ -55,11 +55,7 @@ done
 #    if ($arg | describe) == "int" {
 #      $line = $arg
 #    } else {
-#      let file = if $arg =~ /.* {
-#        $arg
-#      } else {
-#        $"(pwd)/($arg)"
-#      }
+#      let file = ($arg | path expand)
 #      $files = ($files | append $file)
 #    }
 #  }
@@ -72,3 +68,4 @@ done
 #      [_, "dir"] => (codium --new-window $args $file)
 #    }
 #  }
+#}
