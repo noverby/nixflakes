@@ -41,6 +41,7 @@
     usbutils
 
     # File tools
+    helix
     file
     fd
     glab
