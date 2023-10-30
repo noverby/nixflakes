@@ -37,3 +37,38 @@ for file in "${files[@]}"; do
     fi
   fi
 done
+
+## TODO: nushell port
+## Blocked by: https://github.com/nushell/nushell/issues/10887
+#!/usr/bin/env nu
+#def main [...vargs,--wait,--diff] {
+#  mut args = $vargs
+#  mut files = []
+#  mut line = 0
+#  if $wait {
+#    $args = ($args | append "--wait")
+#  }
+#  if $diff {
+#    $args = ($args | append "--diff")
+#  }
+#  for arg in $args {
+#    if ($arg | describe) == "int" {
+#      $line = $arg
+#    } else {
+#      let file = if $arg =~ /.* {
+#        $arg
+#      } else {
+#        $"(pwd)/($arg)"
+#      }
+#      $files = ($files | append $file)
+#    }
+#  }
+#
+#  let nfile = ($files | length)
+#  for file in $files {
+#    match [nfiles, ($file | path type)] {
+#      [1, "file"] => (codium --reuse-window --goto $args $"($file):($line)")
+#      [_, "file"] => (codium --reuse-window $args $file)
+#      [_, "dir"] => (codium --new-window $args $file)
+#    }
+#  }
