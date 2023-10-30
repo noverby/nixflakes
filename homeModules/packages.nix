@@ -19,9 +19,8 @@
     gnome.gnome-tweaks
     gnome.dconf-editor
     celeste
-    pueue
 
-    # System and hardware tools
+    # System tools
     #sudo-rs
     uutils-coreutils-noprefix
     fortune-kind
@@ -32,8 +31,9 @@
     wget
     wl-clipboard
     fpp
+    pueue
 
-    # System and hardware tools
+    # Hardware tools
     acpi
     util-linux
     pciutils
