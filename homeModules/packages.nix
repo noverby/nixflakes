@@ -19,6 +19,7 @@
     gnome.gnome-tweaks
     gnome.dconf-editor
     celeste
+    pueue
 
     # System and hardware tools
     #sudo-rs

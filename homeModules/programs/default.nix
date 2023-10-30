@@ -90,6 +90,7 @@
         man = "tldr";
         top = "htop";
         cd = "z";
+        bg = "pueue";
         jq = "jql";
         optpng = "oxipng";
         firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
