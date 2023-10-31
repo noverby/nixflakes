@@ -50,6 +50,7 @@
         DIRENV_LOG_FORMAT = "\"\"";
         NIXOS_OZONE_WL = "1";
         PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
+        GRANTED_ALIAS_CONFIGURED = "true";
         XDG_DATA_DIRS = builtins.concatStringsSep ":" [
           "/usr/share"
           "/var/lib/flatpak/exports/share"
