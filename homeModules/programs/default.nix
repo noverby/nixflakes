@@ -3,7 +3,45 @@
   username,
   homeDirectory,
   ...
-}: {
+}: let
+  shellAliases = {
+    open = "xdg-open";
+    vim = "nvim";
+    ga = "git add";
+    gc = "git commit";
+    gca = "git commit --amend";
+    gcn = "git commit --no-verify";
+    gcp = "git cherry-pick";
+    gf = "git fetch";
+    gl = "git log --oneline --no-abbrev-commit";
+    glg = "git log --graph";
+    gpl = "git pull";
+    gps = "git push";
+    gr = "git rebase";
+    gri = "git rebase -i";
+    grc = "git rebase --continue";
+    gs = "git status";
+    gsh = "git stash";
+    gsw = "git switch";
+    gco = "git checkout";
+    gcb = "git checkout -b";
+    gundo = "git reset HEAD~1 --soft";
+    du = "dust";
+    cp = "xcp";
+    rm = "rip";
+    cat = "bat";
+    find = "fd";
+    grep = "rg";
+    man = "tldr";
+    top = "htop";
+    cd = "z";
+    bg = "pueue";
+    jq = "jql";
+    optpng = "oxipng";
+    firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
+    chromium-dev = "chromium --remote-debugging-port=9220";
+  };
+in {
   imports = [./git.nix ./vscode.nix];
   programs = {
     home-manager.enable = true;
@@ -14,6 +52,12 @@
 
     nushell = {
       enable = true;
+      shellAliases =
+        shellAliases
+        // {
+          sed = "sd";
+          cut = "choose";
+        };
       configFile.text = ''
         $env.config = {
           show_banner: false
@@ -33,51 +77,10 @@
         PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
         GRANTED_ALIAS_CONFIGURED = "\"true\"";
         XDG_DATA_DIRS = builtins.concatStringsSep ":" [
-          "/usr/share"
-          "/var/lib/flatpak/exports/share"
           "${homeDirectory}/.nix-profile/share"
           "${homeDirectory}/.local/share/flatpak/exports/share"
           "($env.XDG_DATA_DIRS)"
         ];
-      };
-      shellAliases = {
-        open = "xdg-open";
-        vim = "nvim";
-        ga = "git add";
-        gc = "git commit";
-        gca = "git commit --amend";
-        gcn = "git commit --no-verify";
-        gcp = "git cherry-pick";
-        gf = "git fetch";
-        gl = "git log --oneline --no-abbrev-commit";
-        glg = "git log --graph";
-        gpl = "git pull";
-        gps = "git push";
-        gr = "git rebase";
-        gri = "git rebase -i";
-        grc = "git rebase --continue";
-        gs = "git status";
-        gsh = "git stash";
-        gsw = "git switch";
-        gco = "git checkout";
-        gcb = "git checkout -b";
-        gundo = "git reset HEAD~1 --soft";
-        du = "dust";
-        cp = "xcp";
-        rm = "rip";
-        cat = "bat";
-        sed = "sd";
-        cut = "choose";
-        find = "fd";
-        grep = "rg";
-        man = "tldr";
-        top = "htop";
-        cd = "z";
-        bg = "pueue";
-        jq = "jql";
-        optpng = "oxipng";
-        firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
-        chromium-dev = "chromium --remote-debugging-port=9220";
       };
     };
 
@@ -89,6 +92,7 @@
 
     bash = {
       enable = true;
+      inherit shellAliases;
       shellOptions = [
         "histappend"
         "checkwinsize"
