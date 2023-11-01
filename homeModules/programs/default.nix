@@ -87,6 +87,30 @@
       enableBashIntegration = true;
     };
 
+    bash = {
+      enable = true;
+      shellOptions = [
+        "histappend"
+        "checkwinsize"
+        "extglob"
+        "globstar"
+        "checkjobs"
+      ];
+      initExtra = ''
+        export SHELL="${pkgs.bash}/bin/bash"
+      '';
+      historyControl = ["ignoredups" "erasedups"];
+    };
+
+    readline = {
+      enable = true;
+      extraConfig = ''
+        "\e[A":history-search-backward
+        "\e[B":history-search-forward
+        set completion-ignore-case On
+        set completion-prefix-display-length 2
+      '';
+    };
 
     zellij = {
       enable = true;
@@ -121,33 +145,6 @@
       enable = true;
       enableNushellIntegration = true;
       enableBashIntegration = true;
-    };
-
-    bash = {
-      enable = true;
-      shellOptions = [
-        "histappend"
-        "checkwinsize"
-        "extglob"
-        "globstar"
-        "checkjobs"
-      ];
-      profileExtra = ''
-        if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
-          source ~/.nix-profile/etc/profile.d/nix.sh
-        fi
-      '';
-      historyControl = ["ignoredups" "erasedups"];
-    };
-
-    readline = {
-      enable = true;
-      extraConfig = ''
-        "\e[A":history-search-backward
-        "\e[B":history-search-forward
-        set completion-ignore-case On
-        set completion-prefix-display-length 2
-      '';
     };
 
     ssh = {
