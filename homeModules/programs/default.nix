@@ -110,16 +110,19 @@
     starship = {
       enable = true;
       enableNushellIntegration = true;
+      enableBashIntegration = true;
     };
 
     direnv = {
       enable = true;
       enableNushellIntegration = true;
+      enableBashIntegration = true;
     };
 
     zoxide = {
       enable = true;
       enableNushellIntegration = true;
+      enableBashIntegration = true;
     };
 
     nix-index = {
