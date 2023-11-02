@@ -58,19 +58,6 @@
     };
   };
 
-  # Display
-  services.xserver = {
-    enable = true;
-    layout = "dk";
-    xkbVariant = "";
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
-    excludePackages = [pkgs.xterm];
-  };
-
   # Fonts
   fonts.fonts = with pkgs;
     [
@@ -130,10 +117,6 @@
     gjs
     glib.dev
   ];
-  # Unmanaged gnome-extensions deps
-  environment.sessionVariables = with pkgs; {
-    GI_TYPELIB_PATH = map (pkg: "${pkg}/lib/girepository-1.0") [vte pango harfbuzz gtk3 gdk-pixbuf at-spi2-core];
-  };
 
   # Users
   environment.profiles = ["$HOME/.local"];
@@ -156,10 +139,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    gnome = {
-      gnome-keyring.enable = true;
-      gnome-browser-connector.enable = true;
-    };
     kmscon = {
       enable = true;
       hwRender = true;
@@ -167,6 +146,12 @@
         font-name=MesloLGS NF
         font-size=14
       '';
+    };
+    xserver = {
+      enable = true;
+      layout = "dk";
+      xkbVariant = "";
+      excludePackages = [pkgs.xterm];
     };
   };
 

@@ -30,6 +30,7 @@ in
       self.nixosModules.framework
       self.nixosModules.configuration
       self.nixosModules.home-manager
+      self.nixosModules.gnome
       nixos-hardware
       .nixosModules
       .framework-13th-gen-intel
