@@ -1,71 +1,29 @@
-#!/usr/bin/env sh
-cmd=codium
-files=()
-args=()
-line=0
+#!/usr/bin/env nu
+def main [--wait,--diff,...vargs: string] {
+  mut args = []
+  mut files = []
+  mut line = 0
+  if $wait {
+    $args = ($args | append "--wait")
+  }
+  if $diff {
+    $args = ($args | append "--diff")
+  }
+  for arg in $vargs {
+    if ($arg | str starts-with "+") {
+      $line = ($arg | str substring 1..)
+    } else {
+      let file = ($arg | path expand)
+      $files = ($files | append $file)
+    }
+  }
 
-for arg in "$@"; do
-  case $arg in
-  -*)
-    args+=("$arg")
-    ;;
-  +*)
-    line=("${arg:1}")
-    ;;
-  *)
-    files+=("$arg")
-    ;;
-  esac
-done
-
-nfile=${#files[@]}
-for file in "${files[@]}"; do
-  if [[ "$file" = /* ]]; then
-    file=$file
-  else
-    file="$PWD/$file"
-  fi
-  touch "$file"
-  if [ $nfile -gt 1 ]; then
-    $cmd -r $args "$file" &
-  else
-    if [ -d $file ];
-    then
-      $cmd -n $args "$file"
-    else
-      $cmd -rg $args "$file:$line"
-    fi
-  fi
-done
-
-## TODO: nushell port
-## Blocked by: https://github.com/nushell/nushell/issues/10887
-##!/usr/bin/env nu
-#def main [--wait,--diff,...vargs] {
-#  mut args = $vargs
-#  mut files = []
-#  mut line = 0
-#  if $wait {
-#    $args = ($args | append "--wait")
-#  }
-#  if $diff {
-#    $args = ($args | append "--diff")
-#  }
-#  for arg in $args {
-#    if ($arg | describe) == "int" {
-#      $line = $arg
-#    } else {
-#      let file = ($arg | path expand)
-#      $files = ($files | append $file)
-#    }
-#  }
-#
-#  let nfile = ($files | length)
-#  for file in $files {
-#    match [nfiles, ($file | path type)] {
-#      [1, "file"] => (codium --reuse-window --goto $args $"($file):($line)")
-#      [_, "file"] => (codium --reuse-window $args $file)
-#      [_, "dir"] => (codium --new-window $args $file)
-#    }
-#  }
-#}
+  let fileCount = ($files | length)
+  for file in $files {
+    match [$fileCount, ($file | path type)] {
+      [1, "file"] => (codium --reuse-window $args --goto $"($file):($line)")
+      [_, "file"] => (codium --reuse-window $args $file)
+      [_, "dir"] => (codium --new-window $args $file)
+    }
+  }
+}
