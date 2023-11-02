@@ -7,3 +7,21 @@ $env.PATH = ($env.PATH | split row (char esep))
 $env.PATH = ($env.PATH | prepend  "${homeDirectory}/.local/bin")
 
 def ghash [] {git rev-parse HEAD | tr -d '\\n' | wl-copy; git rev-parse HEAD}
+
+def-env assume [profile?: string = ""] {
+  let granted = assumego $profile | split row " "
+  load-env {
+    AWS_ACCESS_KEY_ID: $granted.1,
+    AWS_SECRET_ACCESS_KEY: $granted.2,
+    AWS_SESSION_TOKEN: $granted.3,
+    AWS_PROFILE: $granted.4,
+    AWS_REGION: $granted.5,
+    AWS_SESSION_EXPIRATION: $granted.6,
+    AWS_CREDENTIAL_EXPIRATION: $granted.6,
+    GRANTED_SSO: $granted.7,
+    GRANTED_SSO_START_URL: $granted.8,
+    GRANTED_SSO_ROLE_NAME: $granted.9,
+    GRANTED_SSO_REGION: $granted.10,
+    GRANTED_SSO_ACCOUNT_ID: $granted.11,
+  }
+ }
