@@ -28,7 +28,6 @@
     gundo = "git reset HEAD~1 --soft";
     du = "dust";
     cp = "xcp";
-    rm = "rip";
     cat = "bat";
     find = "fd";
     grep = "rg";

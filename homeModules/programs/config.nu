@@ -8,6 +8,8 @@ $env.PATH = ($env.PATH | prepend  "${homeDirectory}/.local/bin")
 
 def ghash [] {git rev-parse HEAD | tr -d '\\n' | wl-copy; git rev-parse HEAD}
 
+def rm [-r,-f, ...args] { rip $args }
+
 def-env assume [profile?: string = ""] {
   let granted = assumego $profile | split row " "
   load-env {
