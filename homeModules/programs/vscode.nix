@@ -3,10 +3,6 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-      vspacecode.vspacecode
-      vspacecode.whichkey
-
       mkhl.direnv
       jnoortheen.nix-ide
       kamadorueda.alejandra

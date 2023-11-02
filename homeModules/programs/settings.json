@@ -90,44 +90,6 @@
   "terminal.integrated.tabs.title": "${sequence}",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.mode": "none",
-  "vim.easymotion": true,
-  "vim.handleKeys": {
-    "<C-f>": false
-  },
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
-    },
-    {
-      "before": [","],
-      "commands": [
-        "vspacecode.space",
-        {
-          "args": "m",
-          "command": "whichkey.triggerKey"
-        }
-      ]
-    }
-  ],
-  "vim.useSystemClipboard": true,
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
-    },
-    {
-      "before": [","],
-      "commands": [
-        "vspacecode.space",
-        {
-          "args": "m",
-          "command": "whichkey.triggerKey"
-        }
-      ]
-    }
-  ],
-  "vspacecode.bindingOverrides": [],
   "window.autoDetectColorScheme": true,
   "window.openFoldersInNewWindow": "on",
   "window.title": "${rootName}${separator}${activeEditorShort}",

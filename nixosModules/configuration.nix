@@ -111,7 +111,7 @@
     pkgs.unstable.youki
     docker-compose
     gnome.gnome-boxes
-    vim
+    helix
     python3
     powertop
     gjs
