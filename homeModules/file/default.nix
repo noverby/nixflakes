@@ -27,5 +27,6 @@ with config.lib.file; {
     ".pystartup".source = ./config/pystartup;
     ".config/pop-shell/config.json".source = ./config/pop-shell/config.json;
     ".config/wezterm/wezterm.lua".source = ./config/wezterm.lua;
+    ".config/mpv/mpv.conf".source = ./config/mpv/mpv.conf;
   };
 }
