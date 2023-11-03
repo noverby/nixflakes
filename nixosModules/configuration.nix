@@ -38,6 +38,7 @@
   # Network
   networking = {
     hostName = "levitas";
+    nameservers = ["1.1.1.3" "1.0.0.3"];
     networkmanager.enable = true;
   };
 
