@@ -36,10 +36,18 @@
   };
 
   # Network
-  networking = {
+  networking = rec {
     hostName = "levitas";
-    nameservers = ["1.1.1.3" "1.0.0.3"];
-    networkmanager.enable = true;
+    nameservers = [
+      "1.1.1.3"
+      "1.0.0.3"
+      "2606:4700:4700::1113"
+      "2606:4700:4700::1003"
+    ];
+    networkmanager = {
+      enable = true;
+      insertNameservers = nameservers;
+    };
   };
 
   # Locale
