@@ -32,6 +32,7 @@
     wl-clipboard
     fpp
     pueue
+    waypipe
 
     # Hardware tools
     acpi
