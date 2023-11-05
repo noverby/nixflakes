@@ -1,4 +1,40 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  vscodePname = config.programs.vscode.package.pname;
+  configDir =
+    {
+      "vscode" = "Code";
+      "vscode-insiders" = "Code - Insiders";
+      "vscodium" = "VSCodium";
+    }
+    .${vscodePname};
+  settingsPath = "${config.xdg.configHome}/${configDir}/User/settings.json";
+  keybindingsPath = "${config.xdg.configHome}/${configDir}/User/keybindings.json";
+in {
+  home = {
+    activation = {
+      removeExistingVSCodeSettings = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
+        rm -rf "${settingsPath}"
+      '';
+
+      overwriteVSCodeSymlink = let
+        userSettings = config.programs.vscode.userSettings;
+        jsonSettings = pkgs.writeText "tmp_vscode_settings" (builtins.toJSON userSettings);
+        keybindings = config.programs.vscode.keybindings;
+        jsonKeybindings = pkgs.writeText "tmp_vscode_keybindings" (builtins.toJSON keybindings);
+      in
+        lib.hm.dag.entryAfter ["linkGeneration"] ''
+          ${pkgs.rm-improved}/bin/rip "${settingsPath}" "${keybindingsPath}"
+          cat ${jsonSettings} | ${pkgs.jq}/bin/jq --monochrome-output > "${settingsPath}"
+          cat ${jsonKeybindings} | ${pkgs.jq}/bin/jq --monochrome-output > "${keybindingsPath}"
+        '';
+    };
+  };
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
