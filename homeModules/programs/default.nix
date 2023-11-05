@@ -163,6 +163,21 @@ in {
       package = pkgs.firefox.override {
         cfg.enableGnomeExtensions = true;
       };
+      profiles = rec {
+        default = {
+          isDefault = true;
+          userChrome = builtins.readFile ./userChrome.css;
+          settings = {
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          };
+        };
+        dev =
+          default
+          // {
+            id = 1;
+            isDefault = false;
+          };
+      };
     };
 
     obs-studio = {
