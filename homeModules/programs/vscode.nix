@@ -18,7 +18,7 @@ in {
   home = {
     activation = {
       removeExistingVSCodeSettings = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
-        rm -rf "${settingsPath}"
+        rm -rf "${settingsPath}" "${keybindingsPath}"
       '';
 
       overwriteVSCodeSymlink = let
@@ -28,7 +28,7 @@ in {
         jsonKeybindings = pkgs.writeText "tmp_vscode_keybindings" (builtins.toJSON keybindings);
       in
         lib.hm.dag.entryAfter ["linkGeneration"] ''
-          ${pkgs.rm-improved}/bin/rip "${settingsPath}" "${keybindingsPath}"
+          rm -rf "${settingsPath}" "${keybindingsPath}"
           cat ${jsonSettings} | ${pkgs.jq}/bin/jq --monochrome-output > "${settingsPath}"
           cat ${jsonKeybindings} | ${pkgs.jq}/bin/jq --monochrome-output > "${keybindingsPath}"
         '';
