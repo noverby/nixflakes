@@ -813,11 +813,6 @@
     "command": "workbench.action.navigateBack",
     "when": "editorTextFocus && dance.mode == 'normal' || editorTextFocus && dance.mode == 'select'"
   },
-  {
-    "key": "ctrl+s",
-    "command": "dance.selections.save",
-    "when": "editorTextFocus && dance.mode == 'normal' || editorTextFocus && dance.mode == 'select'"
-  },
 
   {
     "key": "space",
