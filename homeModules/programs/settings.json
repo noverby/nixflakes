@@ -156,7 +156,7 @@
           "text": "Save document"
         },
         "q": {
-          "command": "quit",
+          "command": "workbench.action.closeActiveEditor",
           "text": "Quit file"
         }
       },
