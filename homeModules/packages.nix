@@ -25,14 +25,17 @@
     uutils-coreutils-noprefix
     fortune-kind
     xorg.xkill
-    openssl
     lsof
-    whois
-    wget
     wl-clipboard
     fpp
     pueue
     waypipe
+
+    # Network tools
+    xh
+    wget
+    whois
+    openssl
 
     # Hardware tools
     acpi
