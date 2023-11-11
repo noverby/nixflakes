@@ -6,6 +6,7 @@
     pop-gtk-theme
 
     # General apps
+    genact
     wezterm
     bitwarden
     slack
