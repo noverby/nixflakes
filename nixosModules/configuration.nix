@@ -113,7 +113,6 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    pkgs.unstable.youki
     gnome.gnome-boxes
     helix
     python3
