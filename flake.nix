@@ -12,20 +12,9 @@
     flakelight.url = "github:accelbread/flakelight";
   };
 
-  outputs = {
-    flakelight,
-    nixpkgs,
-    nixpkgs-unstable,
-    nixos-hardware,
-    home-manager,
-    ...
-  } @ inputs:
-    flakelight ./. ({
-      lib,
-      system,
-      ...
-    }: {
+  outputs = {flakelight, ...} @ inputs:
+    flakelight ./. {
       inherit inputs;
       nixDir = ./.;
-    });
+    };
 }
