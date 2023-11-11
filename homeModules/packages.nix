@@ -79,6 +79,7 @@
     rustc
     lurk
     python311Packages.pip
+    roc
 
     # Nix dev
     alejandra

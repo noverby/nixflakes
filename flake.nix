@@ -9,7 +9,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    flakelight.url = "github:accelbread/flakelight";
+    flakelight = {
+      url = "github:accelbread/flakelight";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    roc.url = "github:roc-lang/roc";
   };
 
   outputs = {flakelight, ...} @ inputs:

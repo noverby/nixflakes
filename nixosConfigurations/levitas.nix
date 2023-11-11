@@ -3,7 +3,7 @@
   src,
   ...
 }: let
-  inherit (inputs) nixpkgs nixpkgs-unstable;
+  inherit (inputs) nixpkgs nixpkgs-unstable roc;
   system = "x86_64-linux";
   config = {
     allowUnfree = true;
@@ -15,8 +15,11 @@
       // {
         packageOverrides = pkgs: {
           unstable =
-            import nixpkgs-unstable
-            {inherit pkgs config system;};
+            (import nixpkgs-unstable
+              {inherit pkgs config system;})
+            // {
+              roc = roc.packages.${system}.default;
+            };
         };
       };
   };
@@ -24,7 +27,7 @@ in
   inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = {
-      inherit src pkgs;
+      inherit src pkgs inputs;
     };
     modules = with inputs; [
       self.nixosModules.framework
