@@ -48,6 +48,7 @@ in {
       ms-vscode.hexeditor
       esbenp.prettier-vscode
       thenuprojectcontributors.vscode-nushell-lang
+      ms-azuretools.vscode-docker
     ];
     userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
     keybindings = builtins.fromJSON (builtins.readFile ./keybindings.json);
