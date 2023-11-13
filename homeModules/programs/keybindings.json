@@ -38,7 +38,6 @@
   { "key": "ctrl+r", "command": "noop" },
   { "key": "ctrl+t", "command": "noop" },
   { "key": "ctrl+u", "command": "noop" },
-  { "key": "ctrl+v", "command": "noop" },
   { "key": "ctrl+w", "command": "noop" },
   { "key": "ctrl+x", "command": "noop" },
   { "key": "ctrl+y", "command": "noop" },
