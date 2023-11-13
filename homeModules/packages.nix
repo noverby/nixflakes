@@ -51,6 +51,7 @@
     file
     fd
     glab
+    git-filter-repo
     du-dust
     xcp
     rm-improved
