@@ -21,7 +21,6 @@
     "when": "editorTextFocus && dance.mode == 'normal'"
   },
   { "key": "ctrl+b", "command": "noop" },
-  { "key": "ctrl+c", "command": "noop" },
   { "key": "ctrl+d", "command": "noop" },
   { "key": "ctrl+e", "command": "noop" },
   { "key": "ctrl+f", "command": "noop" },
