@@ -2,11 +2,11 @@
   gnomeExtensions = with pkgs.gnomeExtensions; [
     pop-shell
     legacy-gtk3-theme-scheme-auto-switcher
-    pop-launcher-super-key
-    quake-mode
+    #pop-launcher-super-key
+    quake-terminal
     caffeine
     bluetooth-quick-connect
-    current-screen-only-for-alternate-tab
+    #current-screen-only-for-alternate-tab
   ];
 in {
   home.packages = gnomeExtensions;
