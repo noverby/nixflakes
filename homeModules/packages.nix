@@ -86,6 +86,7 @@
     alejandra
     nil
     nix-tree
+    statix
 
     # Media tools
     imagemagick
