@@ -6,6 +6,7 @@
     quake-terminal
     caffeine
     bluetooth-quick-connect
+    light-style
     #current-screen-only-for-alternate-tab
   ];
 in {
