@@ -19,6 +19,7 @@
     gr = "git rebase";
     gri = "git rebase -i";
     grc = "git rebase --continue";
+    gm = "git merge";
     gs = "git status";
     gsh = "git stash";
     gsw = "git switch";
