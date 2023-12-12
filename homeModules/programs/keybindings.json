@@ -1162,17 +1162,6 @@
     "when": "editorTextFocus && dance.mode == 'select'"
   },
   {
-    "key": "y",
-    "command": "dance.run",
-    "args": {
-      "commands": [
-        [".selections.saveText", { "register": "*" }],
-        ".modes.set.normal"
-      ]
-    },
-    "when": "editorTextFocus && dance.mode == 'select'"
-  },
-  {
     "key": "d",
     "command": "dance.run",
     "args": {
