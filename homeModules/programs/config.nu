@@ -9,7 +9,7 @@ def ghash [] {git rev-parse HEAD | tr -d '\\n' | wl-copy; git rev-parse HEAD}
 
 def rm [-r,-f, ...args] { rip $args }
 
-def-env assume [profile?: string = ""] {
+def --env assume [profile?: string = ""] {
   let granted = assumego $profile | split row " "
   load-env {
     AWS_ACCESS_KEY_ID: $granted.1,
