@@ -132,7 +132,10 @@
 
   # Services
   services = {
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs; [hplip hplipWithPlugin];
+    };
     openssh.enable = true;
     flatpak.enable = true;
     fwupd.enable = true;
