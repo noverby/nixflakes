@@ -23,6 +23,7 @@
 
     # System tools
     #sudo-rs
+    killall
     uutils-coreutils-noprefix
     fortune-kind
     xorg.xkill
@@ -73,6 +74,7 @@
     appimage-run
 
     # System dev
+    llvmPackages.bintools
     just
     lldb
     cling
