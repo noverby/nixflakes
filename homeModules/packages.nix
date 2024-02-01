@@ -83,6 +83,7 @@
     lurk
     python311Packages.pip
     roc
+    android-tools
 
     # Nix dev
     alejandra
