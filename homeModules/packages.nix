@@ -102,5 +102,8 @@
     nodePackages.ts-node
     python311Packages.playwright
     bun
+
+    # XR Desktop
+    monado
   ];
 }
