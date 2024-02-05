@@ -79,6 +79,12 @@
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
+  # Graphics
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+  };
+
   # Virtualisation
   virtualisation = {
     docker.enable = true;
