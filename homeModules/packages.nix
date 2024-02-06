@@ -104,6 +104,6 @@
     bun
 
     # XR Desktop
-    monado
+    #monado
   ];
 }
