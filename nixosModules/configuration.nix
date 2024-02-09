@@ -1,9 +1,12 @@
 {pkgs, ...}: {
   # Nix
-  nix.settings = {
-    max-jobs = 100;
-    trusted-users = ["root" "noverby"];
-    experimental-features = "nix-command flakes";
+  nix = {
+    settings = {
+      max-jobs = 100;
+      trusted-users = ["root" "noverby"];
+      experimental-features = "nix-command flakes";
+    };
+    optimise.automatic = true;
   };
 
   # System
