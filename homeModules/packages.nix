@@ -4,6 +4,8 @@
     pop-launcher
     pop-icon-theme
     pop-gtk-theme
+    cosmic-term
+    cosmic-settings
 
     # General apps
     genact
