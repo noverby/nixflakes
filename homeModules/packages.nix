@@ -27,6 +27,7 @@
     #sudo-rs
     killall
     uutils-coreutils-noprefix
+    fuc
     fortune-kind
     xorg.xkill
     lsof
