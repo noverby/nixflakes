@@ -86,6 +86,7 @@
     python311Packages.pip
     roc
     android-tools
+    darling
 
     # Nix dev
     alejandra
