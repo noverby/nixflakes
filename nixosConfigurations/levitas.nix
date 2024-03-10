@@ -13,12 +13,21 @@
     config =
       config
       // {
-        packageOverrides = pkgs: {
+        packageOverrides = pkgs: rec {
           unstable =
             (import nixpkgs-unstable
               {inherit pkgs config system;})
             // {
               roc = roc.packages.${system}.default;
+              monado-new = unstable.monado.overrideAttrs (old: {
+                version = "unstable-2024-03-07";
+                src = pkgs.fetchFromGitHub {
+                  owner = "noverby";
+                  repo = "monado-mirror";
+                  rev = "4bd442913eff792c4120b9195be6206a2d7a11cd";
+                  hash = "sha256-sDGuNT2rmE25aRj3fP5hHUN76fUVqhLNebdv112cqpw=";
+                };
+              });
             };
         };
       };
