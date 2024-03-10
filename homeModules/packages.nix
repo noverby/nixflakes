@@ -77,9 +77,15 @@
     appimage-run
 
     # System dev
-    llvmPackages.bintools
+    gnumake
+    pkg-config
+    ninja
+    llvmPackages.clang
+    cmake
+    meson
     just
     lldb
+    gdb
     cling
     evcxr
     rustc
@@ -88,6 +94,11 @@
     roc
     android-tools
     darling
+
+    # XR dev
+    glslang
+    eigen
+    glxinfo
 
     # Nix dev
     alejandra
@@ -108,6 +119,6 @@
     bun
 
     # XR Desktop
-    #monado
+    monado-new
   ];
 }
