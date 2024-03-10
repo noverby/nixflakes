@@ -2,6 +2,7 @@
   pkgs,
   username,
   homeDirectory,
+  lib,
   ...
 }: let
   shellAliases = {
@@ -40,6 +41,20 @@
     firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
     chromium-dev = "chromium --remote-debugging-port=9220";
   };
+  devDeps = with pkgs; [
+    # XR
+    eigen
+    eudev
+    hidapi
+    libusb.dev
+    vulkan-headers
+    vulkan-loader.dev
+    openxr-loader.dev
+    glib.dev
+    xrgears
+    glm
+    libGL
+  ];
 in {
   imports = [./git.nix ./vscode.nix];
   programs = {
@@ -66,6 +81,8 @@ in {
         NIXOS_OZONE_WL = "1";
         PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
         GRANTED_ALIAS_CONFIGURED = "\"true\"";
+        CMAKE_PREFIX_PATH = builtins.concatStringsSep ":" devDeps;
+        PKG_CONFIG_PATH = builtins.concatStringsSep ":" (map (dep: "${dep}/share/pkgconfig:${dep}/lib/pkgconfig") devDeps);
         XDG_DATA_DIRS = builtins.concatStringsSep ":" [
           "${homeDirectory}/.nix-profile/share"
           "${homeDirectory}/.local/share/flatpak/exports/share"
