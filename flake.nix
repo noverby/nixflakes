@@ -14,6 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     roc.url = "github:roc-lang/roc";
+    stardustxr = {
+      url = "github:StardustXR/server";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    flatland = {
+      url = "github:StardustXR/flatland";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {flakelight, ...} @ inputs:

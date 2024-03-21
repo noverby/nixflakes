@@ -3,7 +3,7 @@
   src,
   ...
 }: let
-  inherit (inputs) nixpkgs nixpkgs-unstable roc;
+  inherit (inputs) nixpkgs nixpkgs-unstable roc stardustxr flatland;
   system = "x86_64-linux";
   config = {
     allowUnfree = true;
@@ -19,6 +19,8 @@
               {inherit pkgs config system;})
             // {
               roc = roc.packages.${system}.default;
+              stardustxr = stardustxr.packages.${system}.default;
+              flatland = flatland.packages.${system}.default;
               monado-new = unstable.monado.overrideAttrs (old: {
                 version = "unstable-2024-03-07";
                 src = pkgs.fetchFromGitHub {

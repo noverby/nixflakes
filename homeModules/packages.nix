@@ -120,5 +120,8 @@
 
     # XR Desktop
     monado-new
+    stardustxr
+    flatland
+    weston
   ];
 }
