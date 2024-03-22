@@ -93,6 +93,11 @@ in {
           "($env.XDG_DATA_DIRS)"
         ];
         RUSTFLAGS = "\"${builtins.concatStringsSep " " (map (dep: "-L ${dep}/lib") devDeps)}\"";
+        # XR
+        XR_RUNTIME_JSON = "${pkgs.monado-new}/share/openxr/1/openxr_monado.json";
+        XRT_COMPOSITOR_FORCE_XCB = "1";
+        XRT_COMPOSITOR_XCB_FULLSCREEN = "1";
+        LD_LIBRARY_PATH = "${lib.makeLibraryPath devDeps}";
       };
     };
 
