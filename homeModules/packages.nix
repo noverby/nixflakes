@@ -81,6 +81,8 @@
     pkg-config
     ninja
     llvmPackages.clang
+    rustc
+    cargo
     cmake
     meson
     just
