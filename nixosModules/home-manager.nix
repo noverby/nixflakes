@@ -2,6 +2,7 @@
   pkgs,
   src,
   inputs,
+  stateVersion,
   ...
 }: let
   username = "noverby";
@@ -12,8 +13,7 @@ in {
     useGlobalPkgs = true;
     users = {"${username}" = src + /homeModules/${username}.nix;};
     extraSpecialArgs = {
-      inherit inputs username homeDirectory;
-      pkgs = pkgs.unstable;
+      inherit inputs pkgs username homeDirectory stateVersion;
     };
   };
 }

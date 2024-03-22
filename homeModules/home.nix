@@ -1,11 +1,11 @@
 {
   username,
   homeDirectory,
+  stateVersion,
   ...
 }: {
   home = {
-    inherit username homeDirectory;
-    stateVersion = "23.11";
+    inherit username homeDirectory stateVersion;
     enableDebugInfo = true;
   };
 }

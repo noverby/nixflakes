@@ -2,12 +2,11 @@
   description = "NixOS + Home-manager";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/23.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     flakelight = {
       url = "github:accelbread/flakelight";
@@ -16,11 +15,11 @@
     roc.url = "github:roc-lang/roc";
     stardustxr = {
       url = "github:StardustXR/server";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     flatland = {
       url = "github:StardustXR/flatland";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

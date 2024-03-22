@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  stateVersion,
+  ...
+}: {
   # Nix
   nix = {
     settings = {
@@ -11,7 +15,7 @@
 
   # System
   system = {
-    stateVersion = "23.05";
+    inherit stateVersion;
     extraSystemBuilderCmds = "ln -s ${./.} $out/full-config";
   };
 
@@ -35,7 +39,8 @@
     initrd.verbose = false;
     kernelParams = ["quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail" "i915.fastboot=1"];
     kernelModules = ["v4l2loopback"];
-    extraModulePackages = [pkgs.linuxPackages.v4l2loopback];
+    kernelPackages = pkgs.linuxPackages_6_8;
+    extraModulePackages = [pkgs.linuxPackages_6_8.v4l2loopback];
   };
 
   # Network
@@ -133,7 +138,7 @@
   # Users
   environment.profiles = ["$HOME/.local"];
   users.users.noverby = {
-    shell = "${pkgs.unstable.nushell}/bin/nu";
+    shell = "${pkgs.nushell}/bin/nu";
     isNormalUser = true;
     description = "Niclas Overby";
     extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
@@ -164,8 +169,10 @@
     };
     xserver = {
       enable = true;
-      layout = "dk";
-      xkbVariant = "";
+      xkb = {
+        layout = "dk";
+        variant = "";
+      };
       excludePackages = [pkgs.xterm];
     };
     udev.extraRules = ''
