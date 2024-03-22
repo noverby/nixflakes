@@ -54,6 +54,10 @@
     xrgears
     glm
     libGL
+    libinput.dev
+    libinput.out
+    libxkbcommon.dev
+    libxkbcommon.out
   ];
 in {
   imports = [./git.nix ./vscode.nix];
@@ -88,6 +92,7 @@ in {
           "${homeDirectory}/.local/share/flatpak/exports/share"
           "($env.XDG_DATA_DIRS)"
         ];
+        RUSTFLAGS = "\"${builtins.concatStringsSep " " (map (dep: "-L ${dep}/lib") devDeps)}\"";
       };
     };
 
