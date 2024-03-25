@@ -209,4 +209,10 @@
       wantedBy = ["multi-user.target"];
     };
   };
+
+  # Cosmic
+  services = {
+    desktopManager.cosmic.enable = false;
+    displayManager.cosmic-greeter.enable = false;
+  };
 }

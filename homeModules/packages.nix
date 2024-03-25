@@ -95,7 +95,7 @@
     python311Packages.pip
     roc
     android-tools
-    darling
+    #darling
 
     # XR dev
     glslang

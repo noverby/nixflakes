@@ -26,6 +26,12 @@
               hash = "sha256-sDGuNT2rmE25aRj3fP5hHUN76fUVqhLNebdv112cqpw=";
             };
           });
+          fprintd = pkgs.fprintd.overrideAttrs (_: {
+            mesonCheckFlags = [
+              "--no-suite"
+              "fprintd:TestPamFprintd"
+            ];
+          });
         };
       };
   };
@@ -41,6 +47,7 @@ in
       self.nixosModules.configuration
       self.nixosModules.home-manager
       self.nixosModules.gnome
+      nixos-cosmic.nixosModules.default
       nixos-hardware
       .nixosModules
       .framework-13th-gen-intel
