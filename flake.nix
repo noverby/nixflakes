@@ -12,14 +12,32 @@
       url = "github:accelbread/flakelight";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+    };
     roc = {
       url = "github:roc-lang/roc";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.flake-compat.follows = "flake-compat";
+    };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+    hercules-ci-effects = {
+      url = "github:hercules-ci/hercules-ci-effects";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     stardustxr = {
       url = "github:StardustXR/server";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flatland.follows = "flatland";
+      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
+      inputs.flake-parts.follows = "flake-parts";
     };
     flatland = {
       url = "github:StardustXR/flatland";
@@ -28,6 +46,7 @@
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
     };
   };
 
