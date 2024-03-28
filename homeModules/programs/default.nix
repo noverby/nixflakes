@@ -58,6 +58,10 @@
     libinput.out
     libxkbcommon.dev
     libxkbcommon.out
+    xorg.libX11.out
+    xorg.libXcursor.out
+    xorg.libXrandr.out
+    xorg.libXi.out
   ];
 in {
   imports = [./git.nix ./vscode.nix];
