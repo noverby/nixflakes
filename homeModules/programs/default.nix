@@ -196,6 +196,7 @@ in {
       package = pkgs.firefox.override {
         cfg.enableGnomeExtensions = true;
       };
+      nativeMessagingHosts = [pkgs.firefoxpwa];
       profiles = rec {
         default = {
           isDefault = true;

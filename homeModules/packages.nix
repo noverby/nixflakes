@@ -6,6 +6,7 @@
     pop-gtk-theme
     cosmic-term
     cosmic-settings
+    firefoxpwa
 
     # General apps
     genact
