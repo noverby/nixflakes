@@ -22,7 +22,6 @@ in {
         "org.gnome.Console.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Calendar.desktop"
-        "beeper.desktop"
         "com.spotify.Client.desktop"
       ];
     };
