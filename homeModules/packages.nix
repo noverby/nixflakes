@@ -108,6 +108,7 @@
     nil
     nix-tree
     statix
+    manix
 
     # Media tools
     imagemagick
