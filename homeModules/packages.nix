@@ -109,6 +109,7 @@
     nix-tree
     statix
     manix
+    devenv
 
     # Media tools
     imagemagick
