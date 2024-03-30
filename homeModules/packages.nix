@@ -25,7 +25,7 @@
     celeste
 
     # System tools
-    #sudo-rs
+    sudo-rs
     killall
     uutils-coreutils-noprefix
     fuc
