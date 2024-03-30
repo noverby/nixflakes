@@ -41,28 +41,6 @@
     firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
     chromium-dev = "chromium --remote-debugging-port=9220";
   };
-  devDeps = with pkgs; [
-    # XR
-    eigen
-    eudev
-    hidapi
-    libusb.dev
-    vulkan-headers
-    vulkan-loader.dev
-    openxr-loader.dev
-    glib.dev
-    xrgears
-    glm
-    libGL
-    libinput.dev
-    libinput.out
-    libxkbcommon.dev
-    libxkbcommon.out
-    xorg.libX11.out
-    xorg.libXcursor.out
-    xorg.libXrandr.out
-    xorg.libXi.out
-  ];
 in {
   imports = [./git.nix ./vscode.nix];
   programs = {
@@ -89,19 +67,15 @@ in {
         NIXOS_OZONE_WL = "1";
         PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
         GRANTED_ALIAS_CONFIGURED = "\"true\"";
-        CMAKE_PREFIX_PATH = builtins.concatStringsSep ":" devDeps;
-        PKG_CONFIG_PATH = builtins.concatStringsSep ":" (map (dep: "${dep}/share/pkgconfig:${dep}/lib/pkgconfig") devDeps);
         XDG_DATA_DIRS = builtins.concatStringsSep ":" [
           "${homeDirectory}/.nix-profile/share"
           "${homeDirectory}/.local/share/flatpak/exports/share"
           "($env.XDG_DATA_DIRS)"
         ];
-        RUSTFLAGS = "\"${builtins.concatStringsSep " " (map (dep: "-L ${dep}/lib") devDeps)}\"";
         # XR
         XR_RUNTIME_JSON = "${pkgs.monado-new}/share/openxr/1/openxr_monado.json";
         XRT_COMPOSITOR_FORCE_XCB = "1";
         XRT_COMPOSITOR_XCB_FULLSCREEN = "1";
-        LD_LIBRARY_PATH = "${lib.makeLibraryPath devDeps}";
       };
     };
 

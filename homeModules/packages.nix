@@ -98,11 +98,6 @@
     android-tools
     #darling
 
-    # XR dev
-    glslang
-    eigen
-    glxinfo
-
     # Nix dev
     alejandra
     nil
