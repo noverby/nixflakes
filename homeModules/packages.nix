@@ -95,7 +95,7 @@
     oxipng
 
     # XR Desktop
-    monado-new
+    monado
     stardustxr
     flatland
     weston

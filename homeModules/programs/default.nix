@@ -2,7 +2,6 @@
   pkgs,
   username,
   homeDirectory,
-  lib,
   ...
 }: let
   shellAliases = {
@@ -37,6 +36,8 @@
     cd = "z";
     bg = "pueue";
     jq = "jql";
+    sed = "sd";
+    cut = "choose";
     optpng = "oxipng";
     firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
     chromium-dev = "chromium --remote-debugging-port=9220";
@@ -52,12 +53,7 @@ in {
 
     nushell = {
       enable = true;
-      shellAliases =
-        shellAliases
-        // {
-          sed = "sd";
-          cut = "choose";
-        };
+      inherit shellAliases;
       configFile.source = ./config.nu;
       environmentVariables = {
         EDITOR = "vi";
@@ -73,7 +69,7 @@ in {
           "($env.XDG_DATA_DIRS)"
         ];
         # XR
-        XR_RUNTIME_JSON = "${pkgs.monado-new}/share/openxr/1/openxr_monado.json";
+        XR_RUNTIME_JSON = "${pkgs.monado}/share/openxr/1/openxr_monado.json";
         XRT_COMPOSITOR_FORCE_XCB = "1";
         XRT_COMPOSITOR_XCB_FULLSCREEN = "1";
       };
