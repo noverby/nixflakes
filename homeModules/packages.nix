@@ -70,32 +70,16 @@
     jql
 
     # Container tools
-    arch-install-scripts
-    debootstrap
-    microdnf
     distrobox
     bubblewrap
     appimage-run
 
     # System dev
-    gnumake
-    pkg-config
-    ninja
-    llvmPackages.clang
-    rustc
-    cargo
-    cmake
-    meson
-    just
     lldb
     gdb
-    cling
-    evcxr
-    rustc
+    cling # C++ repl
+    evcxr # Rust repl
     lurk
-    python311Packages.pip
-    roc
-    android-tools
     #darling
 
     # Nix dev
@@ -109,14 +93,6 @@
     # Media tools
     imagemagick
     oxipng
-
-    # Web dev
-    nodejs
-    yarn
-    nodePackages.pnpm
-    nodePackages.ts-node
-    python311Packages.playwright
-    bun
 
     # XR Desktop
     monado-new
