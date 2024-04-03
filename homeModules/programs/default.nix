@@ -112,6 +112,7 @@ in {
       settings = {
         copy_command = "wl-copy";
         session_serialization = false;
+        pane_frames = false;
       };
     };
 
