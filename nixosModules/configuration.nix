@@ -45,7 +45,7 @@
 
   # Network
   networking = {
-    hostName = "levitas";
+    hostName = "gravitas";
     networkmanager = {
       enable = true;
     };
