@@ -44,17 +44,10 @@
   };
 
   # Network
-  networking = rec {
+  networking = {
     hostName = "levitas";
-    nameservers = [
-      "1.1.1.3"
-      "1.0.0.3"
-      "2606:4700:4700::1113"
-      "2606:4700:4700::1003"
-    ];
     networkmanager = {
       enable = true;
-      insertNameservers = nameservers;
     };
   };
 
@@ -146,6 +139,17 @@
 
   # Services
   services = {
+    resolved = {
+      enable = true;
+      extraConfig = ''
+        [Resolve]
+        DNS=45.90.28.0#5e65f2.dns.nextdns.io
+        DNS=2a07:a8c0::#5e65f2.dns.nextdns.io
+        DNS=45.90.30.0#5e65f2.dns.nextdns.io
+        DNS=2a07:a8c1::#5e65f2.dns.nextdns.io
+        DNSOverTLS=yes
+      '';
+    };
     printing = {
       enable = true;
       drivers = with pkgs; [hplip hplipWithPlugin];
