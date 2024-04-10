@@ -56,8 +56,8 @@ in {
       inherit shellAliases;
       configFile.source = ./config.nu;
       environmentVariables = {
-        EDITOR = "vi";
-        VISUAL = "vi";
+        EDITOR = "hx";
+        VISUAL = "hx";
         PYTHONSTARTUP = "${homeDirectory}/.pystartup";
         DIRENV_LOG_FORMAT = "\"\"";
         NIXOS_OZONE_WL = "1";
