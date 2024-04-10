@@ -83,7 +83,6 @@ in {
 
     bash = {
       enable = true;
-      inherit shellAliases;
       shellOptions = [
         "histappend"
         "checkwinsize"
