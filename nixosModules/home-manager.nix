@@ -11,7 +11,7 @@ in {
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users = {"${username}" = src + /homeModules/${username}.nix;};
+    users.noverby = inputs.self.homeModules.noverby;
     extraSpecialArgs = {
       inherit inputs pkgs username homeDirectory stateVersion;
     };

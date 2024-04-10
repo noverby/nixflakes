@@ -1,3 +1,3 @@
-{...}: {
-  imports = [./home.nix ./systemd.nix ./packages.nix ./gnome.nix ./xdg.nix ./file ./programs];
+{inputs, ...}: {
+  imports = with inputs.self.homeModules; [home systemd packages gnome xdg file programs];
 }
