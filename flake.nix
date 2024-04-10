@@ -54,5 +54,10 @@
     flakelight ./. {
       inherit inputs;
       nixDir = ./.;
+      nixDirAliases = {
+        nixosConfigurations = ["devices"];
+        nixosModules = ["nixos-modules"];
+        homeModules = ["home-modules"];
+      };
     };
 }
