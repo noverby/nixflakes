@@ -6,12 +6,11 @@
     pop-gtk-theme
     cosmic-term
     cosmic-settings
-    firefoxpwa
 
     # General apps
     genact
     wezterm
-    bitwarden
+    #bitwarden
     slack
     fragments
     evince
@@ -23,6 +22,8 @@
     gnome.gnome-tweaks
     gnome.dconf-editor
     celeste
+    firefoxpwa
+    zed-editor
 
     # System tools
     sudo-rs
