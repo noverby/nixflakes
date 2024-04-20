@@ -8,6 +8,7 @@
     bluetooth-quick-connect
     light-style
     #current-screen-only-for-alternate-tab
+    pkgs.breezy-desktop
   ];
 in {
   home.packages = gnomeExtensions;

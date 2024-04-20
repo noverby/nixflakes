@@ -16,6 +16,7 @@
     self.nixosModules.configuration
     self.nixosModules.home-manager
     self.nixosModules.gnome
+    self.nixosModules.xr
     nixos-cosmic.nixosModules.default
     home-manager.nixosModules.home-manager
   ];
