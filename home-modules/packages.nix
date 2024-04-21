@@ -55,6 +55,7 @@
     # File tools
     helix
     file
+    unixtools.xxd
     fd
     glab
     git-filter-repo
