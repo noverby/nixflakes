@@ -35,9 +35,6 @@
     top = "htop";
     cd = "z";
     bg = "pueue";
-    jq = "jql";
-    sed = "sd";
-    cut = "choose";
     optpng = "oxipng";
     firefox-dev = "firefox -start-debugger-server 6000 -P dev http://localhost:3000";
     chromium-dev = "chromium --remote-debugging-port=9220";
