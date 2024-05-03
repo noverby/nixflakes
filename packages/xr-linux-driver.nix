@@ -21,8 +21,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "wheaney";
     repo = "XRLinuxDriver";
-    rev = "b1b12736f3a063be0ccd6b32ce95264ec98b3070";
-    sha256 = "sha256-lFXs/2ovjTI7jT1XPqUNV+U0ZQASetUFnEyLAxiS/Xk=";
+    rev = "b8a80f821d2be931d147d0a2df4c61a2fcc4c68a";
+    sha256 = "sha256-GOpfRXYyXzUSuMqj6s4oebYA8KzJSzgJZ9Xs0EJLzVk=";
     fetchSubmodules = true;
   };
 

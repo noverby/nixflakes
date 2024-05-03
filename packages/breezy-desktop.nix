@@ -14,8 +14,8 @@ in
     src = fetchFromGitHub {
       owner = "wheaney";
       repo = pname;
-      rev = "140f4d21ab85fc3e0ca75c2226981c2845a4ccdd";
-      sha256 = "sha256-C4y2WgrfBf3hR0DHanxutep5CYV/JxJtYp9fVu1f+mo=";
+      rev = "0cba1b8075471dcb47511f8f793160729fc9ce30";
+      sha256 = "sha256-4zjs0GHeiRWmnuIEzfUrr/Y/keKlDx7060OsFO7ft0M=";
     };
 
     nativeBuildInputs = with pkgs; [buildPackages.glib];
