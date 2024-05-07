@@ -119,10 +119,13 @@ in {
       enable = true;
       enableNushellIntegration = true;
       enableBashIntegration = true;
-      settings.directory = {
-        truncation_length = 8;
-        truncation_symbol = ".../";
-        truncate_to_repo = false;
+      settings = {
+        command_timeout = 10000;
+        directory = {
+          truncation_length = 8;
+          truncation_symbol = ".../";
+          truncate_to_repo = false;
+        };
       };
     };
 
