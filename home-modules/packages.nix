@@ -92,7 +92,6 @@
     statix
     manix
     devenv
-    nix-direnv
 
     # Media tools
     imagemagick
