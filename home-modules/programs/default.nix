@@ -56,7 +56,6 @@ in {
         EDITOR = "hx";
         VISUAL = "hx";
         PYTHONSTARTUP = "${homeDirectory}/.pystartup";
-        DIRENV_LOG_FORMAT = "\"\"";
         NIXOS_OZONE_WL = "1";
         PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
         GRANTED_ALIAS_CONFIGURED = "\"true\"";
