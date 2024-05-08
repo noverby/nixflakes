@@ -111,7 +111,6 @@
   "workbench.editorLargeFileConfirmation": 20,
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",  
-  "roc-lang.language-server.exe": "roc_ls",
   "dance.modes": {
     "normal": {
       "lineNumbers": "inherit",

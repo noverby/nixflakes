@@ -18,12 +18,6 @@
     flake-compat = {
       url = "github:edolstra/flake-compat";
     };
-    roc = {
-      url = "github:roc-lang/roc";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.flake-compat.follows = "flake-compat";
-    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };

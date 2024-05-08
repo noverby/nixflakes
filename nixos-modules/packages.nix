@@ -7,7 +7,6 @@
     allowUnfree = true;
     packageOverrides = with inputs;
       prev: {
-        roc = roc.packages.${pkgs.system}.default;
         stardustxr = stardustxr.packages.${pkgs.system}.default;
         flatland = flatland.packages.${pkgs.system}.default;
         monado = prev.monado.overrideAttrs (_: {

@@ -28,29 +28,18 @@ with config.lib.file; {
     ".config/pop-shell/config.json".source = ./config/pop-shell/config.json;
     ".config/wezterm/wezterm.lua".source = ./config/wezterm.lua;
     ".config/mpv/mpv.conf".source = ./config/mpv/mpv.conf;
-    ".config/helix/config.toml".text = '' 
+    ".config/helix/config.toml".text = ''
       [keys.insert]
       up = "no_op"
       down = "no_op"
       left = "no_op"
       right = "no_op"
-      
+
       [keys.normal]
       up = "no_op"
       down = "no_op"
       left = "no_op"
       right = "no_op"
-    '';
-    ".config/helix/languages.toml".text = ''
-      [language-server.roc-ls]
-      command = "roc_ls"
-
-      [[language]]
-      name = "roc"
-      scope = "source.roc"
-      roots = ["main.roc"]
-      file-types = ["roc"]
-      language-servers = [ "roc-ls" ]
     '';
   };
 }

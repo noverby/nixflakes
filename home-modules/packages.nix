@@ -83,7 +83,6 @@
     evcxr # Rust repl
     lurk
     #darling
-    roc
 
     # Nix dev
     alejandra
