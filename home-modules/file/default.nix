@@ -40,6 +40,13 @@ with config.lib.file; {
       down = "no_op"
       left = "no_op"
       right = "no_op"
+      # System  clipboard
+      p = "paste_clipboard_after"
+      P = "paste_clipboard_before"
+      y = "yank_to_clipboard"
+      Y = "yank_joined_to_clipboard"
+      R = "replace_selections_with_clipboard"
+      d = ["yank_to_clipboard", "delete_selection_noyank"]
     '';
   };
 }
