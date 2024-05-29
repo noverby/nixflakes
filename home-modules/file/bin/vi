@@ -21,10 +21,10 @@ def main [--wait,--diff,...vargs: string] {
   let fileCount = ($files | length)
   for file in $files {
     match [$fileCount, ($file | path type)] {
-      [1, "file"] => (codium --reuse-window ...$args --goto $"($file):($line)")
-      [_, "file"] => (codium --reuse-window ...$args $file)
-      [_, ""] => (codium --reuse-window ...$args $file)
-      [_, "dir"] => (codium --new-window ...$args $file)
+      [1, "file"] => (code --reuse-window ...$args --goto $"($file):($line)")
+      [_, "file"] => (code --reuse-window ...$args $file)
+      [_, ""] => (code --reuse-window ...$args $file)
+      [_, "dir"] => (code --new-window ...$args $file)
     }
   }
 }
