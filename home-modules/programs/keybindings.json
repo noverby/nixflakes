@@ -224,7 +224,7 @@
     "when": "listFocus && !inputFocus"
   },
   {
-    "key": "/",
+    "key": "-",
     "command": "list.toggleKeyboardNavigation",
     "when": "listFocus && !inputFocus && listSupportsKeyboardNavigation"
   },
@@ -588,12 +588,12 @@
   },
 
   {
-    "key": "/",
+    "key": "-",
     "command": "dance.search",
     "when": "editorTextFocus && dance.mode == 'normal' || editorTextFocus && dance.mode == 'select'"
   },
   {
-    "key": "shift+/",
+    "key": "_",
     "command": "dance.search.backward",
     "when": "editorTextFocus && dance.mode == 'normal' || editorTextFocus && dance.mode == 'select'"
   },
@@ -1005,12 +1005,12 @@
   },
 
   {
-    "key": "/",
+    "key": "-",
     "command": "dance.search.extend",
     "when": "editorTextFocus && dance.mode == 'select'"
   },
   {
-    "key": "shift+/",
+    "key": "_",
     "command": "dance.search.backward.extend",
     "when": "editorTextFocus && dance.mode == 'select'"
   },
