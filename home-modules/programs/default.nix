@@ -27,7 +27,6 @@
     gcb = "git checkout -b";
     gundo = "git reset HEAD~1 --soft";
     du = "dust";
-    cp = "xcp";
     cat = "bat";
     find = "fd";
     grep = "rg";

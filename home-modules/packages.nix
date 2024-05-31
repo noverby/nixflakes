@@ -60,7 +60,6 @@
     glab
     git-filter-repo
     du-dust
-    xcp
     sd
     choose
     ripgrep
