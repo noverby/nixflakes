@@ -119,6 +119,10 @@ in {
       enableBashIntegration = true;
       settings = {
         command_timeout = 10000;
+        time = {
+          disabled = false;
+          format = " [$time]($style) ";
+        };
         directory = {
           truncation_length = 8;
           truncation_symbol = ".../";
