@@ -61,7 +61,6 @@
     git-filter-repo
     du-dust
     xcp
-    rm-improved
     sd
     choose
     ripgrep
