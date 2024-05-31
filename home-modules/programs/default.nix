@@ -31,7 +31,7 @@
     find = "fd";
     grep = "rg";
     man = "tldr";
-    top = "bottom";
+    top = "btm";
     cd = "z";
     bg = "pueue";
     optpng = "oxipng";
