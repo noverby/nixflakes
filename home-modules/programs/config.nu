@@ -27,7 +27,8 @@ def --env assume [profile?: string = ""] {
 
 def yarn-lock-update [] {
   try { git rebase master }
-  git reset .pnp.cjs yarn.lock
+  let root = git rev-parse --show-toplevel;
+  git reset $"($root)/.pnp.cjs" $"($root)/yarn.lock"
   yarn
-  git add .pnp.cjs yarn.lock
+  git add $"($root)/.pnp.cjs" $"($root)/yarn.lock"
 }
