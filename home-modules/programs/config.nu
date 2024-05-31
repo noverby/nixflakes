@@ -26,3 +26,10 @@ def --env assume [profile?: string = ""] {
     GRANTED_SSO_ACCOUNT_ID: $granted.11,
   }
  }
+
+def yarn-lock-update [] {
+  try { git rebase master }
+  git reset .pnp.cjs yarn.lock
+  yarn
+  git add .pnp.cjs yarn.lock
+}
