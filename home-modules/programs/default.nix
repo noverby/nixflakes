@@ -123,6 +123,9 @@ in {
           disabled = false;
           format = " [$time]($style) ";
         };
+        status = {
+          disabled = false;
+        };
         directory = {
           truncation_length = 8;
           truncation_symbol = ".../";
