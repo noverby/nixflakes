@@ -31,7 +31,7 @@
     find = "fd";
     grep = "rg";
     man = "tldr";
-    top = "htop";
+    top = "bottom";
     cd = "z";
     bg = "pueue";
     optpng = "oxipng";
@@ -45,7 +45,7 @@ in {
     gh.enable = true;
     bat.enable = true;
     tealdeer.enable = true;
-    htop.enable = true;
+    bottom.enable = true;
 
     nushell = {
       enable = true;
