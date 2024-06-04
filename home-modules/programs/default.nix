@@ -56,7 +56,6 @@ in {
         VISUAL = "hx";
         PYTHONSTARTUP = "${homeDirectory}/.pystartup";
         NIXOS_OZONE_WL = "1";
-        PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
         GRANTED_ALIAS_CONFIGURED = "\"true\"";
         XDG_DATA_DIRS = builtins.concatStringsSep ":" [
           "${homeDirectory}/.nix-profile/share"
