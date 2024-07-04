@@ -219,5 +219,6 @@
   services = {
     desktopManager.cosmic.enable = false;
     displayManager.cosmic-greeter.enable = false;
+    system76-scheduler.settings.processScheduler.enable = true;
   };
 }
