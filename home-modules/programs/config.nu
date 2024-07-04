@@ -1,7 +1,6 @@
 $env.config = {
   show_banner: false
   keybindings: []
-  shell_integration: true
 }
 $env.PATH = ($env.PATH | split row (char esep))
 
