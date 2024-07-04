@@ -81,9 +81,8 @@
   security.rtkit.enable = true;
 
   # Graphics
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
   };
 
   # Virtualisation
@@ -164,19 +163,21 @@
       pulse.enable = true;
     };
     kmscon = {
-      enable = true;
-      hwRender = true;
-      extraConfig = ''
-        font-name=MesloLGS NF
-        font-size=14
-      '';
+      #enable = true;
+      #hwRender = true;
+      #useXkbConfig = false;
+      #fonts = [
+      #  {
+      #    name = "Source Code Pro";
+      #    package = pkgs.source-code-pro;
+      #  }
+      #];
+      #extraConfig = ''
+      #  font-size=14
+      #'';
     };
     xserver = {
       enable = true;
-      xkb = {
-        layout = "dk";
-        variant = "";
-      };
       excludePackages = [pkgs.xterm];
     };
     udev.extraRules = ''
