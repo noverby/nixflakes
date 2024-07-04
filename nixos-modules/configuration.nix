@@ -179,6 +179,10 @@
     xserver = {
       enable = true;
       excludePackages = [pkgs.xterm];
+      xkb = {
+        layout = "dk";
+        variant = "";
+      };
     };
     udev.extraRules = ''
       # XReal
