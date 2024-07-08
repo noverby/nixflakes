@@ -1251,6 +1251,16 @@
     "key": "ctrl+j",
     "command": "dance.edit.newLine.below.insert",
     "when": "editorTextFocus && dance.mode == 'insert'"
+  },  
+  {
+    "key": "up",
+    "command": "-showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "down",
+    "command": "-showNextParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
   }
 ]
 
