@@ -19,8 +19,8 @@
     chromium
     mpv
     libreoffice
-    gnome.gnome-tweaks
-    gnome.dconf-editor
+    gnome-tweaks
+    dconf-editor
     celeste
     firefoxpwa
     zed-editor
@@ -95,9 +95,9 @@
     oxipng
 
     # XR Desktop
-    monado
-    stardustxr
-    flatland
-    weston
+    #monado
+    #stardustxr
+    #flatland
+    #weston
   ];
 }

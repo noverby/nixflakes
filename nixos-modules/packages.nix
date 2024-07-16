@@ -7,7 +7,7 @@
     allowUnfree = true;
     packageOverrides = with inputs;
       prev: {
-        stardustxr = stardustxr.packages.${pkgs.system}.default;
+        #stardustxr = stardustxr.packages.${pkgs.system}.default;
         flatland = flatland.packages.${pkgs.system}.default;
         monado = prev.monado.overrideAttrs (_: {
           version = "unstable-2024-03-07";
