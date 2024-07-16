@@ -29,7 +29,6 @@
     sudo-rs
     killall
     uutils-coreutils-noprefix
-    fuc
     fortune-kind
     xorg.xkill
     lsof
@@ -60,14 +59,11 @@
     glab
     git-filter-repo
     du-dust
-    sd
-    choose
     ripgrep
     #ripgrep-all
     tokei
     zip
     unzip
-    jql
 
     # Container tools
     distrobox
