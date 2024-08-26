@@ -85,6 +85,7 @@
     statix
     manix
     devenv
+    nix-prefetch-git
 
     # Media tools
     imagemagick
