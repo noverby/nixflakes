@@ -223,7 +223,7 @@
 
   # Cosmic
   services = {
-    desktopManager.cosmic.enable = true;
+    desktopManager.cosmic.enable = false;
     displayManager.cosmic-greeter.enable = false;
     system76-scheduler.settings.processScheduler.enable = true;
   };
