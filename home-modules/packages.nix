@@ -84,6 +84,7 @@
     manix
     devenv
     nix-prefetch-git
+    nix-fast-build
 
     # Media tools
     imagemagick
