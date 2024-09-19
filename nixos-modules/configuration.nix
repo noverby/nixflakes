@@ -105,15 +105,15 @@
         auth       required                    ${fprintd}/lib/security/pam_fprintd.so
         auth       optional                    pam_permit.so
         auth       required                    pam_env.so
-        auth       [success=ok default=1]      ${gnome.gdm}/lib/security/pam_gdm.so
-        auth       optional                    ${gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so
+        auth       [success=ok default=1]      ${gdm}/lib/security/pam_gdm.so
+        auth       optional                    ${gnome-keyring}/lib/security/pam_gnome_keyring.so
 
         account    include                     login
 
         password   required                    pam_deny.so
 
         session    include                     login
-        session    optional                    ${gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
+        session    optional                    ${gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
       '';
     };
   };
@@ -121,7 +121,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    gnome.gnome-boxes
+    gnome-boxes
     helix
     python3
     powertop
