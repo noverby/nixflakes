@@ -42,6 +42,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "flake-compat";
     };
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {flakelight, ...} @ inputs:
@@ -53,5 +57,8 @@
         nixosModules = ["nixos-modules"];
         homeModules = ["home-modules"];
       };
+      withOverlays = [
+        (inputs.nix-alien.overlays.default)
+      ];
     };
 }

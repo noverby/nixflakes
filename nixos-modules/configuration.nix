@@ -127,6 +127,7 @@
     powertop
     gjs
     glib.dev
+    nix-alien
   ];
 
   # Users
