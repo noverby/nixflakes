@@ -5,6 +5,9 @@
 }: {
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = [
+      "nix-2.24.5"
+    ];
     packageOverrides = with inputs;
       prev: {
         #stardustxr = stardustxr.packages.${pkgs.system}.default;
