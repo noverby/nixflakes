@@ -47,6 +47,12 @@ in {
     tealdeer.enable = true;
     bottom.enable = true;
 
+    wezterm = {
+      enable = true;
+      extraConfig = builtins.readFile ./wezterm.lua;
+      enableBashIntegration = true;
+    };
+
     nushell = {
       enable = true;
       inherit shellAliases;

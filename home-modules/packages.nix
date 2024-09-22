@@ -7,7 +7,6 @@
 
     # General apps
     genact
-    wezterm
     #bitwarden
     slack
     fragments

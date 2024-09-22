@@ -26,7 +26,6 @@ with config.lib.file; {
     ".npmrc".source = ./config/npmrc.ini;
     ".pystartup".source = ./config/pystartup;
     ".config/pop-shell/config.json".source = ./config/pop-shell/config.json;
-    ".config/wezterm/wezterm.lua".source = ./config/wezterm.lua;
     ".config/mpv/mpv.conf".source = ./config/mpv/mpv.conf;
     ".config/zed/settings.json". source = ./config/zed/settings.json;
     ".config/zed/keymap.json". source = ./config/zed/keymap.json;
