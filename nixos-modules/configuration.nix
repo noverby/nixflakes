@@ -120,15 +120,22 @@
   programs.seahorse.enable = true;
 
   # Packages
-  environment.systemPackages = with pkgs; [
-    gnome-boxes
-    helix
-    python3
-    powertop
-    gjs
-    glib.dev
-    nix-alien
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      gnome-boxes
+      helix
+      python3
+      powertop
+      gjs
+      glib.dev
+      nix-alien
+      tailspin
+    ];
+    sessionVariables = {
+      PAGER = "tspin";
+      SYSTEMD_PAGERSECURE = "1";
+    };
+  };
 
   # Users
   environment.profiles = ["$HOME/.local"];
