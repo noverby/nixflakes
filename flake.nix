@@ -2,7 +2,7 @@
   description = "NixOS + Home-manager";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -39,7 +39,6 @@
     };
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "flake-compat";
     };
     nix-alien = {
