@@ -76,7 +76,7 @@
     [
       (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
     ]
-    ++ [fira roboto roboto-slab meslo-lgs-nf];
+    ++ [fira roboto roboto-slab meslo-lgs-nf cascadia-code];
 
   # Audio
   hardware.pulseaudio.enable = false;

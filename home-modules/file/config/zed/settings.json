@@ -30,5 +30,9 @@
     // "on_yank": use system clipboard for yank operations
     "use_system_clipboard": "always"
   },
-  "vim_mode": true
+  "vim_mode": true,
+  "terminal": {
+    "line_height": "standard"
+  },
+  "buffer_font_family": "Cascadia Code NF",
 }
