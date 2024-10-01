@@ -23,8 +23,6 @@
     gs = "git status";
     gsh = "git stash";
     gsw = "git switch";
-    gco = "git checkout";
-    gcb = "git checkout -b";
     gundo = "git reset HEAD~1 --soft";
     du = "dust";
     cat = "bat";

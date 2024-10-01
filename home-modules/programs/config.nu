@@ -31,3 +31,10 @@ def yarn-lock-update [] {
   yarn
   git add $"($root)/.pnp.cjs" $"($root)/yarn.lock"
 }
+
+def gco [branch_name: string] {
+    match (git show-ref --quiet $"refs/heads/($branch_name)" | complete | get exit_code) {
+     0 => { git checkout $branch_name }
+     1 =>  { git checkout -b $branch_name }
+    }
+}
