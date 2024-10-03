@@ -23,8 +23,8 @@ def main [--wait,--diff,...vargs: string] {
     match [$fileCount, ($file | path type)] {
       [1, "file"] => (codium --reuse-window ...$args --goto $"($file):($line)")
       [_, "file"] => (codium --reuse-window ...$args $file)
-      [_, ""] => (codium --reuse-window ...$args $file)
       [_, "dir"] => (codium --new-window ...$args $file)
+      [_, null] => (touch $file; codium --reuse-window ...$args $file)
     }
   }
 }
