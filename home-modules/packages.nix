@@ -89,6 +89,9 @@
     imagemagick
     oxipng
 
+    # Mojo
+    magic
+
     # XR Desktop
     #monado
     #stardustxr
