@@ -136,6 +136,8 @@
       SYSTEMD_PAGERSECURE = "1";
     };
   };
+  # Run unpatched binaries
+  programs.nix-ld.enable = true;
 
   # Users
   environment.profiles = ["$HOME/.local"];
