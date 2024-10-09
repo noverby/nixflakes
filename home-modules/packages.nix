@@ -21,6 +21,7 @@
     celeste
     firefoxpwa
     zed-editor
+    gnome-network-displays
 
     # System tools
     sudo-rs
