@@ -55,5 +55,6 @@ config.window_decorations = "RESIZE"
 config.adjust_window_size_when_changing_font_size = false
 config.font_size = 10.0
 config.front_end = "WebGpu"
+config.warn_about_missing_glyphs = false
 
 return config
