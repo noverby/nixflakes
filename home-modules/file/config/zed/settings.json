@@ -1,6 +1,16 @@
 {
+  "assistant": {
+    "default_model": {
+      "model": "claude-3-5-sonnet-20240620",
+      "provider": "zed.dev"
+    },
+    "version": "2"
+  },
   "base_keymap": "VSCode",
+  "buffer_font_family": "Cascadia Code NF",
   "buffer_font_size": 16,
+  "dock": "right",
+  "format_on_save": "on",
   "git": {
     "inline_blame": {
       "enabled": false
@@ -8,6 +18,60 @@
   },
   "inlay_hints": {
     "enabled": true
+  },
+  "languages": {
+    "JavaScript": {
+      "language_servers": [
+        "vtsls"
+      ]
+    },
+    "TypeScript": {
+      "language_servers": [
+        "vtsls"
+      ],
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      }
+    },
+    "TSX": {
+      "language_servers": [
+        "vtsls"
+      ]
+    }
+  },
+  "load_direnv": "direct",
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    },
+    "rust-analyzer": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "vtsls": {
+      "initialization_options": {
+        "typescript": {
+          "tsdk": ".yarn/sdks/typescript/lib"
+        },
+        "vtsls": {
+          "autoUseWorkspaceTsdk": true
+        }
+      }
+    },
+    "nix": {
+      "binary": {
+        "path_lookup": true
+      }
+    }
+  },
+  "project_panel": {
+    "default_width": 330,
+    "dock": "right"
   },
   "relative_line_numbers": true,
   "scrollbar": {
@@ -17,7 +81,10 @@
     "diagnostics": true,
     "metrics": true
   },
-  "theme": "One Dark",
+  "terminal": {
+    "line_height": "standard"
+  },
+  "theme": "Gruvbox Dark Hard",
   "ui_font_size": 16,
   // allow cursor to reach edges of screen
   "vertical_scroll_margin": 10,
@@ -31,8 +98,8 @@
     "use_system_clipboard": "always"
   },
   "vim_mode": true,
-  "terminal": {
-    "line_height": "standard"
-  },
-  "buffer_font_family": "Cascadia Code NF",
+  "wrap_guides": [
+    80,
+    100
+  ]
 }
