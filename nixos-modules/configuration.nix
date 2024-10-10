@@ -24,7 +24,7 @@
 
   # Console
   console = {
-    keyMap = "dk-latin1";
+    keyMap = "us-acentos";
     font = "ter-132n";
     packages = [pkgs.terminus_font];
   };
@@ -178,8 +178,8 @@
       enable = true;
       excludePackages = [pkgs.xterm];
       xkb = {
-        layout = "dk";
-        variant = "";
+        layout = "us";
+        variant = "altgr-intl";
       };
     };
     udev.extraRules = ''
