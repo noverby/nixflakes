@@ -8,18 +8,24 @@
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Cascadia Code NF",
-  "buffer_font_size": 16,
-  "dock": "right",
-  "format_on_save": "on",
-  "git": {
-    "inline_blame": {
-      "enabled": false
-    }
-  },
   "inlay_hints": {
     "enabled": true
   },
+  "show_whitespaces": "all",
   "languages": {
+    "Nix": {
+      "language_servers": [
+        "nil",
+        "!nix-ls",
+        "..."
+      ],
+      "format_on_save": {
+        "external": {    
+          "command": "alejandra",
+          "arguments": []
+        }
+      }
+    },
     "JavaScript": {
       "language_servers": [
         "vtsls"
@@ -63,28 +69,34 @@
         }
       }
     },
-    "nix": {
+    "nil": {
       "binary": {
-        "path_lookup": true
+        "path": "nil"
       }
     }
   },
-  "project_panel": {
-    "default_width": 330,
-    "dock": "right"
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
   },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
+  "tab_size": 2,
   "relative_line_numbers": true,
-  "scrollbar": {
-    "show": "never"
-  },
-  "telemetry": {
-    "diagnostics": true,
-    "metrics": true
-  },
   "terminal": {
+    "shell": {
+      "program": "zellij-cwd"
+    },
     "line_height": "standard"
   },
-  "theme": "Gruvbox Dark Hard",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "auto_update": false,
   "ui_font_size": 16,
   // allow cursor to reach edges of screen
   "vertical_scroll_margin": 10,
@@ -97,9 +109,5 @@
     // "on_yank": use system clipboard for yank operations
     "use_system_clipboard": "always"
   },
-  "vim_mode": true,
-  "wrap_guides": [
-    80,
-    100
-  ]
+  "vim_mode": true
 }
