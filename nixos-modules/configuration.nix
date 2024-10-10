@@ -174,20 +174,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    kmscon = {
-      #enable = true;
-      #hwRender = true;
-      #useXkbConfig = false;
-      #fonts = [
-      #  {
-      #    name = "Source Code Pro";
-      #    package = pkgs.source-code-pro;
-      #  }
-      #];
-      #extraConfig = ''
-      #  font-size=14
-      #'';
-    };
     xserver = {
       enable = true;
       excludePackages = [pkgs.xterm];
