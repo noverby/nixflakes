@@ -24,6 +24,8 @@
     gsh = "git stash";
     gsw = "git switch";
     gundo = "git reset HEAD~1 --soft";
+    gbm = "gh pr comment --body 'bors merge'";
+    gpr = "gh pr create --fill";
     du = "dust";
     cat = "bat";
     find = "fd";
