@@ -25,6 +25,7 @@
     gsw = "git switch";
     gundo = "git reset HEAD~1 --soft";
     gbm = "gh pr comment --body 'bors merge'";
+    gbc = "gh pr comment --body 'bors cancel'";
     gpr = "gh pr create --fill";
     du = "dust";
     cat = "bat";
