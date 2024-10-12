@@ -22,6 +22,7 @@
     firefoxpwa
     zed-editor
     gnome-network-displays
+    eyedropper
 
     # System tools
     sudo-rs
