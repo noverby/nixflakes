@@ -59,7 +59,7 @@
     git-filter-repo
     du-dust
     ripgrep
-    #ripgrep-all
+    ripgrep-all
     tokei
     zip
     unzip
