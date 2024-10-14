@@ -16,6 +16,7 @@
     glg = "git log --graph";
     gpl = "git pull";
     gps = "git push";
+    gpf = "git push -f";
     gr = "git rebase";
     gri = "git rebase -i";
     grc = "git rebase --continue";
