@@ -28,6 +28,7 @@
     gbm = "gh pr comment --body 'bors merge'";
     gbc = "gh pr comment --body 'bors cancel'";
     gpr = "gh pr create --fill";
+    ggg = "gps; gpr; gbm";
     du = "dust";
     cat = "bat";
     find = "fd";
