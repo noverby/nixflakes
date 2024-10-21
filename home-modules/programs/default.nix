@@ -42,7 +42,7 @@
     chromium-dev = "chromium --remote-debugging-port=9220";
   };
 in {
-  imports = [./git.nix ./vscode.nix];
+  imports = [./git.nix ./vscode.nix ./zed-editor.nix];
   programs = {
     home-manager.enable = true;
     gh.enable = true;

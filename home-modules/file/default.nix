@@ -27,8 +27,6 @@ with config.lib.file; {
     ".pystartup".source = ./config/pystartup;
     ".config/pop-shell/config.json".source = ./config/pop-shell/config.json;
     ".config/mpv/mpv.conf".source = ./config/mpv/mpv.conf;
-    ".config/zed/settings.json". source = ./config/zed/settings.json;
-    ".config/zed/keymap.json". source = ./config/zed/keymap.json;
     ".config/helix/config.toml".text = ''
       [keys.insert]
       up = "no_op"
