@@ -52,14 +52,14 @@ in {
 
     wezterm = {
       enable = true;
-      extraConfig = builtins.readFile ./wezterm.lua;
+      extraConfig = builtins.readFile ./wezterm/config.lua;
       enableBashIntegration = true;
     };
 
     nushell = {
       enable = true;
       inherit shellAliases;
-      configFile.source = ./config.nu;
+      configFile.source = ./nushell/config.nu;
       environmentVariables = {
         EDITOR = "\"hx\"";
         VISUAL = "\"hx\"";
@@ -193,7 +193,7 @@ in {
       profiles = rec {
         default = {
           isDefault = true;
-          userChrome = builtins.readFile ./userChrome.css;
+          userChrome = builtins.readFile ./firefox/userChrome.css;
           settings = {
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           };

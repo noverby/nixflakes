@@ -20,7 +20,6 @@
     dconf-editor
     celeste
     firefoxpwa
-    zed-editor
     gnome-network-displays
     eyedropper
 

@@ -50,7 +50,7 @@ in {
       thenuprojectcontributors.vscode-nushell-lang
       ms-azuretools.vscode-docker
     ];
-    userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
-    keybindings = builtins.fromJSON (builtins.readFile ./keybindings.json);
+    userSettings = builtins.fromJSON (builtins.readFile ./vscode/settings.json);
+    keybindings = builtins.fromJSON (builtins.readFile ./vscode/keybindings.json);
   };
 }
