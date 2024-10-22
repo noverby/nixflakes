@@ -91,6 +91,7 @@
   virtualisation = {
     docker.enable = true;
     libvirtd.enable = true;
+    waydroid.enable = true;
   };
 
   # Security
