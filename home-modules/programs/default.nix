@@ -68,7 +68,7 @@ in {
         DIRENV_LOG_FORMAT = "\"\"";
         PYTHONSTARTUP = "\"${homeDirectory}/.pystartup\"";
         NIXOS_OZONE_WL = "1";
-        GRANTED_ALIAS_CONFIGURED = "\"true\"";
+        GRANTED_ALIAS_CONFIGURED = "true";
         XDG_DATA_DIRS = "\"${builtins.concatStringsSep ":" [
           "${homeDirectory}/.nix-profile/share"
           "${homeDirectory}/.local/share/flatpak/exports/share"
